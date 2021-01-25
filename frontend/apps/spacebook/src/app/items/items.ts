@@ -2,6 +2,8 @@ import { Type } from '@angular/core';
 import { ItemThemeType, ItemUsage } from '@diggel/data';
 import { ItemComponent, ItemDefinition } from '@diggel/ui';
 
+export const item_tangare = 'tangare';
+
 const infoItems = [];
 const itemLocation: Map<string, string> = new Map([
   
