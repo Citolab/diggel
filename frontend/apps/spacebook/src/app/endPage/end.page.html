@@ -8,25 +8,16 @@
       class="score btn btn-lg rounded-lg btn-primary"
       style="margin-top: 240px"
     >
-      Verder
-    </button>
-  </div>
-  <div>
-    <button
-      *ngIf="isLast && openedSurvey"
-      class="btn btn-lg rounded-lg btn-dark mdi mdi-close mr-2"
-      (click)="finish()"
-    >
-      Afsluiten
+      Next
     </button>
   </div>
   <div>
     <button
       *ngIf="isLast"
-      class="score btn btn-lg btn-success rounded-lg btn-primary mdi mdi-format-list-checks"
-      (click)="toSurvey()"
+      class="btn btn-lg rounded-lg btn-dark mdi mdi-close mr-2"
+      (click)="finish()"
     >
-      Naar de vragenlijst
+      Finish
     </button>
   </div>
 </div>

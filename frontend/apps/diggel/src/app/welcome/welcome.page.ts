@@ -26,24 +26,18 @@ export class WelcomePageComponent implements AfterViewInit, OnInit {
 
   // applicationMapping: string[] = [];
   isDemoTestSession = false;
-  openedSurvey = false;
   applications: string[] = [];
 
   constructor(
     private userService: UserService,
     private cordovaService: CordovaService,
-    private modalService: NgbModal,
-    private searchService: SearchService,
+    private modalService: NgbModal
   ) {
-    const demoUser =
-      !userService.useBackend || userService.testSession.isDemoTestSession;
-    this.openedSurvey = !demoUser;
-    this.userService.useBackend = environment.useBackend;
+     this.userService.useBackend = environment.useBackend;
     this.isDemoTestSession = !environment.useBackend || this.userService.testSession.isDemoTestSession;
   }
 
   ngOnInit(): void {
-    this.openedSurvey = false;
     if (this.isDemoTestSession) {
       this.applications = Array.from(
         this.userService.applicationMapping,
@@ -54,15 +48,6 @@ export class WelcomePageComponent implements AfterViewInit, OnInit {
         return this.userService.applicationMapping.get(a).name;
       });
     }
-  }
-
-  toSurvey() {
-    const url = this.userService.begrippenlijst;
-    this.searchService.search(
-      `${url}?code=${this.userService?.testSession?.startCode}`,
-      this.openedSurvey
-    );
-    this.openedSurvey = true;
   }
 
   checkMessage() {

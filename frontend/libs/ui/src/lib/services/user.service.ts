@@ -57,21 +57,6 @@ export class UserService {
     [8, ['D', 'B']],
   ]);
 
-  public toetsvragen_list: Map<number, string> = new Map([
-    [1, 'https://utwentebs.eu.qualtrics.com/jfe/form/SV_0riyiOWYDlK0lj7'],
-    [2, 'https://utwentebs.eu.qualtrics.com/jfe/form/SV_9Ml4cEsTFmlSxjT'],
-    [3, 'https://utwentebs.eu.qualtrics.com/jfe/form/SV_cUSArIa4XWqS7uB'],
-    [4, 'https://utwentebs.eu.qualtrics.com/jfe/form/SV_8pSpDJljUNsBl6R'],
-    [5, 'https://utwentebs.eu.qualtrics.com/jfe/form/SV_0riyiOWYDlK0lj7'],
-    [6, 'https://utwentebs.eu.qualtrics.com/jfe/form/SV_cUSArIa4XWqS7uB'],
-    [7, 'https://utwentebs.eu.qualtrics.com/jfe/form/SV_9Ml4cEsTFmlSxjT'],
-    [8, 'https://utwentebs.eu.qualtrics.com/jfe/form/SV_8pSpDJljUNsBl6R'],
-  ]);
-
-  public begrippenlijst = 'https://utwentebs.eu.qualtrics.com/jfe/form/SV_9MQkxpzdHTYWjyt';
-  // In one of the last items a profilepicture has been chosen.
-  // This profile picture should be seen in the feed page.
-
   private loginResult = {
     success: true,
     resumed: false,

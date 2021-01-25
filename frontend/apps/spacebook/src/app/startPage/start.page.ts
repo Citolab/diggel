@@ -11,9 +11,9 @@ export class StartPageComponent
   extends BaseStartPageComponent
   implements OnInit {
   ngOnInit() {
-    this.welcomeMessage = `Ken jij Spacebook al?
-    Heel de klas gebruikt het om van alles te delen.
-    Ik wil graag dat je me helpt met registreren.`;
+    this.welcomeMessage = `Have you heard about Spacebook?
+    Everyone in my class uses Spacebook to share pictures, music, videos, and articles!
+    Would you like to help me to register?`;
     this.firstItem = itemDefinitions[0];
     super.ngOnInit();
   }

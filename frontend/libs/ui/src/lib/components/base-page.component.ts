@@ -262,7 +262,7 @@ export abstract class BasePageComponent implements AfterContentInit, OnDestroy {
         .pipe(
           tap(() => {
             if (!itemResult.feedback) {
-              this.showNotification('Ok, dan gaan we verder!');
+              this.showNotification('Ok, dan gaan we Next!');
             } else {
               this.showNotification(itemResult.feedback);
             }

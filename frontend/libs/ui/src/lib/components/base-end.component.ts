@@ -15,9 +15,8 @@ import { restartApp } from '@diggel/data';
 export abstract class BaseEndPageComponent implements OnInit, OnDestroy {
   resultButtonClicked = false;
   textSessionReady =
-    'Bedankt voor je hulp! Ik kan Spacebook nu zelf gebruiken.';
+    'Thanks! Now I can use Spacebook myself.';
   endSubscription: Subscription;
-  openedSurvey = false;
   isLast = false;
   private endButtonClicked = false;
   constructor(
@@ -49,23 +48,12 @@ export abstract class BaseEndPageComponent implements OnInit, OnDestroy {
       .subscribe(() => {
         if (!this.isLast) {
           this.showNotification(`${this.textSessionReady} 
-                    Klik op verder om de volgende opdracht te starten`);
+                    Click 'next' to start the next digital environment.`);
         } else {
           this.showNotification(`${this.textSessionReady} 
-                    Dit is het eind van de toets. Er komt nog een korte vragenlijst. Bedankt voor het meedoen!`);
+                    This is the end, thanks for helping!`);
         }
       });
-  }
-
-
-  toSurvey() {
-    const url = this.userService.toetsvragen_list.get(this.userService?.testSession?.testModuleId);
-    this.searchService.search(
-      `${url}?code=${this.userService.testSession.startCode}`,
-      this.openedSurvey
-    );
-    this.openedSurvey = true;
-    this.ref.detectChanges();
   }
 
   async finish() {

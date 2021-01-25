@@ -30,20 +30,10 @@
       </div>
       <div class="text-center mt-5 mx-auto">
         <button
-          *ngIf="!demoUser"
-          class="btn btn-success btn-lg rounded-pill"
-          (click)="toSurvey()"
-        >
-          <span *ngIf="!openedSurvey">Naar de vragenlijst</span>
-          <span *ngIf="openedSurvey">Vragenlijst</span>
-        </button>
-
-        <button
-          *ngIf="openedSurvey"
           class="btn btn-primary btn-lg rounded-pill ml-2"
           (click)="login()"
         >
-          Ik ga je helpen!<span
+          I'll help!<span
             *ngIf="clicked"
             class="mdi mdi-loading mdi-spin"
           ></span>
