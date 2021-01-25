@@ -1,0 +1,22 @@
+@import './../../scss/custom-styles';
+
+.grid-container {
+  @extend .grid-container-base;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 150px 50px 1fr;
+  gap: 1px 1px;
+  grid-template-areas: 'banner banner' 'menu menu' 'item1 item1';
+}
+
+.banner {
+  grid-area: banner;
+}
+
+.menu {
+  grid-area: menu;
+}
+
+.item1 {
+  padding: 1rem;
+  grid-area: item1;
+}

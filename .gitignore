@@ -1,0 +1,3 @@
+release/
+backend/Diggel.Backend/appsettings.local.json
+frontend/tools/android-app/key/diggel.jks

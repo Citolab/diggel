@@ -1,0 +1,36 @@
+{
+	"folders": [
+		{
+			"path": "./frontend"
+		},
+		{
+			"path": "backend"
+		},
+		{
+			"path": "frontend/projects/webspace"
+		},
+		{
+			"path": "frontend/projects/spacebook"
+		},
+		{
+			"path": "frontend/projects/spacegram"
+		},
+		{
+			"path": "frontend/projects/spacetalk"
+		},
+		{
+			"path": "app"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			"./frontend/projects/spacebook": true,
+			"./frontend/projects/whatsapp": true
+		}
+	},
+}

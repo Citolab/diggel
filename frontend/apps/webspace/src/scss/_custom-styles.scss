@@ -1,0 +1,249 @@
+@import './custom-variables';
+
+.bold {
+  font-weight: bolder;
+}
+.italic {
+  font-style: italic;
+}
+.underline {
+  text-decoration: underline;
+}
+
+.image-fit {
+  width: 100%;
+  max-height: 100%;
+  /* height: auto; */
+  object-fit: cover;
+}
+.text-blue {
+  color: #0000ee !important;
+}
+.table-blue {
+  color: #0000ee !important;
+  background-color: #0000ee33 !important;
+}
+.table-green {
+  color: #306844 !important;
+  background-color: #3068444a !important;
+}
+.table-red {
+  color: #ff4444 !important;
+  background-color: #ff44443d !important;
+}
+.image-fit-h {
+  width: auto;
+  max-height: 100%;
+  /* height: auto; */
+  object-fit: cover;
+}
+.modal.fade {
+  touch-action: none;
+}
+
+.item-container {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.image-label {
+  margin-top: 5px;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.modal.modal-toaster {
+  opacity: 0;
+  z-index: 2000;
+  animation: slideInDown 0.4s ease;
+  animation-fill-mode: forwards;
+  animation-delay: 0.4s;
+  padding: 0;
+  .modal-dialog {
+    position: absolute;
+    top: -14px;
+    right: 12px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    color: white;
+    border: 2px solid #292d32;
+    border-radius: 0.25rem;
+    background-color: $dark;
+    padding: 0;
+    .toast-header {
+    }
+    .modal-content {
+      background-color: transparent; //override
+      border: 0; // override
+      padding: 0; // override
+      border-radius: 0;
+    }
+  }
+}
+
+.dark-modal .modal-content {
+  background-color: #292b2c;
+  color: white;
+}
+
+.dark-modal .close {
+  color: white;
+}
+
+.modal.rounded-0 {
+  .modal-dialog {
+    &.modal-lg {
+      .modal-content {
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+.modal.cameraroll-filter {
+  animation: slideInLeft 1s ease;
+  .modal-dialog {
+    &.modal-lg {
+      width: 60% !important;
+      max-width: 100% !important; // margin: 0rem !important;
+      margin: 0 0;
+      align-items: start;
+      height: 100%;
+      .modal-content {
+        // background-color: $dark;
+        border-radius: 0;
+        height: 100%;
+      }
+    }
+  }
+}
+.modal.cameraroll-sm {
+  animation: slideInLeft 1s ease;
+  .modal-dialog {
+    &.modal-lg {
+      width: 35% !important;
+      max-width: 100% !important; // margin: 0rem !important;
+      margin: 0 0;
+      align-items: start;
+      height: 100%;
+      .modal-content {
+        // background-color: $dark;
+        border-radius: 0;
+        height: 100%;
+      }
+    }
+  }
+}
+.modal.cameraroll {
+  animation: slideInLeft 1s ease;
+  .modal-dialog {
+    &.modal-lg {
+      width: 50% !important;
+      max-width: 100% !important; // margin: 0rem !important;
+      margin: 0 0;
+      align-items: start;
+      height: 100%;
+      .modal-content {
+        // background-color: $dark;
+        border-radius: 0;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.modal.cameraroll-cultuur {
+  animation: slideInLeft 1s ease;
+  .modal-dialog {
+    &.modal-lg {
+      width: 50% !important;
+      max-width: 100% !important; // margin: 0rem !important;
+      margin: 0 0;
+      align-items: start;
+      height: 100%;
+      .modal-content {
+        // background-color: $dark;
+        border-radius: 0;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-inner {
+  height: 100%;
+}
+
+.carousel-indicators li {
+  background-color: grey !important;
+}
+
+.city-modal {
+  height: 95vh !important;
+  width: 98vw !important;
+  left: 1vw !important;
+  top: 110px !important;
+  .modal-dialog {
+    max-width: 98vw !important;
+    .modal-content {
+      height: 70vh !important;
+    }
+  }
+}
+
+.modal.cameraroll-bezienswaardigheden {
+  animation: slideInLeft 1s ease;
+  .modal-dialog {
+    &.modal-lg {
+      width: 50% !important;
+      max-width: 100% !important; // margin: 0rem !important;
+      margin: 0 0;
+      align-items: start;
+      .modal-content {
+        // background-color: $dark;
+        border-radius: 0;
+        height: 100vh;
+      }
+    }
+  }
+}
+
+.grid-container-base {
+  width: 90%;
+  min-height: 80vh;
+  margin: 1rem auto;
+  background-color: white;
+  box-shadow: 0px 4px 8px 3px #ccc;
+
+  display: grid;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.modal-animate {
+  animation: slideInDown 0.4s ease;
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

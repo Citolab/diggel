@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="145.351" height="154.407" viewBox="0 0 145.351 154.407">
+  <g id="logo-spacegram-satellite" transform="translate(2 2)">
+    <circle id="Ellipse_170" data-name="Ellipse 170" cx="23.104" cy="23.104" r="23.104" transform="translate(12.754 12.448)" fill="none" stroke="#d85bb2" stroke-miterlimit="10" stroke-width="4"/>
+    <circle id="Ellipse_172" data-name="Ellipse 172" cx="35.5" cy="35.5" r="35.5" fill="none" stroke="#d85bb2" stroke-miterlimit="10" stroke-width="4"/>
+    <path id="Path_3710" data-name="Path 3710" d="M390.636,241.366,486.9,145.1s40.721,40.736-7.41,88.852S390.636,241.366,390.636,241.366Z" transform="translate(-384.281 -139.844)" fill="#fff"/>
+    <path id="Path_3711" data-name="Path 3711" d="M422.749,198.083v21.408l21.4-16.05V174.006" transform="translate(-336.139 -96.515)" fill="#bfbfbf"/>
+    <path id="Path_3712" data-name="Path 3712" d="M414.186,238.211v-10.7l64.2-48.151h10.7l-21.4,42.8Z" transform="translate(-348.976 -88.491)" fill="#bfbfbf"/>
+    <g id="Group_1514" data-name="Group 1514" transform="translate(6.355 5.261)">
+      <path id="Path_3713" data-name="Path 3713" d="M390.636,241.366,486.9,145.1s40.721,40.736-7.41,88.852S390.636,241.366,390.636,241.366Z" transform="translate(-390.636 -145.104)" fill="none" stroke="#4d5152" stroke-miterlimit="10" stroke-width="7"/>
+      <line id="Line_80" data-name="Line 80" y1="92.366" x2="92.374" transform="translate(13.057 13.055)" fill="none" stroke="#4d5152" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="Line_81" data-name="Line 81" x1="11.106" y1="11.101" transform="translate(35.169 35.177)" fill="none" stroke="#4d5152" stroke-miterlimit="10" stroke-width="4"/>
+      <circle id="Ellipse_174" data-name="Ellipse 174" cx="10.471" cy="10.471" r="10.471" transform="translate(19.145 19.153)" fill="#67dde0" stroke="#4d5152" stroke-miterlimit="10" stroke-width="4"/>
+    </g>
+    <path id="Path_3714" data-name="Path 3714" d="M422.749,198.083v21.408l21.4-16.05V174.006" transform="translate(-336.139 -96.515)" fill="none" stroke="#4d5152" stroke-miterlimit="10" stroke-width="4"/>
+    <path id="Path_3715" data-name="Path 3715" d="M414.186,238.211v-10.7l64.2-48.151h10.7l-21.4,42.8Z" transform="translate(-348.976 -88.491)" fill="none" stroke="#4d5152" stroke-miterlimit="10" stroke-width="4"/>
+  </g>
+</svg>

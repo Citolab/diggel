@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-md bg-primary">
+  <a class="navbar-brand text-white font-weight-bold">
+    <img
+      src="./assets/identity/icon-spacetalk-robot.svg"
+      class="mr-2"
+      width="28"
+      height="28"
+      style="margin-top: -4px"
+    />
+    SpaceTalk
+  </a>
+</nav>
+
+<div class="flex-grow-1 bg-light d-flex overflow-hidden">
+  <div class="flex-grow-1 d-flex align-items-center justify-content-center">
+    <div class="bg-white p-5 mt-5 shadow">
+      <div style="--aspect-ratio: 4/3; min-width: 680px; max-width: 680px">
+        <div [class.d-none]="loadingItemsCount !== 0">
+          <template #itemContainer></template>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="slides"
+    style="width: 220px"
+    class="border-left bg-white overflow-scroll"
+  >
+    <div *ngFor="let item of itemComponents;let i = index;">
+      <!-- <div class="mx-2">{{ i + 1 }}</div> -->
+      <div
+        class="bg-white border shadow-sm m-4 p-1"
+        style="--aspect-ratio: 4/3"
+      >
+        <div [id]="'item-' + item" class="slide"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #modalContent let-modal>
+  <div class="toast-header">
+    <img
+      src="assets/profile-pics/shutterstock_1257452734.png"
+      class="profile-sm mr-2 my-2"
+      alt="..."
+    />
+    <div>
+      <strong class="mr-auto text-verdana">Susan</strong><br />
+      <small class="text-secondary">{{ time }}</small>
+    </div>
+
+    <span
+      class="ml-auto mdi mdi-message-text mdi-36px mr-2 text-success"
+    ></span>
+  </div>
+  <div class="toast-body text-verdana" role="alert" aria-live="polite">
+    <div [innerHTML]="notificationMessage"></div>
+    <div class="d-flex justify-content-between mt-5">
+      <button
+        type="button"
+        class="btn btn-success w-100 mr-1"
+        (click)="modal.close('Cancel')"
+      >
+        Terug
+      </button>
+      <button
+        type="button"
+        class="btn btn-success w-100 ml-1"
+        (click)="modal.close('Next')"
+      >
+        Verder
+      </button>
+    </div>
+  </div>
+</ng-template>

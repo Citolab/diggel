@@ -1,0 +1,6 @@
+// normal `build.gradle` configuration can happen
+android {
+  dexOptions {
+    javaMaxHeapSize "4g"
+  }
+}

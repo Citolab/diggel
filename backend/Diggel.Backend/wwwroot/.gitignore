@@ -1,0 +1,8 @@
+﻿# Ignore everything
+*
+
+# But not these files
+!.gitignore
+!placeholder
+!backoffice-resources
+!index.htm

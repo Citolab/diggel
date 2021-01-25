@@ -1,0 +1,64 @@
+@page
+@model ViewGroup
+
+@{
+    ViewData["Title"] = "Groep bekijken";
+}
+
+<h1>@Model.GroupViewModel.Name</h1>
+@if (Model.GroupViewModel.IsDemoGroup)
+{
+    <blockquote>
+        Dit is een demogroep, de startcodes in deze groep kunnen onbeperkt opnieuw worden gebruikt. <br>
+        Logdata wordt niet opgeslagen.
+    </blockquote>
+}
+else
+{
+    <div class="row">
+        <div class="col-sm-4">
+            <form class="form-horizontal" asp-route-id="@Model.GroupViewModel.Id"ß>
+                <div class="input-group">
+                    <input type="number" name="numberOfCandidates" placeholder="Aantal kandidaten" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">Toevoegen</button>
+                    </span>
+                </div>
+                <div asp-validation-summary="All"></div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <h2 class="col-sm-12">
+            <a class="btn btn-sm btn-primary" asp-controller="Report" asp-action="GetResultsByGroupId" asp-route-groupid="@Model.GroupViewModel.Id">Download resultaten</a>
+            <a class="btn btn-sm btn-primary" asp-controller="Report" asp-action="GetSessionLogsByGroupId" asp-route-groupid="@Model.GroupViewModel.Id">Download sessielogs</a>
+            <a class="btn btn-sm btn-primary" asp-controller="Report" asp-action="GetZippedSessionLogsByGroupId" asp-route-groupid="@Model.GroupViewModel.Id">Download sessielogs (zipbestand)</a>
+        </h2>
+    </div>
+}
+<div class="row">
+    <div class="col-sm-6">
+        <table class="table table-striped table-condensed">
+            <thead>
+            <tr>
+                <th>Startcode</th>
+                <th>Status</th>
+                <th>Module</th>
+                <th>Starttijd</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var candidateSession in Model.GroupViewModel.CandidateSessions)
+            {
+                <tr>
+
+                    <td>@candidateSession.StartCode</td>
+                    <td>@candidateSession.Status</td>
+                    <td>@(candidateSession.TestModuleId.HasValue ? candidateSession.TestModuleId.ToString() : "-")</td>
+                    <td>@(candidateSession.StartTimestamp != DateTime.MinValue ? candidateSession.StartTimestamp.ToString("dd-MM-yyyy HH:mm") : "-")</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

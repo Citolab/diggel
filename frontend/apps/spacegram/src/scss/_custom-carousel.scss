@@ -1,0 +1,58 @@
+.carousel,
+.slide {
+  flex-grow: 1 !important;
+  img {
+    margin: auto;
+    height: auto;
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  counter-reset: section;
+  .carousel-indicators {
+    li {
+      border: 2px solid black;
+    }
+    li::before {
+      counter-increment: section; /* Increment the value of section counter by 1 */
+      content: 'Section ' counter(section) ': ';
+    }
+    li.active {
+      border: 2px solid #d65db1;
+    }
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-color: black;
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 36px;
+    height: 36px;
+    top: 50%;
+    opacity: 1;
+  }
+
+  .carousel-control-prev {
+    transform: translateX(-50%);
+    z-index: 1000;
+    // .carousel-control-prev-icon:before {
+    // }
+    // .sr-only {
+    // }
+  }
+  .carousel-control-next {
+    transform: translateX(50%);
+    z-index: 1000;
+    // .carousel-control-next-icon:before {
+    // }
+    // .sr-only {
+    // }
+  }
+}
+
+.carousel-item.active {
+  animation: flip-in-ver-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+

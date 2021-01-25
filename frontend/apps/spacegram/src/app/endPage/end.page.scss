@@ -1,0 +1,31 @@
+.score {
+  opacity: 0;
+  animation: show 1s ease forwards;
+  animation-delay: 5s;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+:host {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url('../../assets/identity/splashscreen-spacegram.svg');
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

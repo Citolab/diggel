@@ -1,0 +1,36 @@
+@page
+@model Groups
+
+@{
+    ViewData["Title"] = "Groepen";
+}
+
+<h1>Groepen</h1>
+
+<a asp-page="./AddGroup">Nieuwe groep toevoegen</a>
+<div class="row">
+    <h2 class="col-sm-12">
+        <a class="btn btn-sm btn-primary" asp-controller="Report" asp-action="GetAllResults">Download resultaten</a>
+        <a class="btn btn-sm btn-primary" asp-controller="Report" asp-action="GetAllSessionLogsCsv">Download sessielogs</a>
+        <a class="btn btn-sm btn-primary" asp-controller="Report" asp-action="GetAllSessionLogsZipped">Download sessielogs (zipbestand)</a>
+    </h2>
+</div>
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th>Groepnaam</th>
+        <th># toetssessies</th>
+        <th>Laatste toetssessie (UTC)</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var group in Model.GroupViewModels)
+    {
+        <tr style="cursor: pointer" onclick="window.location = './ViewGroup?id=@group.Id'">
+            <td>@group.Name </td>
+            <td>@group.CandidateSessions.Count</td>
+            <td>@(group.TimeOfLastTestSession != DateTime.MinValue ? group.TimeOfLastTestSession.ToString("dd-MM-yyyy HH:mm") : "")</td>
+        </tr>
+    }
+    </tbody>
+</table>

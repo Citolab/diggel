@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="41.259" height="34.513" viewBox="0 0 41.259 34.513">
+  <g id="icon-spacetalk-robot" transform="translate(0.5 1)">
+    <path id="Path_3682" data-name="Path 3682" d="M672.272,155.882a3.286,3.286,0,0,1,3.355-3.355h26.838a3.286,3.286,0,0,1,3.355,3.355v16.774a3.286,3.286,0,0,1-3.355,3.355H675.627a3.286,3.286,0,0,1-3.355-3.355Z" transform="translate(-668.917 -143.498)" fill="none" stroke="#fff" stroke-width="1"/>
+    <path id="Ellipse_160" data-name="Ellipse 160" d="M4.309,0A4.309,4.309,0,1,1,0,4.309,4.309,4.309,0,0,1,4.309,0Z" transform="translate(24.3 13.852)" fill="none" stroke="#fff" stroke-width="1"/>
+    <path id="Ellipse_160-2" data-name="Ellipse 160" d="M4.309,0A4.309,4.309,0,1,1,0,4.309,4.309,4.309,0,0,1,4.309,0Z" transform="translate(7.477 13.852)" fill="none" stroke="#fff" stroke-width="1"/>
+    <path id="Path_3683" data-name="Path 3683" d="M682.976,180.644v-5.032a1.646,1.646,0,0,1,1.613-1.678h13.484a1.644,1.644,0,0,1,1.677,1.612c0,.022,0,.043,0,.065v5.032" transform="translate(-671.233 -148.132)" fill="none" stroke="#fff" stroke-width="1"/>
+    <path id="Path_3684" data-name="Path 3684" d="M671.345,158.949h-1.677a1.645,1.645,0,0,0-1.677,1.612v10.129a1.646,1.646,0,0,0,1.613,1.678h1.742Z" transform="translate(-667.99 -144.888)" fill="none" stroke="#fff" stroke-width="1"/>
+    <path id="Path_3685" data-name="Path 3685" d="M715.088,158.949h1.678a1.644,1.644,0,0,1,1.677,1.612c0,.022,0,.043,0,.065v10.064a1.645,1.645,0,0,1-1.612,1.678h-1.743Z" transform="translate(-678.185 -144.888)" fill="none" stroke="#fff" stroke-width="1"/>
+    <path id="Path_3688" data-name="Path 3688" d="M672.272,155.882a3.286,3.286,0,0,1,3.355-3.355h26.838a3.286,3.286,0,0,1,3.355,3.355v16.774a3.286,3.286,0,0,1-3.355,3.355H675.627a3.286,3.286,0,0,1-3.355-3.355Z" transform="translate(-668.917 -143.498)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_3689" data-name="Path 3689" d="M682.976,180.644v-5.032a1.646,1.646,0,0,1,1.613-1.678h13.484a1.644,1.644,0,0,1,1.677,1.612c0,.022,0,.043,0,.065v5.032" transform="translate(-671.233 -148.132)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Ellipse_160-3" data-name="Ellipse 160" d="M2.674,0A2.674,2.674,0,1,1,0,2.674,2.674,2.674,0,0,1,2.674,0Z" transform="translate(17.524)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Line_72" data-name="Line 72" d="M0,0V3.355" transform="translate(20.129 5.003)" fill="none" stroke="#fff" stroke-width="2"/>
+  </g>
+</svg>

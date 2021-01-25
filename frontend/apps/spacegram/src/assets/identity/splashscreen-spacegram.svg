@@ -1,0 +1,44 @@
+<svg id="splashscreen-spacegram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="768" viewBox="0 0 1024 768">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_64" data-name="Rectangle 64" width="1024" height="768" fill="red" opacity="0.387"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_1" data-name="Mask Group 1" clip-path="url(#clip-path)">
+    <g id="Ellipse_32" data-name="Ellipse 32" transform="translate(903 640) rotate(180)" fill="none" stroke="#fff" stroke-width="60">
+      <ellipse cx="391" cy="391.5" rx="391" ry="391.5" stroke="none"/>
+      <ellipse cx="391" cy="391.5" rx="361" ry="361.5" fill="none"/>
+    </g>
+    <g id="Ellipse_30" data-name="Ellipse 30" transform="translate(662 399) rotate(180)" fill="none" stroke="#fff" stroke-width="20">
+      <ellipse cx="150" cy="150.5" rx="150" ry="150.5" stroke="none"/>
+      <ellipse cx="150" cy="150.5" rx="140" ry="140.5" fill="none"/>
+    </g>
+    <g id="Ellipse_31" data-name="Ellipse 31" transform="translate(761 498) rotate(180)" fill="none" stroke="#fff" stroke-width="40">
+      <ellipse cx="249" cy="249.5" rx="249" ry="249.5" stroke="none"/>
+      <ellipse cx="249" cy="249.5" rx="229" ry="229.5" fill="none"/>
+    </g>
+    <g id="Ellipse_5" data-name="Ellipse 5" transform="translate(610 347) rotate(180)" fill="none" stroke="#fff" stroke-width="10">
+      <ellipse cx="98" cy="98.5" rx="98" ry="98.5" stroke="none"/>
+      <ellipse cx="98" cy="98.5" rx="93" ry="93.5" fill="none"/>
+    </g>
+    <g id="Group_19" data-name="Group 19" transform="translate(-28 -23)">
+      <text id="Deel_je_foto_s_en_belevenissen" data-name="Deel je foto’s en belevenissen" transform="translate(361 503.695)" fill="#8f979a" font-size="24" font-family="Verdana"><tspan x="0" y="0">Deel je foto’s en belevenissen</tspan></text>
+      <text id="SpaceGram" transform="translate(419 458.392)" fill="#4d5152" font-size="48" font-family="OpenSans-Italic, Open Sans" font-style="italic"><tspan x="0" y="0">SpaceGram</tspan></text>
+    </g>
+    <g id="logo-spacegram-satellite" transform="translate(470 209)">
+      <circle id="Ellipse_170" data-name="Ellipse 170" cx="23.104" cy="23.104" r="23.104" transform="translate(12.754 12.448)" fill="none" stroke="#d85bb2" stroke-miterlimit="10" stroke-width="4"/>
+      <circle id="Ellipse_172" data-name="Ellipse 172" cx="35.5" cy="35.5" r="35.5" fill="none" stroke="#d85bb2" stroke-miterlimit="10" stroke-width="4"/>
+      <path id="Path_3710" data-name="Path 3710" d="M390.636,241.366,486.9,145.1s40.721,40.736-7.41,88.852S390.636,241.366,390.636,241.366Z" transform="translate(-384.281 -139.844)" fill="#fff"/>
+      <path id="Path_3711" data-name="Path 3711" d="M422.749,198.083v21.408l21.4-16.05V174.006" transform="translate(-336.139 -96.515)" fill="#bfbfbf"/>
+      <path id="Path_3712" data-name="Path 3712" d="M414.186,238.211v-10.7l64.2-48.151h10.7l-21.4,42.8Z" transform="translate(-348.976 -88.491)" fill="#bfbfbf"/>
+      <g id="Group_1514" data-name="Group 1514" transform="translate(6.355 5.261)">
+        <path id="Path_3713" data-name="Path 3713" d="M390.636,241.366,486.9,145.1s40.721,40.736-7.41,88.852S390.636,241.366,390.636,241.366Z" transform="translate(-390.636 -145.104)" fill="none" stroke="#4d5152" stroke-miterlimit="10" stroke-width="7"/>
+        <line id="Line_80" data-name="Line 80" y1="92.366" x2="92.374" transform="translate(13.057 13.055)" fill="none" stroke="#4d5152" stroke-miterlimit="10" stroke-width="1"/>
+        <line id="Line_81" data-name="Line 81" x1="11.106" y1="11.101" transform="translate(35.169 35.177)" fill="none" stroke="#4d5152" stroke-miterlimit="10" stroke-width="4"/>
+        <circle id="Ellipse_174" data-name="Ellipse 174" cx="10.471" cy="10.471" r="10.471" transform="translate(19.145 19.153)" fill="#67dde0" stroke="#4d5152" stroke-miterlimit="10" stroke-width="4"/>
+      </g>
+      <path id="Path_3714" data-name="Path 3714" d="M422.749,198.083v21.408l21.4-16.05V174.006" transform="translate(-336.139 -96.515)" fill="none" stroke="#4d5152" stroke-miterlimit="10" stroke-width="4"/>
+      <path id="Path_3715" data-name="Path 3715" d="M414.186,238.211v-10.7l64.2-48.151h10.7l-21.4,42.8Z" transform="translate(-348.976 -88.491)" fill="none" stroke="#4d5152" stroke-miterlimit="10" stroke-width="4"/>
+    </g>
+  </g>
+</svg>

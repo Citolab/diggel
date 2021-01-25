@@ -1,0 +1,22 @@
+/*! My very own Bootstrap 4 Theme
+ *
+ *  Built on top of Bootstrap 4 (https://getbootstrap.com)
+ *  Built with the Bootstrap Theme Kit by HackerThemes (https://hackerthemes.com)
+ */
+
+$body-bg: #fefefe;
+@import '~bootstrap/scss/bootstrap';
+
+@import './scss/custom-variables';
+@import './scss/custom-bootstrap';
+//  @import '../node_modules/bootstrap/scss/bootstrap';
+@import './scss/custom-utility-classes';
+@import './scss/custom-styles';
+//  @import './scss/bootstrap-materialdesignicons';
+//  @import "./scss/postboot-parts";
+@import './scss/spacebook-notification';
+//  @import "@mdi/font/css/materialdesignicons.css";
+
+.no-pointer {
+  pointer-events: none;
+}

@@ -1,0 +1,37 @@
+<svg id="splashscreen-spacetalk" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="768" viewBox="0 0 1024 768">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_7" data-name="Path 7" d="M0,0H1024V768H0Z" transform="translate(0 32)" fill="#fd0000" opacity="0.622"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_4" data-name="Mask Group 4" transform="translate(0 -32)" clip-path="url(#clip-path)">
+    <text id="SpaceTalk" transform="translate(391.628 466.283)" fill="#4d5152" font-size="48" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">SpaceTalk</tspan></text>
+    <text id="Maak_een_spreekbeurt_in_stappen" data-name="Maak een spreekbeurt in stappen" transform="translate(311 513.695)" fill="#8f979a" font-size="24" font-family="Verdana"><tspan x="0" y="0">Maak een spreekbeurt in stappen</tspan></text>
+    <rect id="Rectangle_57" data-name="Rectangle 57" width="226" height="140" rx="37" transform="translate(116 62)" fill="#fff"/>
+    <rect id="Rectangle_58" data-name="Rectangle 58" width="270" height="167" rx="37" transform="translate(706 35)" fill="#fff"/>
+    <rect id="Rectangle_59" data-name="Rectangle 59" width="214" height="133" rx="37" transform="translate(373 -41)" fill="#fff"/>
+    <ellipse id="Ellipse_22" data-name="Ellipse 22" cx="30.5" cy="31" rx="30.5" ry="31" transform="translate(745 270) rotate(180)" fill="#fff"/>
+    <ellipse id="Ellipse_25" data-name="Ellipse 25" cx="18.5" cy="18" rx="18.5" ry="18" transform="translate(684 295) rotate(180)" fill="#fff"/>
+    <ellipse id="Ellipse_26" data-name="Ellipse 26" cx="30.5" cy="31" rx="30.5" ry="31" transform="translate(453 164) rotate(180)" fill="#fff"/>
+    <ellipse id="Ellipse_29" data-name="Ellipse 29" cx="30.5" cy="31" rx="30.5" ry="31" transform="translate(290 288) rotate(180)" fill="#fff"/>
+    <ellipse id="Ellipse_27" data-name="Ellipse 27" cx="18.5" cy="18" rx="18.5" ry="18" transform="translate(475 189) rotate(180)" fill="#fff"/>
+    <ellipse id="Ellipse_28" data-name="Ellipse 28" cx="18.5" cy="18" rx="18.5" ry="18" transform="translate(342 306) rotate(180)" fill="#fff"/>
+    <g id="logo-spacetalk-robot" transform="translate(456.014 201.86)">
+      <g id="Group_2" data-name="Group 2" transform="translate(15.148 2)">
+        <circle id="Ellipse_170" data-name="Ellipse 170" cx="20" cy="20" r="20" transform="translate(20.563 18.488)" fill="none" stroke="#d24317" stroke-miterlimit="10" stroke-width="4"/>
+        <circle id="Ellipse_172" data-name="Ellipse 172" cx="40" cy="40" r="40" transform="translate(1 -2)" fill="none" stroke="#d24317" stroke-miterlimit="10" stroke-width="4"/>
+      </g>
+      <path id="Path_3682" data-name="Path 3682" d="M672.272,161.835s0-9.308,9.308-9.308h74.455s9.308,0,9.308,9.308v46.534s0,9.308-9.308,9.308H681.58s-9.308,0-9.308-9.308Z" transform="translate(-662.963 -96.447)" fill="#bfbfbf"/>
+      <circle id="Ellipse_160" data-name="Ellipse 160" cx="11.955" cy="11.955" r="11.955" transform="translate(67.415 69.458)" fill="#67dde0" stroke="#4d5152" stroke-width="4"/>
+      <circle id="Ellipse_160-2" data-name="Ellipse 160" cx="11.955" cy="11.955" r="11.955" transform="translate(20.742 69.458)" fill="#67dde0" stroke="#4d5152" stroke-width="4"/>
+      <circle id="Ellipse_160-3" data-name="Ellipse 160" cx="7.418" cy="7.418" r="7.418" transform="translate(48.616 33.806)" fill="#d24317" stroke="#4d5152" stroke-width="4"/>
+      <path id="Path_3683" data-name="Path 3683" d="M682.976,192.549V178.59a4.566,4.566,0,0,1,4.476-4.654c.059,0,.12,0,.178,0h37.229a4.562,4.562,0,0,1,4.654,4.473c0,.061,0,.12,0,.18v13.959" transform="translate(-650.401 -71.321)" fill="#aaa"/>
+      <path id="Path_3684" data-name="Path 3684" d="M677.3,158.95h-4.654a4.565,4.565,0,0,0-4.654,4.473v28.1a4.568,4.568,0,0,0,4.476,4.654H677.3Z" transform="translate(-667.99 -88.91)" fill="#aaa" stroke="#4d5152" stroke-width="4"/>
+      <path id="Path_3685" data-name="Path 3685" d="M715.088,158.95h4.654a4.562,4.562,0,0,1,4.654,4.473c0,.061,0,.12,0,.18v27.921a4.565,4.565,0,0,1-4.473,4.654h-4.834Z" transform="translate(-612.711 -88.91)" fill="#aaa" stroke="#4d5152" stroke-width="4"/>
+      <rect id="Rectangle_1222" data-name="Rectangle 1222" width="36.953" height="14.529" transform="translate(36.754 121.627)" fill="#bfbfbf" stroke="#4d5152" stroke-width="4"/>
+      <path id="Path_3688" data-name="Path 3688" d="M672.272,161.835s0-9.308,9.308-9.308h74.455s9.308,0,9.308,9.308v46.534s0,9.308-9.308,9.308H681.58s-9.308,0-9.308-9.308Z" transform="translate(-662.963 -96.447)" fill="none" stroke="#4d5152" stroke-miterlimit="10" stroke-width="6"/>
+      <path id="Path_3689" data-name="Path 3689" d="M682.976,192.549V178.59a4.566,4.566,0,0,1,4.476-4.654c.059,0,.12,0,.178,0h37.229a4.562,4.562,0,0,1,4.654,4.473c0,.061,0,.12,0,.18v13.959" transform="translate(-650.401 -71.321)" fill="none" stroke="#4d5152" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="Line_72" data-name="Line 72" y2="9.308" transform="translate(55.844 47.687)" fill="none" stroke="#4d5152" stroke-miterlimit="10" stroke-width="4"/>
+    </g>
+  </g>
+</svg>

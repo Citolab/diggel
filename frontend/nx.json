@@ -1,0 +1,48 @@
+{
+  "npmScope": "diggel",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "diggel": {
+      "tags": []
+    },
+    "ui": {
+      "tags": []
+    },
+    "data": {
+      "tags": []
+    },
+    "spacebook": {
+      "tags": []
+    },
+    "webspace": {
+      "tags": []
+    },
+    "spacetalk": {
+      "tags": []
+    },
+    "spacegram": {
+      "tags": []
+    }
+  }
+}

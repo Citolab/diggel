@@ -1,0 +1,143 @@
+
+<?xml-stylesheet href="rocket.css" type="text/css"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="224" height="224" viewBox="0 0 224 224">
+  <defs>
+    <filter id="Path_3533" x="11.768" y="161.751" width="48.36" height="50.36" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <path id="MaskShape" d="M74.018,0c19.254,0,69.268-23.163,82.634-10.93,14.588,13.35-8.616,63.323-8.616,84.948A74.018,74.018,0,1,1,74.018,0Z" transform="translate(37.982 37.982)" fill="#00ff12"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="0.761" cy="0.18" r="1.135" gradientTransform="matrix(0.738, -0.7, 0.418, 0.413, 0.124, 0.638)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#34485a"/>
+      <stop offset="1" stop-color="#7bbdf4"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="0.761" cy="0.18" r="1.212" gradientTransform="matrix(0.691, -0.7, 0.367, 0.387, 0.169, 0.643)" xlink:href="#radial-gradient"/>
+    <radialGradient id="radial-gradient-3" cx="0.574" cy="0.171" r="0.387" gradientTransform="matrix(0.923, 0.395, -1.082, 2.506, 0.23, -0.484)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#57738d"/>
+      <stop offset="1" stop-color="#1a466c"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-4" cx="0.575" cy="0.209" r="0.532" gradientTransform="matrix(0.933, 0.36, -0.385, 0.999, 0.119, -0.207)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.094" stop-color="#fff"/>
+      <stop offset="0.719" stop-color="#7bbdf4"/>
+      <stop offset="1" stop-color="#2d86d0"/>
+    </radialGradient>
+    <filter id="Path_3433" x="-4.018" y="199.737" width="26.381" height="28.38" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <radialGradient id="radial-gradient-5" cx="0.807" cy="0.167" r="0.455" gradientTransform="matrix(0.22, 0.944, -2.181, 1.151, 0.994, -0.787)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.064" stop-color="#fff"/>
+      <stop offset="0.33" stop-color="#7bbdf4"/>
+      <stop offset="1" stop-color="#40627f"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-6" cx="0.626" cy="0.194" r="0.272" gradientTransform="matrix(1.41, 0.348, -1.859, 3.336, 0.105, -0.672)" xlink:href="#radial-gradient-5"/>
+    <clipPath id="clip-path-2">
+      <circle id="Ellipse_114" data-name="Ellipse 114" cx="2.5" cy="2.5" r="2.5" transform="translate(-10086 772)" fill="#1c486d"/>
+    </clipPath>
+    <radialGradient id="radial-gradient-7" cx="0.746" cy="0.234" r="0.122" gradientTransform="matrix(0.707, 0.707, -5.358, 5.359, 1.47, -1.545)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.33" stop-color="#7bbdf4"/>
+      <stop offset="0.54" stop-color="#69a1cf"/>
+      <stop offset="1" stop-color="#40627f"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-8" cx="0.345" cy="0.324" r="0.655" gradientTransform="translate(0 -0.01) scale(1 1.031)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.064" stop-color="#fff"/>
+      <stop offset="0.133" stop-color="#8ca7c1"/>
+      <stop offset="1" stop-color="#1e496e"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-9" cx="0.5" cy="0" r="3.021" gradientTransform="matrix(-0.216, 0.951, -0.172, -0.08, 0.608, -0.476)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.028" stop-color="#fff"/>
+      <stop offset="0.38" stop-color="#7bbdf4"/>
+      <stop offset="1" stop-color="#2d86d0"/>
+    </radialGradient>
+    <filter id="Subtraction_1" x="11.768" y="161.75" width="48.36" height="49.36" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-3">
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Path_3533)">
+        <path id="Path_3533-2" data-name="Path 3533" d="M83.677,28.215H43.437C48.475,14.666,56.366,6.963,62.706.773l.727-.71.943.92A105.2,105.2,0,0,1,74.457,11.862a62.373,62.373,0,0,1,9.22,16.351Z" transform="translate(-10210.92 783.01)" fill="#7fc4fd"/>
+      </g>
+    </clipPath>
+    <clipPath id="clip-Rocket">
+      <rect width="224" height="224"/>
+    </clipPath>
+  </defs>
+  <g id="Rocket" clip-path="url(#clip-Rocket)">
+    <g id="MaskGroup" clip-path="url(#clip-path)">
+      <path class="background" id="Background" data-name="Path 3521" d="M74.018,0A74.018,74.018,0,1,1,0,74.018,74.018,74.018,0,0,1,74.018,0Z" transform="translate(37.982 37.982)" fill="#4da3ff"/>
+      <g id="Clouds" transform="translate(130 -130)">
+        <circle id="Ellipse_103" data-name="Ellipse 103" cx="14.392" cy="14.392" r="14.392" transform="translate(-67.793 259.616)" fill="#fff"/>
+        <circle id="Ellipse_102" data-name="Ellipse 102" cx="14.392" cy="14.392" r="14.392" transform="translate(-94.354 259.392)" fill="#fff"/>
+        <circle id="Ellipse_104" data-name="Ellipse 104" cx="14.392" cy="14.392" r="14.392" transform="translate(-82.185 278.121)" fill="#fff"/>
+        <circle id="Ellipse_105" data-name="Ellipse 105" cx="14.392" cy="14.392" r="14.392" transform="translate(-61.625 280.177)" fill="#fff"/>
+        <circle id="Ellipse_106" data-name="Ellipse 106" cx="11.308" cy="11.308" r="11.308" transform="translate(-65.065 296.401)" fill="#fff"/>
+        <circle id="Ellipse_107" data-name="Ellipse 107" cx="9.252" cy="9.252" r="9.252" transform="translate(-38.672 306.737)" fill="#fff"/>
+        <circle id="Ellipse_113" data-name="Ellipse 113" cx="9.252" cy="9.252" r="9.252" transform="translate(-98.672 240.737)" fill="#fff"/>
+        <circle id="Ellipse_108" data-name="Ellipse 108" cx="9.168" cy="9.168" r="9.168" transform="translate(-94.073 274.112)" fill="#fff"/>
+      </g>
+      <g id="Rocket3D" transform="translate(11041 -803)">
+        <g id="Group_1473" data-name="Group 1473" transform="translate(-2875.079 7739.831) rotate(45)">
+          <g id="Group_1270" data-name="Group 1270" transform="translate(-10540.478 1077.8) rotate(-45)">
+            <path id="Path_3437" data-name="Path 3437" d="M94.83,350.021c-6.335,5.828-11.147,9.47-11.809,8.785-.684-.684,3.134-5.673,9.161-12.207C93.02,347.77,93.925,348.9,94.83,350.021Z" transform="translate(-82.942 -346.6)" fill-rule="evenodd" fill="url(#radial-gradient)"/>
+            <path id="Path_3438" data-name="Path 3438" d="M153.179,408.649c-6.556,6.048-11.567,9.889-12.251,9.2-.662-.662,3-5.5,8.829-11.854C150.861,406.927,152.009,407.81,153.179,408.649Z" transform="translate(-128.068 -392.888)" fill-rule="evenodd" fill="url(#radial-gradient-2)"/>
+          </g>
+          <path id="Path_3507" data-name="Path 3507" d="M112.3,65.017C151.628-1.618,182.722-.058,201.967.151c.209,19.245,2.16,50.752-64.5,90.079A67.947,67.947,0,0,1,112.3,65.017Z" transform="translate(-10665.409 1103.781) rotate(-45)" fill-rule="evenodd" fill="url(#radial-gradient-3)"/>
+          <path id="Intersection_1" data-name="Intersection 1" d="M45.9,109.334A261.227,261.227,0,0,1,40.484,83.3c1.472-2.2,3.468-3.162,5.872-1.846,4.6,2.526,8.218,17.494,9.8,29.875A60.956,60.956,0,0,1,45.9,109.334Z" transform="translate(-10585.923 961.013)" fill="#273139" opacity="0.279"/>
+          <g transform="matrix(0.71, -0.71, 0.71, 0.71, -10679.26, 869.1)" filter="url(#Path_3433)">
+            <path id="Path_3433-2" data-name="Path 3433" d="M335.534,121.4a12.206,12.206,0,1,0,0-17.262A12.244,12.244,0,0,0,335.534,121.4Z" transform="translate(-334.99 100.16)" stroke="#fff" stroke-width="2" fill-rule="evenodd" fill="url(#radial-gradient-4)"/>
+          </g>
+          <rect id="Rectangle_1214" data-name="Rectangle 1214" width="1" height="10" transform="translate(-10523 953)" fill="none" stroke="#679ecc" stroke-width="1"/>
+          <path id="Path_3434" data-name="Path 3434" d="M39.96,212.064C32.5,210.033,7.821,228.906,1.707,236.455c-3.311,4.106-1.413,5.32,1.942,2.737,4.194-3.223,11.986-7.77,21.1-5.541C33.912,235.881,49.717,214.735,39.96,212.064Z" transform="translate(-10722.308 920.717) rotate(-45)" fill-rule="evenodd" fill="url(#radial-gradient-5)"/>
+          <path id="Path_3435" data-name="Path 3435" d="M228.043,349.259c2.031,7.461-16.842,32.139-24.391,38.254-4.106,3.311-5.32,1.413-2.737-1.943,3.223-4.194,7.77-11.986,5.54-21.1C204.226,355.307,225.372,339.5,228.043,349.259Z" transform="translate(-10909.083 956.693) rotate(-45)" fill-rule="evenodd" fill="url(#radial-gradient-6)"/>
+          <g id="Mask_Group_11" data-name="Mask Group 11" transform="translate(-439 178)" clip-path="url(#clip-path-2)">
+            <rect id="Rectangle_1215" data-name="Rectangle 1215" width="1" height="10" transform="translate(-10084 775)" fill="#1a466c" stroke="#1a466c" stroke-width="1" opacity="0.305"/>
+          </g>
+          <path id="Intersection_2" data-name="Intersection 2" d="M66.422,107c-2.632-13.465-3.73-24.589-2.443-24.839s4.419,10.463,7.04,23.945c.34,1.748.654,3.456.94,5.107q-2.286.277-4.6.4C67.044,110.127,66.729,108.583,66.422,107Z" transform="translate(-10585.923 961.013)" fill="#273139" opacity="0.294"/>
+          <path id="Path_3436" data-name="Path 3436" d="M130.555,287.914c.927.927-6.2,9.514-15.915,19.226-9.69,9.69-18.3,16.82-19.226,15.915-.927-.927,6.2-9.514,15.915-19.226C121.019,294.116,129.628,286.987,130.555,287.914Z" transform="translate(-10818.104 931.449) rotate(-45)" fill-rule="evenodd" fill="url(#radial-gradient-7)"/>
+          <circle id="Ellipse_112" data-name="Ellipse 112" cx="2.5" cy="2.5" r="2.5" transform="translate(-10525 949)" fill="url(#radial-gradient-8)"/>
+          <g transform="matrix(0.71, -0.71, 0.71, 0.71, -10679.26, 869.1)" filter="url(#Subtraction_1)">
+            <path id="Subtraction_1-2" data-name="Subtraction 1" d="M83.677,28.215H43.437C48.475,14.666,56.366,6.963,62.706.773l.727-.71.943.92A105.2,105.2,0,0,1,74.457,11.862a62.373,62.373,0,0,1,9.22,16.351Z" transform="translate(1 130.99) rotate(45)" fill="url(#radial-gradient-9)"/>
+          </g>
+          <g id="Mask_Group_10" data-name="Mask Group 10" transform="translate(-375 178)" clip-path="url(#clip-path-3)">
+            <line id="Line_34" data-name="Line 34" x2="46" transform="translate(-10170.5 808.5)" fill="none" stroke="#2d86d0" stroke-linecap="round" stroke-width="2" stroke-dasharray="1 4"/>
+          </g>
+          <path id="Path_3535" data-name="Path 3535" d="M30,4.424H21.039c1.283-1.312,2.534-2.533,3.743-3.713l.7-.679.007-.007L25.51,0,26.4.87l.051.05c1.141,1.112,2.321,2.263,3.542,3.5Z" transform="translate(-10548 961.076)" fill="#679ecc"/>
+        </g>
+      </g>
+      <g id="RocketFlat">
+        <g id="Group_1472" data-name="Group 1472" transform="translate(7851.029 6688.037) rotate(45)">
+          <g id="Group_1270-2" data-name="Group 1270" transform="translate(-10140.478 845.8) rotate(-45)">
+            <path id="Path_3437-2" data-name="Path 3437" d="M94.83,350.021c-6.335,5.828-11.147,9.47-11.809,8.785-.684-.684,3.134-5.673,9.161-12.207C93.02,347.77,93.925,348.9,94.83,350.021Z" transform="translate(-82.942 -346.6)" fill="#7fc4fd" fill-rule="evenodd"/>
+            <path id="Path_3438-2" data-name="Path 3438" d="M153.179,408.649c-6.556,6.048-11.567,9.889-12.251,9.2-.662-.662,3-5.5,8.829-11.854C150.861,406.927,152.009,407.81,153.179,408.649Z" transform="translate(-128.068 -392.888)" fill="#7fc4fd" fill-rule="evenodd"/>
+          </g>
+          <path id="Path_3507-2" data-name="Path 3507" d="M112.3,65.017C151.628-1.618,182.722-.058,201.967.151c.209,19.245,2.16,50.752-64.5,90.079A67.947,67.947,0,0,1,112.3,65.017Z" transform="translate(-10265.409 871.781) rotate(-45)" fill="#343a40" fill-rule="evenodd"/>
+          <path id="Path_3433-3" data-name="Path 3433" d="M335.534,121.4a12.206,12.206,0,1,0,0-17.262A12.244,12.244,0,0,0,335.534,121.4Z" transform="translate(-10445.309 944.798) rotate(-45)" fill="#7fc4fd" stroke="#fff" stroke-width="3" fill-rule="evenodd"/>
+          <path id="Path_3434-2" data-name="Path 3434" d="M39.96,212.064C32.5,210.033,7.821,228.906,1.707,236.455c-3.311,4.106-1.413,5.32,1.942,2.737,4.194-3.223,11.986-7.77,21.1-5.541C33.912,235.881,49.717,214.735,39.96,212.064Z" transform="translate(-10322.308 688.717) rotate(-45)" fill="#7fc4fd" fill-rule="evenodd"/>
+          <path id="Path_3435-2" data-name="Path 3435" d="M228.043,349.259c2.031,7.461-16.842,32.139-24.391,38.254-4.106,3.311-5.32,1.413-2.737-1.943,3.223-4.194,7.77-11.986,5.54-21.1C204.226,355.307,225.372,339.5,228.043,349.259Z" transform="translate(-10509.083 724.693) rotate(-45)" fill="#7fc4fd" fill-rule="evenodd"/>
+          <path id="Path_3436-2" data-name="Path 3436" d="M130.555,287.914c.927.927-6.2,9.514-15.915,19.226-9.69,9.69-18.3,16.82-19.226,15.915-.927-.927,6.2-9.514,15.915-19.226C121.019,294.116,129.628,286.987,130.555,287.914Z" transform="translate(-10418.104 699.449) rotate(-45)" fill="#7fc4fd" fill-rule="evenodd"/>
+          <g id="Group_1469" data-name="Group 1469" transform="translate(0 4)">
+            <line id="Line_33" data-name="Line 33" y1="12" transform="translate(-10122.5 715.5)" fill="none" stroke="#7fc4fd" stroke-width="2"/>
+            <circle id="Ellipse_112-2" data-name="Ellipse 112" cx="2.5" cy="2.5" r="2.5" transform="translate(-10125 713)" fill="#7fc4fd"/>
+          </g>
+          <path id="Subtraction_1-3" data-name="Subtraction 1" d="M83.677,28.215H43.437C48.475,14.666,56.366,6.963,62.706.773l.727-.71.943.92A105.2,105.2,0,0,1,74.457,11.862a62.373,62.373,0,0,1,9.22,16.351Z" transform="translate(-10185.923 729.013)" fill="#7fc4fd"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

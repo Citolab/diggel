@@ -1,0 +1,19 @@
+@using System.Security.Claims
+
+@if (User.Identity.IsAuthenticated)
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li class="navbar-text">Hallo, @User.Identity.Name</li>
+        <li>
+            <a asp-page="./Index" asp-page-handler="signout">Sign out</a>
+        </li>
+    </ul>
+}
+@* else *@
+@* { *@
+@*     <ul class="nav navbar-nav navbar-right"> *@
+@*         <li> *@
+@*             <a asp-page="./Account" asp-page-handler="signin">Sign in</a> *@
+@*         </li> *@
+@*     </ul> *@
+@* } *@

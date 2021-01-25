@@ -1,0 +1,45 @@
+// Overwrite Bootstrap's variables here
+// You can find them in node_modules/bootstrap/scss/_variables.scss
+// Copy the variables you need into this file, don't modify files under node_modules/
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+// $small-font-size:   80%;
+// $enable-rounded:    false;
+$enable-transitions: true;
+$body-bg: #f8f9fa !important;
+// Changing the theme colors
+// $grid-gutter-width:           10px;
+
+$primary: #d65db1;
+// $secondary: #FF6F91;
+$dark: #343a40;
+$white: #fff;
+// $info: #845EC2;
+$info: $dark; // #4f9e5c;
+$primary-light: lighten($primary, 15%);
+$gray-500: #adb5bd;
+$border-radius-lg: 1rem;
+$theme-colors: (
+  'primary-light': $primary-light,
+);
+$input-placeholder-color: $gray-500 !default;
+$btn-disabled-opacity: 0.65 !default;
+// $component-active-bg: lighten($primary, 40%);
+// $component-active-color: darken($primary, 20%);
+$toast-max-width: 350px;
+// $toast-padding-x:                   .75rem !default;
+// $toast-padding-y:                   .25rem !default;
+$toast-font-size: 1rem;
+$toast-color: white;
+$toast-background-color: $info;
+$toast-border-width: 2px !default;
+$toast-border-color: darken($info, 5);
+// $toast-border-radius:               .25rem !default;
+$toast-box-shadow: 0 0.25rem 0.75rem rgba(#000, 0.4) !default;
+$toast-header-color: white;
+$toast-header-background-color: darken($info, 5);
+// $toast-header-border-color:         rgba(0, 0, 0, .05) !default;
+$custom-control-indicator-size: 1.6rem !default;
+$custom-control-indicator-border-color: $primary !default;
+$custom-control-indicator-border-width: 2px !default;
+
+$modal-content-border-radius: 0.25rem !default;

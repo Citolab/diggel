@@ -1,0 +1,124 @@
+// Add additional styles here. For example, overwrite certain styles or add new components.
+// Tip: You can use bootstrap's powerful mixins here!
+.border {
+  &.border-dotted {
+    border-style: dotted !important;
+  }
+  &.border-dashed {
+    border-style: dashed !important;
+  }
+}
+
+.text-verdana {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.logo-md {
+  width: 128px;
+  height: 128px;
+}
+
+.logo-centered {
+  z-index: 1000;
+  transform: translateY(-50%);
+  left: 50%;
+  margin-left: -64px;
+}
+
+.logo-lg {
+  width: 128px;
+  height: 128px;
+}
+
+.badge-round {
+  width: 32px;
+  height: 32px;
+  // padding-top: 6px;
+}
+
+.badge-round-sm {
+  width: 24px;
+  height: 24px;
+  padding-top: 6px;
+}
+
+.profile-sm {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.profile {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.profile-lg {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+}
+
+// https://github.com/twbs/bootstrap/issues/26803
+.flex-even {
+  flex: 1 1 0% !important;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// Generate some border width utility classes
+$class: border-;
+@for $i from 1 through 5 {
+  .#{$class}#{$i} {
+    border-width: $i + px !important;
+  }
+}
+
+// Extra hover btn classes
+@each $color, $value in $theme-colors {
+  .hover\:btn-#{$color}:hover {
+    background-color: $value;
+  }
+}
+
+// Extra hover btn-outline classes
+@each $color, $value in $theme-colors {
+  .hover\:btn-outline-#{$color}:hover {
+    background-color: $value;
+  }
+}
+
+// Extra hover background classes hover:
+@each $color, $value in $theme-colors {
+  .hover\:bg-#{$color}:hover {
+    background-color: $value;
+  }
+}
+
+// .hover\:text-underline:hover {
+//     @include text-underline;
+// }
+
+// @each $color,
+// $value in $theme-colors {
+//     .parenthover {
+//         color: $value;
+//         .eq-hovered {
+//             visibility: hidden
+//         }
+//     }
+//     .hover\:button-outline-#{$color}:hover {
+//         background-color: $value;
+//     }
+// }

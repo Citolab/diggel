@@ -1,0 +1,42 @@
+<div
+  *ngIf="!userService.useBackend || !cordova"
+  class="position-absolute d-flex flex-column"
+  style="top: 5px; left: 5px"
+>
+  <span *ngIf="!userService.useBackend" class="badge badge-danger m-2"
+    >Geen backend</span
+  >
+</div>
+<div
+  *ngIf="allowNavigation"
+  class="position-fixed"
+  style="bottom: 1rem; left: 1rem; z-index: 10000"
+>
+  <div ngbDropdown placement="top-left" class="mr-2">
+    <button
+      class="btn btn-secondary mdi mdi-navigation"
+      id="dropdownBasic1"
+      ngbDropdownToggle
+    >
+      Selecteer item
+    </button>
+    <div
+      ngbDropdownMenu
+      aria-labelledby="dropdownBasic1"
+      style="width: 500px; max-height: 85vh; overflow-y: scroll; z-index: 1000;"
+    >
+      <button
+        *ngFor="let item of scoredItems"
+        [class.active]="isActive(item)"
+        (click)="routeToItem(item)"
+        class="dropdown-item mdi mdi-newspaper"
+      >
+        {{ item.id }}
+        <span style="position: absolute; right: 2px" *ngIf="item.response">
+          Antwoord: {{ item.response }} Score: {{ item.score }}</span
+        >
+      </button>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

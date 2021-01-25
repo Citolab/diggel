@@ -1,0 +1,34 @@
+<!-- <div class="toast" role="alert" aria-live="assertive" aria-atomic="true"> -->
+<div
+  class="toast-header"
+  [style.display]="state.value === 'inactive' ? 'none' : ''"
+>
+  <img
+    src="assets/profile-pics/shutterstock_1257452734.png"
+    class="profile-sm mr-2 my-2"
+    alt="..."
+  />
+  <div>
+    <strong class="mr-auto text-verdana" [attr.aria-label]="title">Susan</strong
+    ><br />
+    <small class="text-secondary">{{ time }}</small>
+  </div>
+
+  <span class="ml-auto mdi mdi-message-text mdi-36px mr-2 text-success"></span>
+</div>
+<div
+  class="toast-body text-verdana"
+  *ngIf="message && options.enableHtml"
+  role="alert"
+  aria-live="polite"
+  [innerHTML]="message"
+></div>
+<div
+  class="toast-body text-verdana"
+  *ngIf="message && !options.enableHtml"
+  role="alert"
+  aria-live="polite"
+  [attr.aria-label]="message"
+>
+  {{ message }}
+</div>

@@ -1,0 +1,42 @@
+// Used hack from version in 26dec 2018. Should remove when updated
+// https://github.com/scttcper/ngx-toastr/issues/602
+#toast-container > div {
+  opacity: 1;
+}
+
+.toast {
+  max-width: 260px !important;
+}
+
+// Minor properties copied from this template
+// https://github.com/scttcper/ngx-toastr/blob/master/src/lib/toastr-bs4-alert.scss
+
+// Toast
+.toast-container {
+  position: fixed;
+  z-index: 2000;
+}
+
+.toast-top-right {
+  top: 12px;
+  right: 12px;
+}
+
+.toast {
+  width: 350px;
+}
+
+.toast a {
+  font-weight: bold;
+  clear: all;
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  text-align: center;
+  background-color: lighten($info, 10);
+  border-radius: 1rem;
+  color: white;
+  text-decoration: underline;
+  text-transform: uppercase;
+}

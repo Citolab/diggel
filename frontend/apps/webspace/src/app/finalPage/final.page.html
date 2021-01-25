@@ -1,0 +1,37 @@
+<template #itemContainer></template>
+<ng-template #modalContent let-modal>
+  <div class="toast-header">
+    <img
+      src="assets/profile-pics/shutterstock_1257452734.png"
+      class="profile-sm mr-2 my-2"
+      alt="..."
+    />
+    <div>
+      <strong class="mr-auto text-verdana">Susan</strong><br />
+      <small class="text-secondary">{{ time }}</small>
+    </div>
+
+    <span
+      class="ml-auto mdi mdi-message-text mdi-36px mr-2 text-success"
+    ></span>
+  </div>
+  <div class="toast-body text-verdana" role="alert" aria-live="polite">
+    <div [innerHTML]="notificationMessage"></div>
+    <div class="d-flex justify-content-between mt-5">
+      <button
+        type="button"
+        class="btn btn-success px-5"
+        (click)="modal.close('Cancel')"
+      >
+        Terug
+      </button>
+      <button
+        type="button"
+        class="btn btn-success px-5"
+        (click)="modal.close('Next')"
+      >
+        Verder
+      </button>
+    </div>
+  </div>
+</ng-template>

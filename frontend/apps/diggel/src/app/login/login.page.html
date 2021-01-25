@@ -1,0 +1,91 @@
+<div class="container-fluid">
+  <div class="row align-items-stretch" style="height: 24rem; margin-top: 10rem">
+    <div
+      class="offset-2 col-3 p-3 bg-dark d-flex flex-column align-items-center justify-content-center"
+    >
+      <div class="flex-grow-1 d-flex flex-column align-items-center">
+        <input
+          #codeEl
+          autocomplete="off"
+          maxlength="5"
+          [(ngModel)]="code"
+          (keyup.enter)="login(codeEl.value, codeEl)"
+          (ngModelChange)="checkMessage()"
+          type="text"
+          autofocus
+          class="code text-light my-5"
+          id="pin"
+          aria-describedby="pin"
+          placeholder=""
+        />
+
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            #accept="ngModel"
+            [(ngModel)]="accepted"
+            type="checkbox"
+            (change)="checkMessage()"
+            [checked]
+            value=""
+            id="defaultCheck1"
+          />
+          <label
+            class="form-check-label text-secondary"
+            [class.text-light]="code.length >= 5"
+            for="defaultCheck1"
+          >
+            Ik begrijp dat alles wat ik in deze opdrachten doe bijgehouden
+            wordt.
+          </label>
+        </div>
+
+        <div
+          [class.alert]="result && !result.success"
+          [class.alert-danger]="result && !result.success"
+          role="alert"
+        >
+          <span *ngIf="!result?.success">{{result?.message}}</span>
+        </div>
+      </div>
+
+      <button
+        class="btn btn-primary btn-lg btn-block rounded-pill"
+        [disabled]="!(accepted && code.length >= 5)"
+        (click)="login(codeEl.value, codeEl)"
+      >
+        Inloggen
+        <span *ngIf="clicked" class="mdi mdi-loading mdi-spin"></span>
+      </button>
+    </div>
+    <div class="col-5 bg-white p-4 pb-2 text-dark d-flex flex-column">
+      <div class="flex-grow-1">
+        <p class="lead font-weight-bold">Digitale geletterdheid.</p>
+        <div class="mb-5 text-secondary">
+          <p class="text-secondary"></p>
+          <p>Welkom!</p>
+          <p>
+            Je gaat zo meteen Susan helpen in twee digitale omgevingen. Ze
+            stuurt je steeds berichtjes waarin ze jou om hulp vraagt.
+          </p>
+
+          <p>
+            Je hebt een leerlingcode gekregen. Vul die links in en klik op
+            inloggen om Susan te helpen. Veel succes!
+          </p>
+        </div>
+        <p class="mt-2 font-italic">Veel success met het helpen van Susan!</p>
+      </div>
+
+      <div class="d-flex justify-content-end align-items-center">
+        <img
+          class="mr-2"
+          style="width: 180px"
+          src="assets/partnerlogos/universityoftwente.svg"
+        />
+
+        <img style="height: 32px" src="assets/partnerlogos/citolab-logo.svg" />
+      </div>
+    </div>
+  </div>
+</div>

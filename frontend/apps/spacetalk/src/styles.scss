@@ -1,0 +1,53 @@
+/*! My very own Bootstrap 4 Theme
+ *
+ *  Built on top of Bootstrap 4 (https://getbootstrap.com)
+ *  Built with the Bootstrap Theme Kit by HackerThemes (https://hackerthemes.com)
+ */
+@import './scss/custom-variables';
+@import './scss/custom-bootstrap';
+//  @import '../node_modules/bootstrap/scss/bootstrap';
+@import './scss/custom-utility-classes';
+@import './scss/custom-styles';
+@import './scss/bootstrap-materialdesignicons';
+@import './scss/postboot-parts';
+@import './scss/spacebook-notification';
+@import '@mdi/font/css/materialdesignicons.css';
+
+diggel-slide {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+
+.my-custom-class {
+  .popover-body {
+    background: $dark;
+    color: white !important;
+  }
+}
+.my-custom-class .arrow::after {
+  border-top-color: $dark;
+}
+
+[style*='--aspect-ratio'] > :first-child {
+  width: 100%;
+}
+[style*='--aspect-ratio'] > img {
+  height: auto;
+}
+@supports (--custom: property) {
+  [style*='--aspect-ratio'] {
+    position: relative;
+  }
+  [style*='--aspect-ratio']::before {
+    content: '';
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }
+  [style*='--aspect-ratio'] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+}

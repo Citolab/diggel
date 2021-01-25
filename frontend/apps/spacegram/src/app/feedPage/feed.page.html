@@ -1,0 +1,96 @@
+<nav class="navbar navbar-expand-md navbar-light bg-white bg-primary fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-primary font-weight-bold">
+      <img
+        src="./assets/identity/icon-spacegram-satellite.svg"
+        width="24"
+        height="24"
+      />
+      <span class="ml-2">SPACEGRAM</span>
+    </a>
+  </div>
+</nav>
+
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-12 col-sm-7 col-md-7 p-2">
+      <div id="story-header" class="d-flex align-items-center w-100"></div>
+
+      <template #itemContainer></template>
+    </div>
+
+    <div class="col-12 col-sm-5 col-md-5">
+      <div class="d-flex my-3">
+        <img
+          [src]="!!profilePictureUrl ? profilePictureUrl : 'assets/profile-pics/profile-empty.png'"
+          class="profile-lg border"
+          alt="..."
+        />
+        <div class="ml-3 d-flex flex-column justify-content-center">
+          <span class="font-weight-bold">Susie Frusie</span>
+          <span class="text-muted small">Susan</span>
+        </div>
+      </div>
+      <div class="card border-0 mb-3 mr-5">
+        <div class="card-header text-muted font-weight-bold">
+          Susans volgers
+        </div>
+        <div class="card-body bg-light">
+          <div
+            class="text-dark d-flex mb-2 align-items-center"
+            *ngFor="let name of ['Bahia','Camil','Tom','Anne','Novan']"
+          >
+            <img
+              class="profile-sm mr-3"
+              [src]="'assets/profile-pics-feed/' + name + '.png'"
+            />
+            <div class="d-flex flex-column justify-content-center">
+              <span class="font-weight-bold">{{ name }}</span>
+              <span class="text-muted small">Volgt jou</span>
+            </div>
+          </div>
+          <span class="text-muted small">Spacegram</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="col-md-3 d-sm-none d-md-block" style="padding-top:160px;">
+    </div> -->
+  </div>
+</main>
+<ng-template #modalContent let-modal>
+  <div class="toast-header">
+    <img
+      src="assets/profile-pics/shutterstock_1257452734.png"
+      class="profile-sm mr-2 my-2"
+      alt="..."
+    />
+    <div>
+      <strong class="mr-auto text-verdana">Susan</strong><br />
+      <small class="text-secondary">{{ time }}</small>
+    </div>
+
+    <span
+      class="ml-auto mdi mdi-message-text mdi-36px mr-2 text-success"
+    ></span>
+  </div>
+  <div class="toast-body text-verdana" role="alert" aria-live="polite">
+    <div [innerHTML]="notificationMessage"></div>
+    <div class="d-flex justify-content-between mt-5">
+      <button
+        type="button"
+        class="btn btn-success w-100 mr-1"
+        (click)="modal.close('Cancel')"
+      >
+        Terug
+      </button>
+      <button
+        type="button"
+        class="btn btn-success w-100 ml-1"
+        (click)="modal.close('Next')"
+      >
+        Verder
+      </button>
+    </div>
+  </div>
+</ng-template>

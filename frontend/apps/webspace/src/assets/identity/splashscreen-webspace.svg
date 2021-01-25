@@ -1,0 +1,49 @@
+<svg id="splashscreen-webspace" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="768" viewBox="0 0 1024 768">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_64" data-name="Rectangle 64" width="1024" height="768" fill="#ed1717" opacity="0.329"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_3" data-name="Mask Group 3" clip-path="url(#clip-path)">
+    <g id="Group_18" data-name="Group 18" transform="translate(1285.236 1001.494) rotate(180)">
+      <circle id="Ellipse_4" data-name="Ellipse 4" cx="83" cy="83" r="83" transform="translate(304.236 896.494)" fill="#fff"/>
+      <ellipse id="Ellipse_5" data-name="Ellipse 5" cx="131" cy="131.5" rx="131" ry="131.5" transform="translate(387.236 847.494)" fill="#fff"/>
+      <ellipse id="Ellipse_13" data-name="Ellipse 13" cx="43" cy="43.5" rx="43" ry="43.5" transform="translate(487.236 795.494)" fill="#fff"/>
+      <ellipse id="Ellipse_22" data-name="Ellipse 22" cx="43" cy="43.5" rx="43" ry="43.5" transform="translate(281.236 914.494)" fill="#fff"/>
+      <circle id="Ellipse_14" data-name="Ellipse 14" cx="69.5" cy="69.5" r="69.5" transform="translate(554.236 777.494)" fill="#fff"/>
+      <ellipse id="Ellipse_15" data-name="Ellipse 15" cx="43" cy="43.5" rx="43" ry="43.5" transform="translate(594.236 724.494)" fill="#fff"/>
+      <circle id="Ellipse_20" data-name="Ellipse 20" cx="53" cy="53" r="53" transform="translate(661.236 708.494)" fill="#fff"/>
+      <circle id="Ellipse_6" data-name="Ellipse 6" cx="83" cy="83" r="83" transform="translate(554.236 896.494)" fill="#fff"/>
+      <ellipse id="Ellipse_7" data-name="Ellipse 7" cx="99.5" cy="99" rx="99.5" ry="99" transform="translate(654.236 784.494)" fill="#fff"/>
+      <ellipse id="Ellipse_8" data-name="Ellipse 8" cx="99.5" cy="99" rx="99.5" ry="99" transform="translate(704.236 923.494)" fill="#fff"/>
+      <circle id="Ellipse_9" data-name="Ellipse 9" cx="117" cy="117" r="117" transform="translate(826.236 738.494)" fill="#fff"/>
+      <ellipse id="Ellipse_10" data-name="Ellipse 10" cx="76.5" cy="77" rx="76.5" ry="77" transform="translate(1111.236 923.494)" fill="#fff"/>
+      <circle id="Ellipse_11" data-name="Ellipse 11" cx="77" cy="77" r="77" transform="translate(1034.236 825.494)" fill="#fff"/>
+      <circle id="Ellipse_24" data-name="Ellipse 24" cx="77" cy="77" r="77" transform="translate(1018.236 887.494)" fill="#fff"/>
+      <circle id="Ellipse_34" data-name="Ellipse 34" cx="111.5" cy="111.5" r="111.5" transform="translate(834.236 855.494)" fill="#fff"/>
+    </g>
+    <text id="Website_maken_voor_iedereen" data-name="Website maken voor iedereen" transform="translate(333 480.695)" fill="#8f979a" font-size="24" font-family="Verdana"><tspan x="0" y="0">Website maken voor iedereen</tspan></text>
+    <text id="WebSpace" transform="translate(390.628 434.283)" fill="#4d5152" font-size="48" font-family="OpenSans-Bold, Open Sans" font-weight="700"><tspan x="0" y="0">WebSpace</tspan></text>
+    <g id="logo-webspace-planet" transform="translate(409.676 186.051)">
+      <g id="Group_1511" data-name="Group 1511" transform="translate(38.73 20.835)">
+        <path id="Path_3667" data-name="Path 3667" d="M392.664,218.183a64.845,64.845,0,0,1-129.689,0,63.9,63.9,0,0,1,1.435-13.651,64.87,64.87,0,0,1,126.823,0A63.69,63.69,0,0,1,392.664,218.183Z" transform="translate(-262.975 -153.326)" fill="#e57c5c"/>
+      </g>
+      <g id="Group_1512" data-name="Group 1512" transform="translate(40.162 20.835)">
+        <path id="Path_3668" data-name="Path 3668" d="M390.261,204.532a64.871,64.871,0,0,1-126.823,0,64.87,64.87,0,0,1,126.823,0Z" transform="translate(-263.438 -153.326)" fill="#e88c77"/>
+      </g>
+      <path id="Path_3670" data-name="Path 3670" d="M286.75,225.42c-24.98,20.212-38.826,38.405-33.78,47.131,7.8,13.521,57.984-.826,112.08-32.051s91.612-67.522,83.811-81.043c-5.043-8.729-27.738-5.844-57.761,5.708" transform="translate(-244.563 -123.858)" fill="none" stroke="#61ba94" stroke-miterlimit="10" stroke-width="4"/>
+      <line id="Line_56" data-name="Line 56" y2="28.695" transform="translate(183.263 137.021)" fill="none" stroke="#4d5152" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line id="Line_57" data-name="Line 57" x2="21.668" transform="translate(174.348 149.775)" fill="none" stroke="#4d5152" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line id="Line_58" data-name="Line 58" y2="12.753" transform="translate(52.54 165.716)" fill="none" stroke="#4d5152" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line id="Line_59" data-name="Line 59" x2="12.753" transform="translate(46.163 172.093)" fill="none" stroke="#4d5152" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line id="Line_60" data-name="Line 60" y2="12.753" transform="translate(161.022)" fill="none" stroke="#4d5152" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <line id="Line_61" data-name="Line 61" x2="12.753" transform="translate(154.645 6.376)" fill="none" stroke="#4d5152" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+      <path id="Union_2" data-name="Union 2" d="M0,64.857A63.89,63.89,0,0,1,1.433,51.214l0-.008a64.872,64.872,0,0,1,126.826,0,63.677,63.677,0,0,1,1.432,13.651A64.845,64.845,0,1,1,0,64.857Z" transform="translate(38.73 20.835)" fill="none" stroke="#4d5152" stroke-miterlimit="10" stroke-width="6"/>
+      <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(17.134 34.568)" fill="#67dde0" stroke="#4d5152" stroke-width="4">
+        <circle cx="24.896" cy="24.896" r="24.896" stroke="none"/>
+        <circle cx="24.896" cy="24.896" r="22.896" fill="none"/>
+      </g>
+      <path id="Path_3670-2" data-name="Path 3670" d="M286.75,225.42c-24.98,20.212-38.826,38.405-33.78,47.131,7.8,13.521,57.984-.826,112.08-32.051s91.612-67.522,83.811-81.043c-5.043-8.729-27.738-5.844-57.761,5.708" transform="translate(-251.94 -135.846)" fill="none" stroke="#61ba94" stroke-miterlimit="10" stroke-width="4"/>
+    </g>
+  </g>
+</svg>

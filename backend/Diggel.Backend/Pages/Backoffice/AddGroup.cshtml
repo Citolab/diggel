@@ -1,0 +1,33 @@
+@page
+@model AddGroup
+@{
+    ViewData["Title"] = "Groep toevoegen";
+}
+<h2>Groep toevoegen</h2>
+
+<form asp-page-handler="add" class="form-horizontal">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" asp-for="Name">Naam</label>
+        <div class="col-sm-9">
+            <input asp-for="Name" class="form-control"/>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label" asp-for="NumberOfCandidates">Aantal kandidaten</label>
+        <div class="col-sm-9">
+            <input asp-for="NumberOfCandidates" class="form-control"/>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-9">
+            <button type="submit" class="btn btn-primary" onclick="$(this).button('loading')" data-loading-text="Wordt opgeslagen.. <i class='fa fa-circle-o-notch fa-spin'></i>">
+                Opslaan
+            </button><br/><br />
+            @* <p class="alert alert-warning"> Het opslaan van een nieuwe groep kan even duren.</p> *@
+        </div>
+    </div>
+</form>

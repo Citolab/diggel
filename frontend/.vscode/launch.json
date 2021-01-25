@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "spacetalk Debug",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:4204/",
+      "webRoot": "${workspaceRoot}/apps/spacetalk",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///./src/*": "${webRoot}/src/*",
+        "webpack:///../node_modules/*": "${webRoot}/../node_modules/*"
+      }
+    },
+    {
+      "name": "spacebook Debug",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:4201/",
+      "webRoot": "${workspaceRoot}/apps/spacebook",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///./src/*": "${webRoot}/src/*",
+        "webpack:///../node_modules/*": "${webRoot}/../node_modules/*"
+      }
+    },
+    {
+      "name": "webspace Debug",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:4203/",
+      "webRoot": "${workspaceRoot}/apps/webspace",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///./src/*": "${webRoot}/src/*",
+        "webpack:///../node_modules/*": "${webRoot}/../node_modules/*"
+      }
+    }
+  ]
+}

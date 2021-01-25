@@ -1,0 +1,25 @@
+import { Component } from '@angular/core';
+import { slideIn } from '@diggel/ui';
+import { itemDefinitions } from '../items/items';
+import { ItemThemeType } from '@diggel/data';
+import { BasePageComponent } from '@diggel/ui';
+
+@Component({
+  selector: 'diggel-feed',
+  templateUrl: './registration.page.html',
+  styleUrls: ['./registration.page.scss'],
+  animations: [slideIn],
+})
+export class RegistrationComponent extends BasePageComponent {
+  public singleItemMode = true;
+  public notificationMessage =
+    '<span class="h5">😱</span> Je bent nog niet klaar met registreren.';
+  public registrationSteps: Array<string> = [
+    'Account',
+    'Voorkeuren',
+    'Profielfoto',
+    'Groepen',
+  ];
+  public itemDefinitions = itemDefinitions;
+  public theme = ItemThemeType.registration;
+}

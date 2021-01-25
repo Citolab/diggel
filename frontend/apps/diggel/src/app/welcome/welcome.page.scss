@@ -1,0 +1,31 @@
+$char-w: 1ch;
+$gap: 0.5 * $char-w;
+$n-char: 5;
+$in-w: $n-char * ($char-w + $gap);
+input.code {
+  display: block;
+  // margin: 0em auto;
+  border: none;
+  text-transform: uppercase;
+  padding: 0;
+  width: $in-w;
+  background: repeating-linear-gradient(
+      90deg,
+      lightgrey 0,
+      lightgrey $char-w,
+      transparent 0,
+      transparent $char-w + $gap
+    )
+    0 100% / #{$in-w - $gap} 2px no-repeat;
+  font: 4ch droid sans mono, consolas, monospace;
+  letter-spacing: $gap;
+  &:focus {
+    outline: none;
+    // border: 1px solid white;
+    // color: white;
+  }
+}
+
+.form-check-label {
+  transition: all 1s ease;
+}

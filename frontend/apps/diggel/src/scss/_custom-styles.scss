@@ -1,0 +1,143 @@
+/*
+PK: Je kan nu niet meer de background scrollen, dat werd heel lelijk bij de smileys
+*/
+
+.modal.fade {
+  touch-action: none;
+}
+
+.modal.modal-toaster {
+  opacity: 0;
+  z-index: 2000;
+  animation: slideInDown 0.4s ease;
+  animation-fill-mode: forwards;
+  animation-delay: 0.4s;
+  padding: 0;
+  .modal-dialog {
+    position: absolute;
+    top: -14px;
+    right: 12px;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    color: white;
+    border: 2px solid #292d32;
+    border-radius: 0.25rem;
+    background-color: $dark;
+    padding: 0;
+    .toast-header {
+    }
+    .modal-content {
+      background-color: transparent; //override
+      border: 0; // override
+      padding: 0; // override
+      border-radius: 0;
+    }
+  }
+}
+
+header-tekst-bold .dark-modal .modal-content {
+  background-color: #292b2c;
+  color: white;
+}
+
+.dark-modal .close {
+  color: white;
+}
+
+.modal.rounded-0 {
+  .modal-dialog {
+    &.modal-lg {
+      .modal-content {
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+.modal.cameraroll {
+  animation: slideInLeft 1s ease;
+  .modal-dialog {
+    &.modal-lg {
+      width: 50% !important;
+      max-width: 100% !important; // margin: 0rem !important;
+      margin: 0 0;
+      align-items: start;
+      height: 100%;
+      .modal-content {
+        // background-color: $dark;
+        border-radius: 0;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.modal.post {
+  animation: slideInLeft 1s ease;
+  .modal-dialog {
+    &.modal-lg {
+      width: 73% !important;
+      max-width: 100% !important; // margin: 0rem !important;
+      margin: 0 0;
+      align-items: start;
+      height: 100vh;
+      max-height: 100vh;
+      .modal-content {
+        // background-color: $dark;
+        border-radius: 0;
+        height: 100%;
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+        .card-body {
+          padding-bottom: 0 !important;
+          padding-top: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+.modal.filter {
+  max-width: 28% !important;
+  animation: slideInLeft 1s ease;
+  .modal-dialog {
+    &.modal-lg {
+      width: 100% !important;
+      max-width: 100% !important; // margin: 0rem !important;
+      margin: 0 0;
+      align-items: start;
+      height: 100%;
+      .modal-content {
+        // background-color: $dark;
+        border-radius: 0;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.modal-animate {
+  animation: slideInDown 0.4s ease;
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

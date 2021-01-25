@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-md navbar-light bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white font-weight-bold">
+      <img
+        src="./assets/identity/icon-webspace-planet.svg"
+        width="26"
+        height="26"
+      />
+      <span class="ml-2">WEBSPACE</span>
+    </a>
+  </div>
+</nav>
+
+<div class="grid-container">
+  <div
+    id="banner"
+    class="banner d-flex justify-content-center align-items-center"
+  >
+    <diggel-banner #banner></diggel-banner>
+    <div id="header-text" class="position-absolute">
+      <diggel-header-tekst-bold #header></diggel-header-tekst-bold>
+    </div>
+  </div>
+  <div id="menu" class="menu">
+    <diggel-menu activeItem="Algemeen" #menu subItem="steden"></diggel-menu>
+  </div>
+  <div id="steden-volgorde" class="item1"></div>
+</div>
+
+<template #itemContainer></template>
+<ng-template #modalContent let-modal>
+  <div class="toast-header">
+    <img
+      src="assets/profile-pics/shutterstock_1257452734.png"
+      class="profile-sm mr-2 my-2"
+      alt="..."
+    />
+    <div>
+      <strong class="mr-auto text-verdana">Susan</strong><br />
+      <small class="text-secondary">{{ time }}</small>
+    </div>
+
+    <span
+      class="ml-auto mdi mdi-message-text mdi-36px mr-2 text-success"
+    ></span>
+  </div>
+  <div class="toast-body text-verdana" role="alert" aria-live="polite">
+    <div [innerHTML]="notificationMessage"></div>
+    <div class="d-flex justify-content-between mt-5">
+      <button
+        type="button"
+        class="btn btn-success px-5"
+        (click)="modal.close('Cancel')"
+      >
+        Terug
+      </button>
+      <button
+        type="button"
+        class="btn btn-success px-5"
+        (click)="modal.close('Next')"
+      >
+        Verder
+      </button>
+    </div>
+  </div>
+</ng-template>

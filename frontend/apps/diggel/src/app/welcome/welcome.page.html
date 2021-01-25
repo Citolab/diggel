@@ -1,0 +1,75 @@
+<div class="container mt-5">
+  <div class="row justify-content-center align-items-center mt-5">
+    <div class="d-flex flex-wrap mt-5" style="width: 500px">
+      <div
+        class="d-flex flex-column"
+        *ngFor="let application of applications"
+        class="mx-3"
+        style="width: 200px"
+      >
+        <div
+          class="bg-white shadow-sm rounded-lg d-flex justify-content-center align-items-center"
+          style="width: 200px; height: 200px"
+        >
+          <img
+            class="px-4"
+            style="width: 120px"
+            src="assets/omgevingen/logo-{{application}}.svg"
+          />
+        </div>
+        <div class="h4 mt-2 text-center text-secondary">
+          {{ application }}
+          <button
+            class="btn btn-primary"
+            *ngIf="isDemoTestSession"
+            (click)="clickDemoTestLink(application)"
+          >
+            go
+          </button>
+        </div>
+      </div>
+      <div class="text-center mt-5 mx-auto">
+        <button
+          *ngIf="!demoUser"
+          class="btn btn-success btn-lg rounded-pill"
+          (click)="toSurvey()"
+        >
+          <span *ngIf="!openedSurvey">Naar de vragenlijst</span>
+          <span *ngIf="openedSurvey">Vragenlijst</span>
+        </button>
+
+        <button
+          *ngIf="openedSurvey"
+          class="btn btn-primary btn-lg rounded-pill ml-2"
+          (click)="login()"
+        >
+          Ik ga je helpen!<span
+            *ngIf="clicked"
+            class="mdi mdi-loading mdi-spin"
+          ></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #modalContent let-modal>
+  <div class="toast-header">
+    <img
+      src="assets/profile-pics/shutterstock_1257452734.png"
+      class="profile-sm mr-2 my-2"
+      alt="..."
+    />
+    <div>
+      <strong class="mr-auto text-verdana">Susan</strong><br />
+      <small class="text-secondary">{{ getTime() }}</small>
+    </div>
+
+    <span
+      class="ml-auto mdi mdi-message-text mdi-36px mr-2 text-success"
+    ></span>
+  </div>
+  <div class="toast-body text-verdana" role="alert" aria-live="polite">
+    <div [innerHTML]="notificationMessage"></div>
+  </div>
+</ng-template>
