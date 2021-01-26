@@ -12,6 +12,7 @@ import {
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { WelcomePageComponent } from './welcome/welcome.page';
+import { TranslateModule } from '@ngx-translate/core';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     UiModule,
     RouterModule.forRoot(appRoutes, { useHash: true, relativeLinkResolution: 'legacy' }),
+    TranslateModule.forRoot()
   ],
   providers: [
     {
@@ -46,4 +48,4 @@ const appRoutes: Routes = [
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

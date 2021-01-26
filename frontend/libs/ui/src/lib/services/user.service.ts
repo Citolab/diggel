@@ -15,6 +15,7 @@ import {
 import { map, flatMap } from 'rxjs/operators';
 import { of, Observable, Subject } from 'rxjs';
 import { environment } from 'environments/environment';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root',
@@ -73,7 +74,7 @@ export class UserService {
 
   constructor(
     private http: HttpClient,
-    @Inject('contextId') private contextId: string
+    @Inject('contextId') private contextId: string, private translate: TranslateService
   ) {
     this.useBackend = environment.useBackend;
     if (!this.useBackend) {
@@ -81,6 +82,7 @@ export class UserService {
       this.authenticated = true;
     }
   }
+
   // This function is call in the EnsureLogin Guard.
   // TestsessionId will have a value in the test.
   isLoggedIn(): Observable<boolean> {

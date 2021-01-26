@@ -35,7 +35,7 @@
             [class.text-light]="code.length >= 5"
             for="defaultCheck1"
           >
-            I do agreed that everything I do using these assignments is recorded and used for research purposes.
+            {{ 'DIGGEL_TERMS' | translate }}
           </label>
         </div>
 
@@ -53,27 +53,16 @@
         [disabled]="!(accepted && code.length >= 5)"
         (click)="login(codeEl.value, codeEl)"
       >
-        Inloggen
+        {{ 'DIGGEL_LOGIN' | translate }}
         <span *ngIf="clicked" class="mdi mdi-loading mdi-spin"></span>
       </button>
     </div>
     <div class="col-5 bg-white p-4 pb-2 text-dark d-flex flex-column">
       <div class="flex-grow-1">
-        <p class="lead font-weight-bold">Digital literacy.</p>
-        <div class="mb-5 text-secondary">
-          <p class="text-secondary"></p>
-          <p>Hi!</p>
-          <p>
-            You'll about to help Susan in two digital environments.
-            She'll send you messages to ask for your help.
-          </p>
-
-          <p>
-            You received a code to login.
-            Fill in this code so you can help Susas. 
-          </p>
+        <p class="lead font-weight-bold">{{ 'DIGGEL_TITLE' | translate }}.</p>
+        <div class="mb-5 text-secondary" [innerHTML]="'DIGGEL_LOGIN_DESCRIPTION' | translate">
         </div>
-        <p class="mt-2 font-italic">Good luck!</p>
+        <p class="mt-2 font-italic">{{ 'DIGGEL_GOOD_LUCK' | translate }}</p>
       </div>
 
       <div class="d-flex justify-content-end align-items-center">

@@ -1,0 +1,3 @@
+.remove-chevron::after {
+  display: none;
+}

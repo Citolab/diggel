@@ -1,10 +1,7 @@
 <diggel-item-header name="Camil" [readonly]="readonly" [loading]="loading">
-  <p class="card-text">
-    Kijk wat ik hier op vakantie in Brazilië tegenkom. Het is een soort aap met
-    een knalrood gezicht.<br /><br />
-    Weet iemand hoe dit dier heet? 🤔
+  <p class="card-text" [innerHTML]="text['post_intro'] | safe:'html'">
   </p>
-  <img src="./assets/items/aap/aap.jpg" class="w-100" />
+  <img src="./assets/items/tangare/zevenkleurige-tangare-sevencolored-tanager-tangara-600w-1456713944.jpg" class="w-100" />
   <div class="form-group mt-3 text-muted">
     <diggel-post-reaction
       id="C"
@@ -16,8 +13,8 @@
         <div class="flex-grow-1">
           <input
             *ngIf="!readonly"
-            #aapInput
-            placeholder="Schrijf een reactie"
+            #input
+            placeholder="{{ text['write_message'] }}"
             [ngModel]="response"
             (ngModelChange)="valueChanged($event)"
             (paste)="logPaste($event)"
@@ -36,7 +33,7 @@
     (click)="onNext.next(true)"
     class="btn btn-primary float-right mt-2"
   >
-    Plaatsen
+   {{ text['post'] }}
     <span *ngIf="!loading" class="mdi mdi-chevron-right"></span>
     <span *ngIf="loading" class="mdi mdi-loading mdi-spin"></span>
   </button>

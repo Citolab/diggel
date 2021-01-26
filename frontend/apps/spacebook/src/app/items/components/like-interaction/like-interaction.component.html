@@ -1,0 +1,14 @@
+<input
+  [type]="type"
+  [name]="group"
+  (click)="response !== id ? selectedOption() : deselectedOption()"
+  [id]="id"
+  [disabled]="readonly"
+  [checked]="response === id"
+  class="radio-custom"
+  autocomplete="off"
+/>
+<label
+  (click)="response !== id ? selectedOption() : deselectedOption()"
+  [ngClass]="small ? 'radio-custom-label-small' : 'radio-custom-label'"
+></label>

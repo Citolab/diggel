@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { UiModule } from '@diggel/ui';
 import { BackendUrlInterceptor } from '@diggel/ui';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -23,6 +25,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
     FormsModule,
     UiModule,
+    TranslateModule.forRoot()
   ],
   declarations: [
     AppComponent,
@@ -41,7 +44,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
 
 @NgModule({})
 export class AppSpacebookSharedModule {

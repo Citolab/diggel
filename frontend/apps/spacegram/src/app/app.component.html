@@ -3,9 +3,28 @@
   class="position-absolute d-flex flex-column"
   style="top: 5px; left: 5px"
 >
-  <span *ngIf="!userService.useBackend" class="badge badge-danger m-2"
-    >No backend</span
-  >
+  <div class="d-flex">
+    <span *ngIf="!userService.useBackend" class="badge badge-danger m-2"
+      >No backend</span
+    >
+    <span
+      style="z-index: 1000; cursor: pointer"
+      (click)="setLang('en')"
+      *ngIf="!userService.useBackend && lang !== 'en'"
+      class="badge badge-info m-2"
+    >
+      EN
+    </span>
+
+    <span
+      style="z-index: 1000; cursor: pointer"
+      (click)="setLang('nl')"
+      *ngIf="!userService.useBackend && lang !== 'nl'"
+      class="badge badge-info m-2"
+    >
+      NL
+    </span>
+  </div>
 </div>
 <div
   *ngIf="allowNavigation"
@@ -23,7 +42,7 @@
     <div
       ngbDropdownMenu
       aria-labelledby="dropdownBasic1"
-      style="width: 500px; max-height: 85vh; overflow-y: scroll; z-index: 1000;"
+      style="width: 500px; max-height: 85vh; overflow-y: scroll; z-index: 1000"
     >
       <button
         *ngFor="let item of scoredItems"
@@ -33,7 +52,7 @@
       >
         {{ item.id }}
         <span style="position: absolute; right: 2px" *ngIf="item.response">
-          Antwoord: {{ item.response }} Score: {{ item.score }}</span
+          Answer: {{ item.response }} Score: {{ item.score }}</span
         >
       </button>
     </div>

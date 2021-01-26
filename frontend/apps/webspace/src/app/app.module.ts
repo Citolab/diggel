@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ItemModule } from './items/item.module';
 import { StartPageComponent } from './startPage/start.page';
 import { EndPageComponent } from './endPage/end.page';
@@ -19,6 +19,8 @@ import { HandigeWebsitesComponent } from './handige-websitesPage/handige-website
 import { DierenComponent } from './dierenPage/dieren.page';
 import { AlgemeenSubComponent } from './algemeenSubPage/algemeen-sub.page';
 import { FinalComponent } from './finalPage/final.page';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -29,6 +31,7 @@ import { FinalComponent } from './finalPage/final.page';
     NgbModule,
     FormsModule,
     UiModule,
+    TranslateModule.forRoot()
   ],
   declarations: [
     AppComponent,

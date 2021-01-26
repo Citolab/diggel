@@ -1,0 +1,14 @@
+<div class="pb-2 d-flex mb-2 w-100">
+  <div>
+    <img class="profile-sm mr-3" [src]="imgSrc" />
+  </div>
+  <div class="d-flex flex-column flex-grow-1">
+    <div class="align-items-start bg-light py-1 px-2 rounded-lg">
+      <small *ngIf="showname" class="text-dark font-weight-bold mb-2">{{
+        name
+      }}</small>
+      <ng-content></ng-content>
+    </div>
+    <!-- <small *ngIf="showtime" class="text-muted">{{minutes}} min</small> -->
+  </div>
+</div>

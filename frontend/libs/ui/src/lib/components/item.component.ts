@@ -13,4 +13,5 @@ export interface ItemComponent {
   getNotification(): string;
   getResult(): ItemResult;
   setInitialValue(itemResult: ItemResult): void;
+  setLang(lang: string): void;
 }

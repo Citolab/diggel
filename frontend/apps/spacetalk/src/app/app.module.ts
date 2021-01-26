@@ -12,7 +12,7 @@ import { BrowserComponent } from './browserPage/browser.page';
 import { BlankPageComponent } from './blankPage/blank.page';
 import { PresentationPageComponent } from './presentationPage/presentation.page';
 import { AppRoutingModule } from './app-routing.module';
-
+import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   imports: [
     BrowserModule,
@@ -23,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     NgbModule,
     FormsModule,
     UiModule,
+    TranslateModule.forRoot()
   ],
   declarations: [
     AppComponent,

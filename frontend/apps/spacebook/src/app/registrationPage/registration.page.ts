@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { slideIn } from '@diggel/ui';
 import { itemDefinitions } from '../items/items';
 import { ItemThemeType } from '@diggel/data';
@@ -10,16 +10,20 @@ import { BasePageComponent } from '@diggel/ui';
   styleUrls: ['./registration.page.scss'],
   animations: [slideIn],
 })
-export class RegistrationComponent extends BasePageComponent {
-  public singleItemMode = true;
-  public notificationMessage =
-    '<span class="h5">😱</span> Je bent nog niet klaar met registreren.';
-  public registrationSteps: Array<string> = [
-    'Account',
-    'Voorkeuren',
-    'Profielfoto',
-    'Groepen',
-  ];
+export class RegistrationComponent extends BasePageComponent implements OnInit {
   public itemDefinitions = itemDefinitions;
   public theme = ItemThemeType.registration;
+  public singleItemMode = true;
+  public registrationSteps: Array<string> = this.translate.currentLang === 'nl' ?
+    ['Account', 'Voorkeuren', 'Profielfoto', 'Groepen'] :
+    ['Account', 'Preferences', 'Profile picture', 'Groups'];
+
+  ngOnInit(): void {
+    this.translate.setTranslation('en', {
+      DIGGEL_NOT_ANSWERED: '<span class="h5">😱</span> The registration is not yet completed.'
+    });
+    this.translate.setTranslation('nl', {
+      DIGGEL_NOT_ANSWERED: '<span class="h5">😱</span> Je bent nog niet klaar met registreren.'
+    });
+  }
 }

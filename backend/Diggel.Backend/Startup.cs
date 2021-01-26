@@ -116,7 +116,7 @@ namespace Diggel.Backend
             var database = _configuration.GetValue<string>("AppSettings:database");
             if (database.Equals("mongo", StringComparison.OrdinalIgnoreCase))
             {
-                services.AddMongoDbPersistence("Diggel2", _configuration.GetConnectionString("MongoDB"));
+                services.AddMongoDbPersistence("Diggel_DEMO", _configuration.GetConnectionString("MongoDB"));
             }
             else if (database.Equals("memory", StringComparison.OrdinalIgnoreCase))
             {

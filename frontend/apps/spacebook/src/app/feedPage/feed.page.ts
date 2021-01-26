@@ -4,7 +4,7 @@ import { slideIn } from '@diggel/ui';
 import {
   itemDefinitions,
 } from '../items/items';
-import { ItemThemeType, profileImages } from '@diggel/data';
+import { ItemThemeType } from '@diggel/data';
 
 @Component({
   selector: 'diggel-feed',

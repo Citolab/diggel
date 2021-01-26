@@ -14,11 +14,12 @@ import {
 } from '@diggel/ui';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
-import { HeaderBoldComponent } from './items/header/header.bold.component';
-import { MenuComponent } from './items/menu/menu.component';
-import { BannerComponent } from './items/banner/banner.component';
-import { itemBanner, itemMenu, itemHeaderBold } from './items/items';
+// import { HeaderBoldComponent } from './items/header/header.bold.component';
+// import { MenuComponent } from './items/menu/menu.component';
+// import { BannerComponent } from './items/banner/banner.component';
+// import { itemBanner, itemMenu, itemHeaderBold } from './items/items';
 import { WebspaceBaseComponent } from './webspace-base.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'diggel-web-page',
@@ -27,9 +28,9 @@ import { WebspaceBaseComponent } from './webspace-base.component';
 export class WebPageComponent
   extends WebspaceBaseComponent
   implements AfterViewInit {
-  @ViewChild('banner') bannerComponent: BannerComponent;
-  @ViewChild('header') HeaderComponent: HeaderBoldComponent;
-  @ViewChild('menu') menuComponent: MenuComponent;
+  // @ViewChild('banner') bannerComponent: BannerComponent;
+  // @ViewChild('header') HeaderComponent: HeaderBoldComponent;
+  // @ViewChild('menu') menuComponent: MenuComponent;
 
   constructor(
     public toastr: ToastrService,
@@ -41,7 +42,8 @@ export class WebPageComponent
     router: Router,
     userService: UserService,
     ref: ChangeDetectorRef,
-    route: ActivatedRoute
+    route: ActivatedRoute,
+    translate: TranslateService
   ) {
     super(
       toastr,
@@ -52,26 +54,27 @@ export class WebPageComponent
       resolver,
       router,
       userService,
+      translate,
       ref,
-      route
+      route,
     );
   }
 
   ngAfterViewInit(): void {
     if (this.userService.testSession?.itemResults) {
-      this.bannerComponent.setInitialValue(
-        this.userService.testSession?.itemResults.find(
-          (i) => i.id === itemBanner
-        )
-      );
-      this.menuComponent.setInitialValue(
-        this.userService.testSession?.itemResults.find((i) => i.id === itemMenu)
-      );
-      this.HeaderComponent.setInitialValue(
-        this.userService.testSession?.itemResults.find(
-          (i) => i.id === itemHeaderBold
-        )
-      );
+      // this.bannerComponent.setInitialValue(
+      //   this.userService.testSession?.itemResults.find(
+      //     (i) => i.id === itemBanner
+      //   ),  this.translate.currentLang
+      // );
+      // this.menuComponent.setInitialValue(
+      //   this.userService.testSession?.itemResults.find((i) => i.id === itemMenu)
+      // );
+      // this.HeaderComponent.setInitialValue(
+      //   this.userService.testSession?.itemResults.find(
+      //     (i) => i.id === itemHeaderBold
+      //   )
+      // );
       this.ref.detectChanges();
     }
   }

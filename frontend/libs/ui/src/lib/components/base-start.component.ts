@@ -5,6 +5,7 @@ import { Subscription, timer } from 'rxjs';
 import { ItemThemeType, setLocalSession } from '@diggel/data';
 import { UserService } from '../services/user.service';
 import { ItemDefinition } from '../model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'diggel-start-base',
@@ -15,13 +16,15 @@ export abstract class BaseStartPageComponent implements OnInit, OnDestroy {
   private chain: Subscription;
   private testSessionSubscription: Subscription;
 
+  public lang = this.translate.currentLang;
   protected welcomeMessage = '';
   protected firstItem: ItemDefinition;
 
   constructor(
     public toastr: ToastrService,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    protected translate: TranslateService
   ) { }
 
   ngOnInit() {

@@ -28,6 +28,7 @@ import { restartApp } from '@diggel/data';
 import { UserService } from './../services/user.service';
 import { ItemComponent } from './item.component';
 import { ItemDefinition } from '../model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'diggel-base',
@@ -47,8 +48,7 @@ export abstract class BasePageComponent implements AfterContentInit, OnDestroy {
   public componentRef: ComponentRef<ItemComponent>;
   public currentItem: ItemComponent;
   public currentItemDef: ItemDefinition;
-  public notificationMessage =
-    '<span class="h5">😱</span> Je hebt mijn vraag nog niet helemaal beantwoord.';
+  public notificationMessage = '';
   protected placedComponents = new Map<string, HTMLElement>();
   private onEndUrl = 'end';
   private nextSubscription: Subscription;
@@ -73,6 +73,7 @@ export abstract class BasePageComponent implements AfterContentInit, OnDestroy {
     private router: Router,
 
     public userService: UserService,
+    protected translate: TranslateService,
     protected ref: ChangeDetectorRef,
     route: ActivatedRoute
   ) {
@@ -95,6 +96,15 @@ export abstract class BasePageComponent implements AfterContentInit, OnDestroy {
         this.setItemComponentsInContainer();
       }
     });
+    translate.setTranslation('en', {
+      DIGGEL_NOT_ANSWERED: '<span class="h5">😱</span> Your answer is not yet complete.',
+      DIGGEL_NEXT_ITEM: 'Ok, dan gaan we verder!'
+    });
+    translate.setTranslation('nl', {
+      DIGGEL_NOT_ANSWERED: '<span class="h5">😱</span> Je hebt mijn vraag nog niet helemaal beantwoord.',
+      DIGGEL_NEXT_ITEM: `Ok, let's continue!`
+    });
+    this.notificationMessage = translate.instant('DIGGEL_NOT_ANSWERED');
   }
 
   ngAfterContentInit(): void {
@@ -202,6 +212,7 @@ export abstract class BasePageComponent implements AfterContentInit, OnDestroy {
         )
         : undefined;
     instance.readonly = true;
+    instance.setLang(this.translate.currentLang);
     if (restoredItemResult !== undefined) {
       instance.setInitialValue(restoredItemResult);
     }
@@ -262,7 +273,7 @@ export abstract class BasePageComponent implements AfterContentInit, OnDestroy {
         .pipe(
           tap(() => {
             if (!itemResult.feedback) {
-              this.showNotification('Ok, dan gaan we Next!');
+              this.showNotification(this.translate.instant('DIGGEL_NEXT_ITEM'));
             } else {
               this.showNotification(itemResult.feedback);
             }

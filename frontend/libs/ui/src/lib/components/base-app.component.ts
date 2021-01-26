@@ -7,6 +7,7 @@ import { ItemThemeType } from '@diggel/data';
 import { filter, map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { ItemDefinition } from '../model';
+import { TranslateService } from '@ngx-translate/core';
 
 export class ScoredItemDefinition extends ItemDefinition {
   score: string;
@@ -20,6 +21,7 @@ export class ScoredItemDefinition extends ItemDefinition {
 export abstract class AppBaseComponent implements OnDestroy {
   public cordova = true;
   public development = false;
+  public lang = this.translate.currentLang;
   public allowNavigation = false;
   public scoredItems: ScoredItemDefinition[];
   private queryParamSubscription: Subscription;
@@ -40,8 +42,14 @@ export abstract class AppBaseComponent implements OnDestroy {
     cordovaService: CordovaService,
     public userService: UserService,
     public router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private translate: TranslateService
   ) {
+    // this language will be used as a fallback when a translation isn't found in the current language
+    translate.setDefaultLang('en');
+    // the lang to use, if the lang isn't available, it will use the current loader to get them
+    translate.use(localStorage.getItem('lang') || 'en');
+    this.lang = translate.currentLang;
     this.cordova = cordovaService.onCordova;
     this.development = !environment.production;
 
@@ -111,6 +119,13 @@ export abstract class AppBaseComponent implements OnDestroy {
       this.testSessionLoadedSubscription.unsubscribe();
     }
   }
+
+  setLang(lang: string) {
+    localStorage.setItem('lang', lang || 'en')
+    this.translate.use(lang || 'en');
+    window.location.reload();
+  }
+
 
   isActive(item: ItemDefinition) {
     const url = window.location.href.split('/');

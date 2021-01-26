@@ -1,12 +1,12 @@
-import { OnInit, OnDestroy, Component, ChangeDetectorRef } from '@angular/core';
+import { OnInit, OnDestroy, Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { take } from 'rxjs/operators';
 import { timer, Subscription } from 'rxjs';
 import { UserService } from '../services/user.service';
 import { CordovaService } from '../services/cordova.service';
 import { BackendService } from '../services/backend.service';
-import { SearchService } from '../services/search.service';
 import { restartApp } from '@diggel/data';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'diggel-end-base',
@@ -14,20 +14,30 @@ import { restartApp } from '@diggel/data';
 })
 export abstract class BaseEndPageComponent implements OnInit, OnDestroy {
   resultButtonClicked = false;
-  textSessionReady =
-    'Thanks! Now I can use Spacebook myself.';
+  textSessionReady = '';
   endSubscription: Subscription;
   isLast = false;
+  public lang = this.translate.currentLang;
   private endButtonClicked = false;
   constructor(
     private userService: UserService,
     public toastr: ToastrService,
     private cordovaService: CordovaService,
     private backendService: BackendService,
-    private searchService: SearchService,
-    private ref: ChangeDetectorRef
+    protected translate: TranslateService
   ) {
     toastr.clear();
+    translate.setTranslation('en', {
+      DIGGEL_END_THANKS: `Thanks! Now I use Spacebook myself.`,
+      DIGGEL_NEXT_SESSION: `Click 'next' to start the next digital environment.`,
+      DIGGEL_END: `This is the end, thanks for helping!`
+    });
+    translate.setTranslation('nl', {
+      DIGGEL_END_THANKS: `Bedankt voor je hulp! Ik kan Spacebook nu zelf gebruiken.`,
+      DIGGEL_NEXT_SESSION: `Klik op verder om de volgende opdracht te starten`,
+      DIGGEL_END: `Dit is het eind van de toets. Bedankt voor het meedoen!`
+    });
+    this.textSessionReady = translate.instant('DIGGEL_END_THANKS');
   }
   ngOnDestroy(): void {
     if (this.endSubscription) {
@@ -46,13 +56,8 @@ export abstract class BaseEndPageComponent implements OnInit, OnDestroy {
     this.endSubscription = timer(1000)
       .pipe(take(1))
       .subscribe(() => {
-        if (!this.isLast) {
-          this.showNotification(`${this.textSessionReady} 
-                    Click 'next' to start the next digital environment.`);
-        } else {
-          this.showNotification(`${this.textSessionReady} 
-                    This is the end, thanks for helping!`);
-        }
+        this.showNotification(this.textSessionReady + ' ' + 
+        this.translate.instant(this.isLast ? 'DIGGEL_END' : 'DIGGEL_NEXT_SESSION'));
       });
   }
 
