@@ -1,7 +1,6 @@
-import { translationsEn } from "./translations"
+import { translations as en } from "./translations"
 
-export const translationsNl = {
-    ...translationsEn,
+export const translations = {...en,
     DIGGEL_CANCEL: 'Terug',
     DIGGEL_NEXT: 'Volgende',
     DIGGEL_NO_CONNECTION: 'Geen verbinding',

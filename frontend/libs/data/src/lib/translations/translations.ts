@@ -1,4 +1,4 @@
-export const translationsEn = {
+export const translations = {
   DIGGEL_CANCEL: 'Cancel',
   DIGGEL_NEXT: 'Next',
   DIGGEL_NO_CONNECTION: 'No internet connection',

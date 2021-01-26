@@ -12,7 +12,8 @@ import {
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { WelcomePageComponent } from './welcome/welcome.page';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { CustomLoader } from '@diggel/data';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -36,7 +37,10 @@ const appRoutes: Routes = [
     HttpClientModule,
     UiModule,
     RouterModule.forRoot(appRoutes, { useHash: true, relativeLinkResolution: 'legacy' }),
-    TranslateModule.forRoot()
+    TranslateModule.forRoot(
+      {
+        loader: { provide: TranslateLoader, useClass: CustomLoader }
+      })
   ],
   providers: [
     {
