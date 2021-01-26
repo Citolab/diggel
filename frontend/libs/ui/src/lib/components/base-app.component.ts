@@ -3,7 +3,7 @@ import { environment } from 'environments/environment';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CordovaService } from './../services/cordova.service';
 import { UserService } from './../services/user.service';
-import { ItemThemeType } from '@diggel/data';
+import { ItemThemeType, translationsEn } from '@diggel/data';
 import { filter, map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { ItemDefinition } from '../model';
@@ -49,6 +49,8 @@ export abstract class AppBaseComponent implements OnDestroy {
     translate.setDefaultLang('en');
     // the lang to use, if the lang isn't available, it will use the current loader to get them
     translate.use(localStorage.getItem('lang') || 'en');
+    translate.setTranslation('en', translationsEn);
+    translate.setTranslation('nl', translationsEn);
     this.lang = translate.currentLang;
     this.cordova = cordovaService.onCordova;
     this.development = !environment.production;

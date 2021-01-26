@@ -2,8 +2,9 @@ import { Type } from '@angular/core';
 import { ItemThemeType, ItemUsage } from '@diggel/data';
 import { ItemComponent, ItemDefinition } from '@diggel/ui';
 
-export const itemWelcomeSpacebook = 'welkom';
+export const itemWelcomeSpacebook = 'welcome';
 export const itemTangare = 'tangare';
+export const itemWorkflow = 'workflow';
 
 const infoItems = [itemWelcomeSpacebook];
 const itemLocation: Map<string, string> = new Map([
@@ -34,6 +35,7 @@ const feedItems = addType([
     component: import('./welcome-spacebook/welcome-spacebook.component'),
   },
   { id: itemTangare, component: import('./tangare/tangare.component') },
+  { id: itemWorkflow, component: import('./workflow/workflow.component') },
 ], ItemThemeType.feed);
 
 

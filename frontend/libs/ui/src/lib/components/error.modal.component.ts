@@ -32,17 +32,6 @@ export class ErrorModalContentComponent {
   noConnectionMessage = this.translate.instant('DIGGEL_NO_CONNECTION_MESSAGE');
   noConnection = this.translate.instant('DIGGEL_NO_CONNECTION');
   constructor(public activeModal: NgbActiveModal, private translate: TranslateService) {
-    translate.setTranslation('en', {
-      DIGGEL_NO_CONNECTION: 'No internet connection',
-      DIGGEL_NO_CONNECTION_MESSAGE: 'Ask for help or try again',
-      DIGGEL_NO_CONNECTION_RETRY: 'Retry',
-    });
-    translate.setTranslation('nl', {
-      DIGGEL_NO_CONNECTION: 'Geen verbinding',
-      DIGGEL_NO_CONNECTION_MESSAGE: 'Vraag iemand om hulp en probeer het opnieuw.',
-      DIGGEL_NO_CONNECTION_RETRY: 'Probeer opnieuw',
-    });
-
   }
 }
 

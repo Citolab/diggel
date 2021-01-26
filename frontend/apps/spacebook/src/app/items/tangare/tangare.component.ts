@@ -34,7 +34,7 @@ export class TangareItemComponent implements ItemComponent {
       in een reactie op zijn bericht.<a href='https://www.google.com'>Zoek op internet</a>`;
     } else {
       this.text['post_intro'] = `<p>Look at this bird form Brazil.
-        It has 7 colors but i don't know the name</p>.
+        It has 7 colors but i don't know the name.</p>
         <p>Does anyone know the name of this bird? 🤔</p>`;
       this.text['write_message'] = `Write a comment`;
       this.text['post'] = `Post`;

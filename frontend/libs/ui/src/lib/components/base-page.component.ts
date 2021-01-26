@@ -96,14 +96,6 @@ export abstract class BasePageComponent implements AfterContentInit, OnDestroy {
         this.setItemComponentsInContainer();
       }
     });
-    translate.setTranslation('en', {
-      DIGGEL_NOT_ANSWERED: '<span class="h5">😱</span> Your answer is not yet complete.',
-      DIGGEL_NEXT_ITEM: 'Ok, dan gaan we verder!'
-    });
-    translate.setTranslation('nl', {
-      DIGGEL_NOT_ANSWERED: '<span class="h5">😱</span> Je hebt mijn vraag nog niet helemaal beantwoord.',
-      DIGGEL_NEXT_ITEM: `Ok, let's continue!`
-    });
     this.notificationMessage = translate.instant('DIGGEL_NOT_ANSWERED');
   }
 

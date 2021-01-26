@@ -27,17 +27,7 @@ export abstract class BaseEndPageComponent implements OnInit, OnDestroy {
     protected translate: TranslateService
   ) {
     toastr.clear();
-    translate.setTranslation('en', {
-      DIGGEL_END_THANKS: `Thanks! Now I use Spacebook myself.`,
-      DIGGEL_NEXT_SESSION: `Click 'next' to start the next digital environment.`,
-      DIGGEL_END: `This is the end, thanks for helping!`
-    });
-    translate.setTranslation('nl', {
-      DIGGEL_END_THANKS: `Bedankt voor je hulp! Ik kan Spacebook nu zelf gebruiken.`,
-      DIGGEL_NEXT_SESSION: `Klik op verder om de volgende opdracht te starten`,
-      DIGGEL_END: `Dit is het eind van de toets. Bedankt voor het meedoen!`
-    });
-    this.textSessionReady = translate.instant('DIGGEL_END_THANKS');
+    this.textSessionReady = translate.instant('SPACEBOOK_END_THANKS`,');
   }
   ngOnDestroy(): void {
     if (this.endSubscription) {

@@ -1,7 +1,7 @@
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { BehaviorSubject } from 'rxjs';
 
-
+export type profileName = 'Bahia'|'Camil'|'Tom'|'Anne'|'Novan'|'Susan';
 
 export class LogRow {
   public timestamp: Date;

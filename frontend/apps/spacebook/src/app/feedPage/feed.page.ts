@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BasePageComponent } from '@diggel/ui';
 import { slideIn } from '@diggel/ui';
 import {
@@ -18,9 +18,8 @@ export class FeedComponent extends BasePageComponent {
   public profilePictureUrl: string;
   public placement: 'first' | 'lastOrPlaced' | 'firstOrPlaced' = 'first';
   public groups: string[];
-
-
   protected afterItemComponentAdded() {
     // override to do nothing
+
   }
 }

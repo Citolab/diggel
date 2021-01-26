@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { itemHerkenNepnieuws } from '../items/items';
 import { ItemThemeType } from '@diggel/data';
 import { WebPageComponent } from '../web-page.component';
 
@@ -10,5 +9,4 @@ import { WebPageComponent } from '../web-page.component';
 })
 export class HandigeWebsitesComponent extends WebPageComponent {
   public theme = ItemThemeType.handigeWebsites;
-  itemHerkenNepnieuws = itemHerkenNepnieuws;
 }

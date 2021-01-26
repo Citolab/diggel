@@ -1,0 +1,30 @@
+<diggel-item-header name="Tom" [readonly]="readonly" [loading]="loading">
+  <p class="card-text" [innerHTML]="text['post_intro'] | safe:'html'">
+  </p>
+  <diggel-post-reaction *ngFor="let alt of alternatives;" [id]="alt.id" [name]="alt.person">
+    <div class="text-dark d-flex">
+      <div class="flex-grow-1">{{ alt.text }}</div>
+      <div>
+        <diggel-like-interaction
+          (selected)="selectedOption($event)"
+          (deselected)="selectedOption($event)"
+          [id]="alt.id"
+          group="mygroup"
+          [readonly]="readonly"
+          [response]="response"
+        >
+        </diggel-like-interaction>
+      </div>
+    </div>
+  </diggel-post-reaction>
+  <button
+    type="button"
+    *ngIf="!readonly"
+    (click)="onNext.next(true)"
+    class="btn btn-primary float-right mt-2"
+  >
+    Plaatsen
+    <span *ngIf="!loading" class="mdi mdi-chevron-right"></span>
+    <span *ngIf="loading" class="mdi mdi-loading mdi-spin"></span>
+  </button>
+</diggel-item-header>

@@ -37,7 +37,9 @@
       </div>
 
       <div *ngIf="groups" class="card border-0 mb-3 mr-5">
-        <div class="card-header bg-white">Susans groepen</div>
+        <div class="card-header bg-white">
+          {{ 'SPACEBOOK_SUSAN_GROUP' | translate }}
+        </div>
         <div class="card-body">
           <div
             *ngFor="let group of groups; let i = index"
@@ -50,7 +52,9 @@
       </div>
 
       <div class="card border-0 mb-3 mr-5">
-        <div class="card-header bg-white">Susans vrienden</div>
+        <div class="card-header bg-white">
+          {{ 'SPACEBOOK_FRIENDS' | translate }}
+        </div>
         <div class="card-body">
           <!-- <ul class="list-group list-group-flush"> -->
 
@@ -125,14 +129,14 @@
         class="btn btn-success px-5"
         (click)="modal.close('Cancel')"
       >
-        Terug
+        {{ 'DIGGEL_CANCEL' | translate }}
       </button>
       <button
         type="button"
         class="btn btn-success px-5"
         (click)="modal.close('Next')"
       >
-        Next
+        {{ 'DIGGEL_NEXT' | translate }}
       </button>
     </div>
   </div>

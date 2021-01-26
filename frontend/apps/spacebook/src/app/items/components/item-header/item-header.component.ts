@@ -18,14 +18,6 @@ export class ItemHeaderComponent implements OnChanges {
 
   constructor(public translate: TranslateService) {
     this.time = this.getTime();
-    this.translate.setTranslation('en', {
-      SPACEBOOK_POSTED: `Posted `,
-      SPACEBOOK_POST: 'Post'
-    });
-    this.translate.setTranslation('nl', {
-      SPACEBOOK_POSTED: `Geplaatst om `,
-      SPACEBOOK_POST: 'Bericht'
-    });
   }
 
   ngOnChanges(): void {

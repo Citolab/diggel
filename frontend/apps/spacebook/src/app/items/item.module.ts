@@ -14,8 +14,7 @@ import { ItemHeaderComponent } from './components/item-header/item-header.compon
 import { PostReactionComponent } from './components/post-reaction/post-reaction.component';
 import { LikeInteractionComponent } from './components/like-interaction/like-interaction.component';
 import { TranslateModule } from '@ngx-translate/core';
-
-
+import { WorkflowItemComponent } from './workflow/workflow.component';
 
 @NgModule({
   imports: [
@@ -33,7 +32,8 @@ import { TranslateModule } from '@ngx-translate/core';
     PostReactionComponent,
     LikeInteractionComponent,
     WelcomeSpacebookComponent,
-    TangareItemComponent
+    TangareItemComponent,
+    WorkflowItemComponent
   ],
   entryComponents: [],
   exports: [],
