@@ -95,14 +95,14 @@ export class WorkflowItemComponent implements ItemComponent {
     }
     if (this.response !== answer) {
       this.logStream.next({
-        action: Action.selecteerAntwoord,
+        action: Action.selectAnswer,
         content: answer,
         timestamp: new Date(),
       });
       this.response = answer;
     } else {
       this.logStream.next({
-        action: Action.deselecteerAntwoord,
+        action: Action.deselectAnswer,
         content: answer,
         timestamp: new Date(),
       });

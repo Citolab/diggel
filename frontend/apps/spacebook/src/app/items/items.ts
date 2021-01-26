@@ -6,6 +6,7 @@ export const itemWelcomeSpacebook = 'welcome';
 export const itemTangare = 'tangare';
 export const itemWorkflow = 'workflow';
 export const itemFunnyVideo = 'funny-video';
+export const itemTie = 'tie';
 
 const infoItems = [itemWelcomeSpacebook];
 const itemLocation: Map<string, string> = new Map([
@@ -34,7 +35,8 @@ const feedItems = addType([
   { id: itemWelcomeSpacebook, component: import('./welcome-spacebook/welcome-spacebook.component'), },
   { id: itemTangare, component: import('./tangare/tangare.component') },
   { id: itemWorkflow, component: import('./workflow/workflow.component') },
-  { id: itemFunnyVideo, component: import('./funny-video/funny-video.component') }
+  { id: itemFunnyVideo, component: import('./funny-video/funny-video.component') },
+  { id: itemTie, component: import('./tie/tie.component') }
 ], ItemThemeType.feed);
 
 

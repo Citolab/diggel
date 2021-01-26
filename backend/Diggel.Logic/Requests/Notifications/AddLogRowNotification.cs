@@ -106,7 +106,7 @@ namespace Diggel.Logic.Requests.Notifications
                         TestSessionId = logRow.TestSessionId,
                         ItemId = logRow.ItemId,
                         ItemContext = logRow.ItemContext,
-                        Action = LogActions.Zoekterm,
+                        Action = LogActions.SearchTerm,
                         Content = searchterms,
                         Timestamp = logRow.Timestamp
                     };

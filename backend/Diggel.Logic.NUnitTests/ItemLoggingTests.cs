@@ -72,7 +72,7 @@ namespace Diggel.Logic.NUnitTests
                     .Where(l => l.TestSessionId == testSessionId && l.ItemId == "item1").ToList();
 
             Assert.AreEqual(4, logs.Count);
-            Assert.AreEqual(LogActions.Zoekterm, logs.Last().Action);
+            Assert.AreEqual(LogActions.SearchTerm, logs.Last().Action);
             Assert.AreEqual("aap rood gezicht", logs.Last().Content);
         }
 
@@ -102,7 +102,7 @@ namespace Diggel.Logic.NUnitTests
                     .Where(l => l.TestSessionId == testSessionId && l.ItemId == "item1").ToList();
 
             Assert.AreEqual(4, logs.Count);
-            Assert.AreEqual(LogActions.Zoekterm, logs.Last().Action);
+            Assert.AreEqual(LogActions.SearchTerm, logs.Last().Action);
             Assert.AreEqual("space walkers", logs.Last().Content);
         }
 
@@ -130,7 +130,7 @@ namespace Diggel.Logic.NUnitTests
                 itemLogCollection.AsQueryable()
                     .Where(l => l.TestSessionId == testSessionId && l.ItemId == "item99").ToList();
 
-            Assert.AreEqual(LogActions.Zoekterm, logs.Last().Action);
+            Assert.AreEqual(LogActions.SearchTerm, logs.Last().Action);
             Assert.AreEqual("whatsapp privacy optie", logs.Last().Content);
         }
 

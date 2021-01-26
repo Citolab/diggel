@@ -204,12 +204,12 @@ namespace Diggel.Logic.Requests.Queries
                  .Distinct()
                  .ToHashSet();
             var itemsThatCanContainSearchTerms = allRelevantLogValues
-                 .Where(log => log.Action == LogActions.Zoekterm)
+                 .Where(log => log.Action == LogActions.SearchTerm)
                  .Select(log => $"{log.ItemContext}-{log.ItemId}")
                  .Distinct()
                  .ToHashSet();
             var candidateSearchTerms = allRelevantLogValues
-                 .Where(log => log.Action == LogActions.Zoekterm)
+                 .Where(log => log.Action == LogActions.SearchTerm)
                  .Select(log => new
                  {
                      Key = $"{log.TestSessionId}-{log.ItemContext}-{log.ItemId}",

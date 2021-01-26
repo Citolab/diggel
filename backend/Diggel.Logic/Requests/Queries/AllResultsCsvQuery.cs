@@ -38,7 +38,7 @@ namespace Diggel.Logic.Requests.Queries
 
             var allRelevantLogValues = UnitOfWork.GetCollection<ItemLogRow>()
                 .AsQueryable()
-                .Where(l => l.Action == LogActions.Zoekterm || l.Action == LogActions.ItemStarted || l.Action == LogActions.OpenLink)
+                .Where(l => l.Action == LogActions.SearchTerm || l.Action == LogActions.ItemStarted || l.Action == LogActions.OpenLink)
                 .ToList();
             await using var memoryStream = new MemoryStream();
             await CsvQueryHelper.WriteRowsAsync(memoryStream, candidateSessions, testSessions, allRelevantLogValues, allItemsResults);

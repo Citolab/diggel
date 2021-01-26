@@ -116,32 +116,31 @@ export class Item {
 }
 
 export class Action {
-  static zoekterm = 'zoekterm';
+  static searchTerm = 'search_term';
   static filter = 'filter';
-  static navigatie = 'navigatie';
-  static keyLog = 'tekst_invoer';
-  static paste = 'plakken';
-  static klik = 'klik';
-  static klikAdvertentie = 'klik_advertentie';
+  static navigation = 'navigation';
+  static keyLog = 'key_log';
+  static paste = 'past';
+  static click = 'click';
   static sessionStarted = 'sessie_start';
-  static sessionResumed = 'sessie_hervat';
-  static sessionFinished = 'sessie_einde';
+  static sessionResumed = 'sessie_resumed';
+  static sessionFinished = 'sessie_finished';
   static itemStarted = 'item_start';
-  static selecteerAntwoord = 'selecteer_antwoord';
-  static deselecteerAntwoord = 'deselecteer_antwoord';
-  static geannuleerd = 'geannuleerd';
+  static selectAnswer = 'select_answer';
+  static deselectAnswer = 'deselect_answer';
+  static cancelled = 'cancelled';
   static autocomplete = 'autocomplete';
-  static bevestigd = 'bevestigd';
-  static maakLink = 'maak_link';
-  static verwijderLink = 'verwijder_link';
-  static openLink = 'hyperlink_openen';
-  static undoVerwijderLink = 'ongedaan_maken_verwijder_link';
-  static undoAllVerwijderLink = 'ongedaan_alle_verwijderde_links';
-  static slepen = 'gesleept_object_losgelaten';
-  static kleur = 'kleur toegepast';
-  static ongedaanMakenKleur = 'kleur ongedaan gemaakt';
-  static selecteerTekst = 'selecteer_tekst';
-  static deselecteerTekst = 'deselecteer_tekst';
+  static confirmed = 'confirmed';
+  static createLink = 'link_create';
+  static deleteLink = 'link_delete';
+  static openLink = 'open_hyperlink';
+  static undoRemoveLink = 'link_remove_undo';
+  static undoRemoveLinkAll = 'link_remove_undo_all';
+  static drag = 'object_dragged';
+  static color = 'collered';
+  static colorUndo = 'color_undo';
+  static selectText = 'text_select';
+  static deselectText = 'text_deselect';
 }
 
 export interface SelectableImage {

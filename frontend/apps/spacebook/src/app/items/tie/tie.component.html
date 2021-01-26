@@ -3,7 +3,7 @@
     <div class="form-group mb-3 text-muted small w-100">
       <div *ngIf="sortedImages.length === 0">
         <img
-          [src]="'./assets/items/koekjes-bakken/placeholder.png'"
+          [src]="'./assets/items/placeholder.png'"
           class="w-100 bg-light rounded-sm"
           alt="Random first slide"
         />
@@ -19,7 +19,7 @@
         (click)="open(modalContent)"
         [disabled]="readonly"
       >
-        Fotoverhaal
+        {{ text['PHOTO_STORY'] }}
       </button>
     </div>
   </div>
@@ -32,7 +32,7 @@
         (click)="onNext.next(true)"
         class="btn btn-primary float-right"
       >
-        Plaatsen
+      {{ text['POST'] }}
         <span *ngIf="!loading" class="mdi mdi-chevron-right"></span>
         <span *ngIf="loading" class="mdi mdi-loading mdi-spin"></span>
       </button>
@@ -43,7 +43,7 @@
 <ng-template #modalContent let-modal>
   <div class="modal-header shadow-sm">
     <h4 class="modal-title mdi mdi-camera-iris" id="modal-basic-title">
-      Kies fotos
+      {{ text['CHOOSE_PICTURE']  }}
     </h4>
     <button
       type="button"
@@ -79,10 +79,10 @@
       class="btn btn-outline-primary"
       (click)="modal.close('Cancel')"
     >
-      Annuleren
+    {{  text['CANCEL'] }}
     </button>
     <button type="button" class="btn btn-primary" (click)="modal.close('Next')">
-      Klaar
+     {{  text['OK'] }}
     </button>
   </div>
 </ng-template>

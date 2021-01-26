@@ -136,7 +136,7 @@ export function groupBy<T, K>(list: T[], getKey: (item: T) => K) {
 export async function openModal(content: any, options: ExtendedNgbModalOptions, afterModalOpened = () => {}): Promise<'Cancel' | 'Next'> {
   if (options.logOpen == null || options.logOpen === true) {
     options.logStream.next({
-      action: Action.klik,
+      action: Action.click,
       content: `${options.actionDescription ? `${options.actionDescription} openen` : 'popup openen'}`,
       timestamp: new Date(),
     });
@@ -146,14 +146,14 @@ export async function openModal(content: any, options: ExtendedNgbModalOptions, 
   const result = await dialog.result;
   if (result === 'Cancel') {
     options.logStream.next({
-      action: Action.geannuleerd,
+      action: Action.cancelled,
       content: `${options.actionDescription ? `${options.actionDescription} geannuleerd` : 'popup openen geannuleerd'}`,
       timestamp: new Date(),
     });
   }
   if (result === 'Next') {
     options.logStream.next({
-      action: Action.bevestigd,
+      action: Action.confirmed,
       content: `${options.actionDescription ? `${options.actionDescription} bevestigd` : 'popup openen bevestigd'}`,
       timestamp: new Date(),
     });

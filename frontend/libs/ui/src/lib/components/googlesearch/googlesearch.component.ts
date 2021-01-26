@@ -85,7 +85,7 @@ export class GoogleSearchBrowser {
           this.inBrowserRef.addEventListener('loadstart', (data) => {
             const id = this.uuidv4();
             this.logdata[id] = {
-              action: Action.navigatie,
+              action: Action.navigation,
               content: data.url,
               timestamp: new Date(),
             };
