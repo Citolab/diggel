@@ -56,7 +56,7 @@ namespace Diggel.Logic.NUnitTests
             var notification = new AddLogRowNotification
             {
                 ItemId = "item1",
-                LogAction = LogActions.Navigatie,
+                LogAction = LogActions.Navigation,
                 LogText =
                     "https://www.google.com/search?source=hp&ei=ALB3XITkFszVwQLQ5qqgAg&q=aap+rood+gezicht&btnK=Google+Search&oq=aap+rood+gezicht&gs_l=psy-ab.3..0i203j0i22i30.5624.10683..12563...4.0..0.177.1694.14j5......0....1..gws-wiz.....6..35i39j0j0i10i203j0i22i10i30.BRDPHHoCphg",
                 TestSessionId = testSessionId
@@ -86,7 +86,7 @@ namespace Diggel.Logic.NUnitTests
             var notification = new AddLogRowNotification
             {
                 ItemId = "item1",
-                LogAction = LogActions.Navigatie,
+                LogAction = LogActions.Navigation,
                 LogText =
                     "https://citolab-diggel2.azurewebsites.net/search?q=space+walkers",
                 TestSessionId = testSessionId
@@ -115,7 +115,7 @@ namespace Diggel.Logic.NUnitTests
             var notification = new AddLogRowNotification
             {
                 ItemId = "item99",
-                LogAction = LogActions.Navigatie,
+                LogAction = LogActions.Navigation,
                 LogText =
                     "https://www.google.com/search?source=hp&ei=IPf2X_mTFIv2kwWj8rmIAw&q=whatsapp+privacy+optie&oq=whatsapp+privacy+optie&gs_lcp=ChFtb2JpbGUtZ3dzLXdpei1ocBADMgUIIRCgATIFCCEQoAE6AggAOggIABCxAxCDAToFCAAQsQM6CAguELEDEIMBOgUILhCxAzoICAAQxwEQrwE6BAgAEAo6AgguOgcIABCxAxAKOgYIABAKEAM6BAgAEAM6BggAEBYQHjoECAAQEzoICAAQFhAeEBM6CAghEBYQHRAeUO8UWM-DAWDClwFoA3AAeACAAcMBiAHOEJIBBDE5LjaYAQCgAQGwAQA&sclient=mobile-gws-wiz-hp",
                 TestSessionId = testSessionId
@@ -144,7 +144,7 @@ namespace Diggel.Logic.NUnitTests
             var notification = new AddLogRowNotification
             {
                 ItemId = "item1",
-                LogAction = LogActions.Navigatie,
+                LogAction = LogActions.Navigation,
                 LogText =
                     "https://www.google.nl/maps/dir/Enschede/Deventer/Amsterdam/@52.264905,5.3382144,9z/data=!3m1!4b1!4m20!4m19!1m5!1m1!1s0x47b8139482fe5187:0xd24e1fb7ad7265e2!2m2!1d6.8936619!2d52.2215372!1m5!1m1!1s0x47c7ebc9af5d5611:0xc1a40d18d98571e3!2m2!1d6.1552165!2d52.2660751!1m5!1m1!1s0x47c63fb5949a7755:0x6600fd4cb7c0af8d!2m2!1d4.9035614!2d52.3679843!3e0",
                 TestSessionId = testSessionId

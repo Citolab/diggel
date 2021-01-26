@@ -10,6 +10,7 @@ namespace Diggel.Logic.Models
         public const string KeyLog = "key_log";
         public const string Paste = "past";
         public const string Click = "click";
+        public const string MapsRoute = "mapsroute";
         public const string SessionStarted = "sessie_start";
         public const string SessionResumed = "sessie_resumed";
         public const string SessionFinished = "sessie_finished";

@@ -51,7 +51,7 @@ namespace Diggel.Logic.Requests.Notifications
         {
             switch (logRow.Action)
             {
-                case LogActions.Navigatie:
+                case LogActions.Navigation:
                     await ExtractAndLogSearchTerms(logRow, itemLog);
                     await ExtractAndLogMapsNavigationTerms(logRow, itemLog);
                     break;

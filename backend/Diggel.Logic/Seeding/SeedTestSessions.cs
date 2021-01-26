@@ -130,7 +130,7 @@ namespace Diggel.Logic.Seeding
                         TestSessionId = Guid.Parse("0D0D50F3-C189-4666-9057-5CD00A96C3C3"),
                         ItemId = "item1",
                         ItemContext = "A",
-                        Action = LogActions.Klik,
+                        Action = LogActions.Click,
                         Content = "klik: ad1",
                         Timestamp = now.AddSeconds(-1)
                     }
@@ -182,7 +182,7 @@ namespace Diggel.Logic.Seeding
                         TestSessionId = Guid.Parse("1A4F65B7-049C-4229-9AC4-6B672AD5E939"),
                         ItemId = "item1",
                         ItemContext = "A",
-                        Action = LogActions.Klik,
+                        Action = LogActions.Click,
                         Content = "klik: ad2",
                         Timestamp = now.AddSeconds(-1)
                     }
