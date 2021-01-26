@@ -17,6 +17,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Folder Include="Properties\PublishProfiles\" />
 		<Folder Include="remote_server_apk" />
 	</ItemGroup>
 

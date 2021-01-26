@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Configuration;
 
 namespace Diggel.Backend.Pages.Backoffice
 {
@@ -33,10 +34,12 @@ namespace Diggel.Backend.Pages.Backoffice
         [BindProperty] public bool LoginFailure { get; set; }
 
         private readonly CommandHandler _commandHandler;
+        private readonly IConfiguration _configuration;
 
-        public IndexModel(IUnitOfWork unitOfWork)
+        public IndexModel(IUnitOfWork unitOfWork, IConfiguration configuration)
         {
             _commandHandler = new CommandHandler(unitOfWork);
+            _configuration = configuration;
         }
 
         public IActionResult OnGet(bool noAccess, bool loginFailure)
@@ -48,7 +51,7 @@ namespace Diggel.Backend.Pages.Backoffice
 
         public async Task<IActionResult> OnPostSignIn()
         {
-            var command = new LoginCommand {Username = Username, Password = Password};
+            var command = new LoginCommand(_configuration) { Username = Username, Password = Password};
             var loginResult = await _commandHandler.Handle(command);
             if (loginResult.Success)
             {
