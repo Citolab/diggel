@@ -1,0 +1,29 @@
+<diggel-item-header name="Tom" [readonly]="readonly" [loading]="loading">
+  <p class="card-text" [innerHTML]="text['post_intro'] | safe:'html'">
+  </p>
+  <p class="card-text">{{ text['vote'] }}</p>
+  <button
+    *ngFor="let alternative of alternatives"
+    role="button"
+    (click)="selectedOption(alternative.id)"
+    [disabled]="readonly"
+    [attr.aria-pressed]="response === alternative.id"
+    [class.active]="response === alternative.id"
+    [class.text-dark]="!(response === alternative.id)"
+    [class.voted]="response === alternative.id && readonly"
+    [class.not-voted]="response !== alternative.id && readonly"
+    class="poll-item btn btn-block btn-outline-primary text-left mb-1"
+  >
+    {{ alternative.text }}
+  </button>
+  <button
+    type="button"
+    *ngIf="!readonly"
+    (click)="onNext.next(true)"
+    class="btn btn-primary float-right mt-2"
+  >
+    {{ text['post'] }}
+    <span *ngIf="!loading" class="mdi mdi-chevron-right"></span>
+    <span *ngIf="loading" class="mdi mdi-loading mdi-spin"></span>
+  </button>
+</diggel-item-header>

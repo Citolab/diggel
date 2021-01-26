@@ -15,6 +15,7 @@ import { PostReactionComponent } from './components/post-reaction/post-reaction.
 import { LikeInteractionComponent } from './components/like-interaction/like-interaction.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { WorkflowItemComponent } from './workflow/workflow.component';
+import { FunnyVideoItemComponent } from './funny-video/funny-video.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { WorkflowItemComponent } from './workflow/workflow.component';
     LikeInteractionComponent,
     WelcomeSpacebookComponent,
     TangareItemComponent,
-    WorkflowItemComponent
+    WorkflowItemComponent,
+    FunnyVideoItemComponent
   ],
   entryComponents: [],
   exports: [],
