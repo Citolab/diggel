@@ -77,7 +77,7 @@ export class TieItemComponent implements ItemComponent {
       this.text['OK'] = `Ok`;
       this.text['POST'] = `Post`;
       this.text['NOTIFICATION'] = `<p>I want to use a slideshow to show how to tie a knot.</p>
-      <p>Select the photo's in the order of making.</p>.`;
+      <p>Select the photo's in the order of making.</p>`;
 
     }
   }

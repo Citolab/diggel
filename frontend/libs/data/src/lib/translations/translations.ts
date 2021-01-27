@@ -1,10 +1,11 @@
 export const translations = {
+  DIGGEL_BACK: 'Back',
   DIGGEL_CANCEL: 'Cancel',
   DIGGEL_NEXT: 'Next',
   DIGGEL_NO_CONNECTION: 'No internet connection',
   DIGGEL_NO_CONNECTION_MESSAGE: 'Ask for help or try again',
   DIGGEL_NO_CONNECTION_RETRY: 'Retry',
-  DIGGEL_TERMS: `I do agreed that everything I do using these assignments is recorded and used for research purposes. `,
+  DIGGEL_TERMS: `I do agree that everything I do using these assignments is recorded and used for research purposes. `,
   DIGGEL_TITLE: 'Digital literacy',
   DIGGEL_LOGIN: 'Login',
   DIGGEL_GOOD_LUCK: 'Good luck with helping Susan!',
@@ -32,6 +33,6 @@ export const translations = {
   SPACEBOOK_POST: 'Post',
   SPACEBOOK_WELCOME_MESSAGE: `<p>Have you heard about Spacebook?</p>
   <p>Everyone in my class uses Spacebook to share pictures, music, videos, and articles!</p>
-  <p>Would you like to help me using it?</p>`,
+  <p>I have to register first. Would you like to help me?</p>`,
   SPACEBOOK_END_THANKS: `Thanks! Now I use Spacebook myself.`,
 }

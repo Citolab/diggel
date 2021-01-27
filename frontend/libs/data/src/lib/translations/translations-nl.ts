@@ -1,6 +1,7 @@
 import { translations as en } from "./translations"
 
 export const translations = {...en,
+    DIGGEL_BACK: 'Terug',
     DIGGEL_CANCEL: 'Terug',
     DIGGEL_NEXT: 'Volgende',
     DIGGEL_NO_CONNECTION: 'Geen verbinding',

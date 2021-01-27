@@ -22,12 +22,12 @@ export class WelcomeSpacebookComponent implements ItemComponent {
 
   setLang(lang: string): void {
     if (lang === 'nl') {
-      this.text['notification'] = `Hoi! Het is gelukt om me te registreren.
+      this.text['notification'] = `Dank je! Het is gelukt om me te registreren.
       Ik ben benieuwd wat mijn vrienden op Spacebook zetten.`;
       this.text['welcome'] = 'Welkom bij';
       this.text['start'] = 'BEGIN';
     } else {
-      this.text['notification'] = `Hi! I just registered.
+      this.text['notification'] = `Thanks! I'm registered.
       I'd love the see what my friends posted on Spacebook.`;
       this.text['welcome'] = 'Welcome to';
       this.text['start'] = 'START';

@@ -61,7 +61,6 @@ export class TangareItemComponent implements ItemComponent {
   }
 
   setInitialValue(itemResult: ItemResult): void {
-
     if (itemResult) {
       itemResult.responses.forEach((response) => {
         this.response = response.value;
@@ -94,7 +93,7 @@ export class TangareItemComponent implements ItemComponent {
   getNotification = () => this.text['notification'];
 
   score() {
-    const tangare = 'tangare';
+    const tangare = ['tangare'];
 
     // get correct answers and prepare with rules like lower case, trim etc.
     const correctAnswers = [

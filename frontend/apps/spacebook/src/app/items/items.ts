@@ -2,6 +2,8 @@ import { Type } from '@angular/core';
 import { ItemThemeType, ItemUsage } from '@diggel/data';
 import { ItemComponent, ItemDefinition } from '@diggel/ui';
 
+export const itemNews = 'news';
+
 export const itemWelcomeSpacebook = 'welcome';
 export const itemTangare = 'tangare';
 export const itemWorkflow = 'workflow';
@@ -31,6 +33,10 @@ const addType = (
   });
 };
 
+const registerItems = addType([
+  { id: itemNews, component: import('./news/news.component') }
+], ItemThemeType.registration);
+
 const feedItems = addType([
   { id: itemWelcomeSpacebook, component: import('./welcome-spacebook/welcome-spacebook.component'), },
   { id: itemTangare, component: import('./tangare/tangare.component') },
@@ -39,8 +45,6 @@ const feedItems = addType([
   { id: itemTie, component: import('./tie/tie.component') }
 ], ItemThemeType.feed);
 
-
-
 export const itemDefinitions: ItemDefinition[] = [
-  ...feedItems
+  ...registerItems, ...feedItems
 ];
