@@ -1,98 +1,88 @@
-# Diggel
+# Diggel - frontend
 
-This project was generated using [Nx](https://nx.dev).
+This application is generated using [Nx](https://nx.dev)
+It's an Angular application that can be wrapped into a Cordova app.
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+Spacebook was created first. A year later, Spacebook changed a bit and 3 new applications were added.
 
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+## Current state
 
-## Quick Start & Documentation
+This application is a copy of the original application that contain items that are not allowed to share.
 
-[Nx Documentation](https://nx.dev/angular)
+All items and removed. 5 example items are created and added to Spacebook and Spacegram.
+Because everything in the application was in Dutch we did some translations, but there are still some Dutch textes.
 
-[10-minute video showing all Nx features](https://nx.dev/angular/getting-started/what-is-nx)
+The application is build to run on a specific Samsung tablet. Resolutions/aspect ratios other than this tablet aren't tested.
 
-[Interactive Tutorial](https://nx.dev/angular/tutorial/01-create-application)
+TODO:
+- add items for WebSpace and SpaceTalk.
+- we think about integrating a QTI player to be able to play QTI package in stead of items as Angular components
 
-## Adding capabilities to your workspace
+## Application/ assessment
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+One application equals an assessment with items.
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+### Items
 
-Below are our core plugins:
+Each application has an items.ts file in src/app/items/items.ts. 
+This file contains the item definition.
+The items are presented in the same order as the are added in itemDefinition.
 
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
+```ts 
+export const itemDefinitions: ItemDefinition[] = [...registrationItems, ...feedItems];
+```
 
-There are also many [community plugins](https://nx.dev/nx-community) you could add.
+After an item is submitted, the next item of the itemDefinition array will be presented.
 
-## Generate an application
+### Steps to create new items:
 
-Run `ng g @nrwl/angular:app my-app` to generate an application.
+- Add a new component that implement the ItemComponent interface.
+- In items.ts declare the item by: { id: --id--, component: import('./---ref-to---.component') },
+- Add the ItemComponent to the declarions in the ItemModule
 
-> You can use any of the plugins above to generate applications as well.
+When a new item should be presented it will retrieve the Type of the Component from the list.
+and created and added like this:
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+```ts 
+const factory = this.resolver.resolveComponentFactory(component);
+const itemComponent = this.container.createComponent(factory);
+```
 
-## Generate a library
+Different pages have different ways of showing items:
 
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
+- Single mode (e.g. registation page): Just one item on the page. If a new item is added, the previous one will be removed.
+- Multiple items: If a next item is presented the previous one will still be on the page, but in read only mode. By default, a next item will be presented below the previous one. If you set PlaceOnTop = true, new items will appear on top. There are implementation like in WebSpace: web-page.component where the item, after it's added to the page, will be moved into a specific HTMLelement.
+When the ItemCompontent.location || ItemComponent.id matches a div id, it will be place into that HTMLelement. If there is already an item there, it will be removed. This is used in cases where there are multiple items for one text/image.
 
-> You can also use any of the plugins above to generate libraries as well.
+Some items are to inform the user or to make transitions to items more authentic. These items are marked as info items (ItemUsage.info).
 
-Libraries are sharable across libraries and applications. They can be imported from `@diggel/mylib`.
+### Pages
 
-## Development server
+An item is assigned to a theme. E.g. ItemThemeType.registration. This enum should match a route.
+The following steps should be taken when creating a new page where items are added.
 
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+- Create a new component that extends BasePageComponent
+- add <template #itemContainer></template> in the html (even if it's relocated later)
+- make sure the following fieds are overridden 
+    - ItemModule: this should point to the modules that declared the ItemComponents
+    - itemDefinitions: itemDefinitions for this project (e.g. for Spacebook);
+    - itemComponents: itemDefinitions filtered by Theme
+- add an enum value in ItemThemeType
+- add a route that matches the ItemThemeType name.
+- optional: override logic of the BasePageComponent and customize the Html in the page.
+ 
+# Cordova ( tools/android-app )
 
-## Code scaffolding
+In a normal browser is not possible to log what steps users take to search for the correct answer.
+Cordova wraps a webapplication in an Android app. It has it's own browser where script can be injected to websites.
+Everytime a user navigates to a website and javascript file is injected that logs, clicks, key-strokes and navigation events.
+These log entries are sent to the backend and stored in the log collection in Mongo. This data can be used to analyse what path students take to find the correct answer.
 
-Run `ng g component my-component --project=my-app` to generate a new component.
+There are several scripts that run while creating the apk:
+- add gradle options
+- cordova.js is added to index.html of all applications.
+- update the version of the apk using the date to be sure it's always a newer version. [AppUpdate] (https://github.com/vaenow/cordova-plugin-app-update) is used to auto update.
+- rename the apk to diggel.apk
+- Move the apk to a release folder.
 
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
-
-## ☁ Nx Cloud
-
-### Computation Memoization in the Cloud
-
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+`apk:build`/`apk:nobuild` builds an apk file that can be installed on a android tablet.
