@@ -23,7 +23,11 @@ export const translations = {...en,
     DIGGEL_NEXT_SESSION: `Klik op verder om de volgende opdracht te starten`,
     DIGGEL_END: `Dit is het eind van de toets. Bedankt voor het meedoen!`,
     DIGGEL_NOT_ANSWERED: '<span class="h5">😱</span> Je hebt mijn vraag nog niet helemaal beantwoord.',
-    DIGGEL_NEXT_ITEM: `Ok, let's continue!`,
+    DIGGEL_NEXT_ITEM: 'Ok, dan gaan we verder!',
+    DIGGEL_HELP: `Ik ga je helpen`,
+    DIGGEL_WELCOME: `
+    <p>Hoi, mijn naam is Susan. Kun je me helpen online te gaan?</p>
+    <pIk wil graag dat je me helpt met een aantal programma’s. Ik stuur je steeds een berichtje als ik je hulp nodig heb.</p>`,
     SPACEBOOK_END_THANKS: `Bedankt voor je hulp! Ik kan Spacebook nu zelf gebruiken.`,
     SPACEBOOK_FRIENDS: 'Susans vrienden',
     SPACEBOOK_SUSAN_GROUP: 'Susans groepen',

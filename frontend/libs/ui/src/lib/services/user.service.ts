@@ -125,7 +125,9 @@ export class UserService {
   // refreshing will restore item results from localStorage
   // when logging in; previous item result will be clear from localStorage
   async login(loginCode: string): Promise<LoginResult> {
+    const lang = localStorage.getItem('lang');
     localStorage.clear();
+    localStorage.setItem('lang', lang);
     if (!this.useBackend) {
       this.useBackend = false;
       return Promise.resolve(this.loginResult);

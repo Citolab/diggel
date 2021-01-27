@@ -1,9 +1,10 @@
 import { AfterViewInit, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { SearchService, UserService } from '@diggel/ui';
+import { UserService } from '@diggel/ui';
 import { LoginResult } from '@diggel/data';
 import { environment } from 'environments/environment';
 import { CordovaService } from '@diggel/ui';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'diggel-welcome',
@@ -19,10 +20,6 @@ export class WelcomePageComponent implements AfterViewInit, OnInit {
   accepted: boolean;
   clicked = false;
   code = '';
-  notificationMessage = `
-    <p>Hoi, mijn naam is Susan. Kun je me helpen online te gaan?</p>
-    <pIk wil graag dat je me helpt met een aantal programma’s. Ik stuur je steeds een berichtje als ik je hulp nodig heb.</p>
-    <p>Voordat we beginnen wil ik je eerst vragen een vragenlijst over woorden in te vullen.</p>`;
 
   // applicationMapping: string[] = [];
   isDemoTestSession = false;
@@ -31,7 +28,8 @@ export class WelcomePageComponent implements AfterViewInit, OnInit {
   constructor(
     private userService: UserService,
     private cordovaService: CordovaService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private translate: TranslateService
   ) {
      this.userService.useBackend = environment.useBackend;
     this.isDemoTestSession = !environment.useBackend || this.userService.testSession.isDemoTestSession;

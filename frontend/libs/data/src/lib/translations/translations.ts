@@ -21,7 +21,11 @@ export const translations = {
   DIGGEL_NEXT_SESSION: `Click 'next' to start the next digital environment.`,
   DIGGEL_END: `This is the end, thanks for helping!`,
   DIGGEL_NOT_ANSWERED: '<span class="h5">😱</span> Your answer is not yet complete.',
-  DIGGEL_NEXT_ITEM: 'Ok, dan gaan we verder!',
+  DIGGEL_NEXT_ITEM: `Ok, let's continue!`,
+  DIGGEL_HELP: `I'll help`,
+  DIGGEL_WELCOME: `
+  <p>Hi, I am Susan. Would you like to help me to go online?</p>
+  <p>I need some help using some applications. If I need your help, I'll send you a message.</p>`,
   SPACEBOOK_FRIENDS: 'Susans friends',
   SPACEBOOK_SUSAN_GROUP: 'Susans groups',
   SPACEBOOK_POSTED: `Posted `,

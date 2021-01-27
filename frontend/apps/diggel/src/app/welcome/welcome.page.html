@@ -33,7 +33,7 @@
           class="btn btn-primary btn-lg rounded-pill ml-2"
           (click)="login()"
         >
-          I'll help!<span
+          {{ 'DIGGEL_HELP' | translate }}<span
             *ngIf="clicked"
             class="mdi mdi-loading mdi-spin"
           ></span>
@@ -60,6 +60,6 @@
     ></span>
   </div>
   <div class="toast-body text-verdana" role="alert" aria-live="polite">
-    <div [innerHTML]="notificationMessage"></div>
+    <div [innerHTML]="'DIGGEL_WELCOME' | translate"></div>
   </div>
 </ng-template>
