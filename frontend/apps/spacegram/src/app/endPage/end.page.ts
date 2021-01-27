@@ -8,7 +8,7 @@ import { BaseEndPageComponent } from '@diggel/ui';
 })
 export class EndPageComponent extends BaseEndPageComponent implements OnInit {
   async ngOnInit() {
-    this.textSessionReady = `Bedankt voor je hulp! Ik kan Spacegram nu zelf gebruiken. `;
+    this.textSessionReady = this.translate.instant('SPACEGRAM_END_THANKS');
     await super.ngOnInit();
   }
 }

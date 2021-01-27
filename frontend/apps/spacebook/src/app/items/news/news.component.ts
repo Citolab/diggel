@@ -131,6 +131,10 @@ export class NewsItemComponent
     };
   }
 
+  trackById(_: number, { id }:{ id: string }) {
+    return id;
+  }
+
   getNotification() {
     return this.text['notification'];
   }

@@ -1,0 +1,32 @@
+<div ngbDropdown placement="top-left" class="mr-2">
+  <button
+    class="btn btn-outline-secondary mdi"
+    [class.border-0]="readonly"
+    [class.mdi-earth]="dropdownZichtbaarheidText == 'Iedereen'"
+    [class.mdi-account]="dropdownZichtbaarheidText == 'Vrienden'"
+    [class.mdi-account-multiple]="
+      dropdownZichtbaarheidText == 'Vrienden van vrienden'
+    "
+    [class.remove-chevron]="readonly"
+    id="dropdownBasic1"
+    [disabled]="readonly"
+    ngbDropdownToggle
+  >
+    {{ dropdownZichtbaarheidText }}
+  </button>
+  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+    <button
+      *ngFor="let privacyOption of privacyOptions"
+      (click)="selectedPrivacyOption(privacyOption)"
+      class="dropdown-item mdi"
+      [class.mdi-earth]="privacyOption.text == 'Iedereen'"
+      [class.mdi-account]="privacyOption.text == 'Vrienden'"
+      [class.active]="responseZichtbaarheid === privacyOption.id"
+      [class.mdi-account-multiple]="
+        privacyOption.text == 'Vrienden van vrienden'
+      "
+    >
+      {{ privacyOption.text }}
+    </button>
+  </div>
+</div>

@@ -12,7 +12,8 @@ import { BrowserComponent } from './browserPage/browser.page';
 import { BlankPageComponent } from './blankPage/blank.page';
 import { PresentationPageComponent } from './presentationPage/presentation.page';
 import { AppRoutingModule } from './app-routing.module';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { CustomLoader } from '@diggel/data';
 @NgModule({
   imports: [
     BrowserModule,
@@ -23,7 +24,10 @@ import { TranslateModule } from '@ngx-translate/core';
     NgbModule,
     FormsModule,
     UiModule,
-    TranslateModule.forRoot()
+    TranslateModule.forRoot(
+      {
+        loader: { provide: TranslateLoader, useClass: CustomLoader }
+      })
   ],
   declarations: [
     AppComponent,

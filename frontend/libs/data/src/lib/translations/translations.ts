@@ -35,4 +35,8 @@ export const translations = {
   <p>Everyone in my class uses Spacebook to share pictures, music, videos, and articles!</p>
   <p>I have to register first. Would you like to help me?</p>`,
   SPACEBOOK_END_THANKS: `Thanks! Now I use Spacebook myself.`,
+  SPACEGRAM_WELCOME_MESSAGE: `Have you heard about Spacegram? Everyone in my class uses Spacegram to share their picture!`,
+  SPACEGRAM_FOLLOWS_YOU: `Follower`,
+  SPACEGRAM_FOLLOWERS: `followers`,
+  SPACEGRAM_END_THANKS: `Thanks! Now I use Spacegram myself.`,
 }

@@ -11,8 +11,7 @@ export class StartPageComponent
   extends BaseStartPageComponent
   implements OnInit {
   ngOnInit() {
-    this.welcomeMessage = `Ken jij Spacegram al?
-    Heel de klas gebruikt het om foto's te delen!`;
+    this.welcomeMessage = this.translate.instant('SPACEGRAM_WELCOME_MESSAGE');
     this.firstItem = itemDefinitions[0];
     super.ngOnInit();
   }

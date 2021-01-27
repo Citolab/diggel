@@ -20,6 +20,7 @@ import { DierenComponent } from './dierenPage/dieren.page';
 import { AlgemeenSubComponent } from './algemeenSubPage/algemeen-sub.page';
 import { FinalComponent } from './finalPage/final.page';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { CustomLoader } from '@diggel/data';
 
 @NgModule({
   imports: [
@@ -31,7 +32,10 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
     NgbModule,
     FormsModule,
     UiModule,
-    TranslateModule.forRoot()
+    TranslateModule.forRoot(
+      {
+        loader: { provide: TranslateLoader, useClass: CustomLoader }
+      })
   ],
   declarations: [
     AppComponent,

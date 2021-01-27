@@ -12,7 +12,8 @@ import { EndPageComponent } from './endPage/end.page';
 import { FormsModule } from '@angular/forms';
 import { BackendUrlInterceptor, UiModule } from '@diggel/ui';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { CustomLoader } from '@diggel/data';
 
 @NgModule({
   imports: [
@@ -24,7 +25,10 @@ import { TranslateModule } from '@ngx-translate/core';
     NgbModule,
     FormsModule,
     UiModule,
-    TranslateModule.forRoot()
+    TranslateModule.forRoot(
+      {
+        loader: { provide: TranslateLoader, useClass: CustomLoader }
+      })
   ],
   declarations: [
     AppComponent,

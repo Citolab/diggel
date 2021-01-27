@@ -1,23 +1,31 @@
-<div class="d-flex justify-content-center align-items-center" style="margin-top: 60%;">
-  <div>
-    <button
-      *ngIf="!isLast"
-      type="button"
-      [disabled]="resultButtonClicked"
-      (click)="next()"
-      class="score btn btn-lg rounded-lg btn-primary"
-      style="margin-top: 240px"
-    >
-      Next
-    </button>
-  </div>
-  <div>
-    <button
-      *ngIf="isLast"
-      class="btn btn-lg rounded-lg btn-dark mdi mdi-close mr-2"
-      (click)="finish()"
-    >
-      Finish
-    </button>
+<div
+  class="full"
+  [ngStyle]="{ 'background-image': 'url(assets/identity/splashscreen-spacegram-' + lang + '.svg)'}"
+>
+  <div
+    class="d-flex justify-content-center align-items-center"
+    style="margin-top: 60%"
+  >
+    <div>
+      <button
+        *ngIf="!isLast"
+        type="button"
+        [disabled]="resultButtonClicked"
+        (click)="next()"
+        class="score btn btn-lg rounded-lg btn-primary"
+        style="margin-top: 240px"
+      >
+        Next
+      </button>
+    </div>
+    <div>
+      <button
+        *ngIf="isLast"
+        class="btn btn-lg rounded-lg btn-dark mdi mdi-close mr-2"
+        (click)="finish()"
+      >
+        Finish
+      </button>
+    </div>
   </div>
 </div>

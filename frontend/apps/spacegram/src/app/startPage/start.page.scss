@@ -14,7 +14,7 @@
   }
 }
 
-:host {
+.full {
   display: block;
   position: absolute;
   top: 0;
@@ -23,7 +23,6 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  background-image: url('../../assets/identity/splashscreen-spacegram.svg');
 
   display: flex;
   justify-content: center;

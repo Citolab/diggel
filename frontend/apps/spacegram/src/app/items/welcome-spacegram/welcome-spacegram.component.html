@@ -1,0 +1,26 @@
+<div
+  class="d-flex bg-primary justify-content-center align-items-center flex-column rounded-sm"
+>
+  <div
+    class="mt-5 d-flex align-items-center justify-content-center"
+    style="width: 140px; height: 140px; background: white; border-radius: 50%"
+  >
+    <img
+      src="assets/identity/icon-spacegram-satellite.svg"
+      style="width: 80px; height: 80px"
+    />
+  </div>
+
+  <p class="text-uppercase text-light font-weight-bold mb-0 mt-2">{{ text['welcome'] }}</p>
+  <h2 class="my-0 font-weight-bold text-light">SPACEGRAM</h2>
+
+  <button
+    type="button"
+    (click)="onNext.next(true)"
+    class="btn btn-outline-light float-right mt-5 mb-3"
+  >
+    {{ text['start'] }}
+    <span *ngIf="!loading" class=""></span>
+    <span *ngIf="loading" class="mdi mdi-loading mdi-spin"></span>
+  </button>
+</div>

@@ -1,7 +1,12 @@
-<button
-  type="button"
-  (click)="start()"
-  class="register btn btn-primary btn-lg rounded-pill"
+<div
+  class="full"
+  [ngStyle]="{ 'background-image': 'url(assets/identity/splashscreen-spacegram-' + lang + '.svg)'}"
 >
-  Start
-</button>
+  <button
+    type="button"
+    (click)="start()"
+    class="register btn btn-primary btn-lg rounded-pill"
+  >
+    Start
+  </button>
+</div>

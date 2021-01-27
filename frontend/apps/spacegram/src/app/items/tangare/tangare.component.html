@@ -1,0 +1,40 @@
+<diggel-item-header name="Camil" [readonly]="readonly" [loading]="loading">
+  <p class="card-text" [innerHTML]="text['post_intro'] | safe:'html'">
+  </p>
+  <img src="./assets/items/tangare/tangare.jpg" class="w-100" />
+  <div class="form-group mt-3 text-muted">
+    <diggel-post-reaction
+      id="C"
+      name="Susan"
+      [showname]="readonly"
+      [showtime]="readonly"
+    >
+      <div class="text-dark d-flex">
+        <div class="flex-grow-1">
+          <input
+            *ngIf="!readonly"
+            #input
+            placeholder="{{ text['write_message'] }}"
+            [ngModel]="response"
+            (ngModelChange)="valueChanged($event)"
+            (paste)="logPaste($event)"
+            class="form-control rounded-lg"
+            type="text"
+          />
+          <p *ngIf="readonly">{{ response }}</p>
+        </div>
+      </div>
+    </diggel-post-reaction>
+  </div>
+
+  <button
+    type="button"
+    *ngIf="!readonly"
+    (click)="onNext.next(true)"
+    class="btn btn-primary float-right mt-2"
+  >
+   {{ text['post'] }}
+    <span *ngIf="!loading" class="mdi mdi-chevron-right"></span>
+    <span *ngIf="loading" class="mdi mdi-loading mdi-spin"></span>
+  </button>
+</diggel-item-header>

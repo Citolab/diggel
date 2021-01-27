@@ -1,0 +1,88 @@
+<diggel-item-header name="Susan" [readonly]="readonly" [loading]="loading">
+  <div class="w-100 d-flex justify-content-between">
+    <div class="form-group mb-3 text-muted small w-100">
+      <div *ngIf="sortedImages.length === 0">
+        <img
+          [src]="'./assets/items/placeholder.png'"
+          class="w-100 bg-light rounded-sm"
+          alt="Random first slide"
+        />
+      </div>
+      <ngb-carousel [interval]="2500" *ngIf="sortedImages.length > 0">
+        <ng-template ngbSlide *ngFor="let image of sortedImages">
+          <img [src]="image.url" class="w-100" alt="Random first slide" />
+        </ng-template>
+      </ngb-carousel>
+
+      <button
+        class="btn btn-outline-primary mdi mdi-image-multiple mt-2"
+        (click)="open(modalContent)"
+        [disabled]="readonly"
+      >
+        {{ text['PHOTO_STORY'] }}
+      </button>
+    </div>
+  </div>
+
+  <div class="w-100 d-flex justify-content-end mt-2">
+    <div>
+      <button
+        type="button"
+        *ngIf="!readonly"
+        (click)="onNext.next(true)"
+        class="btn btn-primary float-right"
+      >
+      {{ text['POST'] }}
+        <span *ngIf="!loading" class="mdi mdi-chevron-right"></span>
+        <span *ngIf="loading" class="mdi mdi-loading mdi-spin"></span>
+      </button>
+    </div>
+  </div>
+</diggel-item-header>
+
+<ng-template #modalContent let-modal>
+  <div class="modal-header shadow-sm">
+    <h4 class="modal-title mdi mdi-camera-iris" id="modal-basic-title">
+      {{ text['CHOOSE_PICTURE']  }}
+    </h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div
+      *ngFor="let image of images"
+      class="p-1 cursor-pointer position-relative float-left"
+      [class.bg-primary]="image.order"
+      [class.bg-light]="!image.order"
+      style="width: 33.333333%"
+      (click)="setImageOrder(image)"
+    >
+      <img class="w-100" [src]="image.url" />
+      <div
+        class="badge badge-pill badge-primary"
+        style="position: absolute; left: 12px; bottom: 12px"
+        *ngIf="image.order"
+      >
+        {{ image.order }}/4
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer bg-light">
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      (click)="modal.close('Cancel')"
+    >
+    {{  text['CANCEL'] }}
+    </button>
+    <button type="button" class="btn btn-primary" (click)="modal.close('Next')">
+     {{  text['OK'] }}
+    </button>
+  </div>
+</ng-template>

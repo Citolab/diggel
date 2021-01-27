@@ -36,5 +36,9 @@ export const translations = {...en,
       <p>Heel de klas gebruikt het om van alles te delen.</p>
       <p>Ik wil graag dat je me helpt met registreren.</p>`,
     SPACEBOOK_POSTED: `Geplaatst om `,
-    SPACEBOOK_POST: 'Bericht'
+    SPACEBOOK_POST: 'Bericht',
+    SPACEGRAM_WELCOME_MESSAGE: `Ken jij Spacegram al? Heel de klas gebruikt het om foto's te delen!`,
+    SPACEGRAM_FOLLOWS_YOU: `Volgt jou`,
+    SPACEGRAM_FOLLOWERS: `volgers`,
+    SPACEGRAM_END_THANKS: `Bedankt voor je hulp! Ik kan Spacegram nu zelf gebruiken.`,
 }

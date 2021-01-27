@@ -1,0 +1,48 @@
+<h3>{{ text['SUGGESTED'] }}</h3>
+
+<div class="w-100 ml-2">
+  <div class="group-container">
+    <div class="list-group list-group-flush mt-3">
+      <div
+        *ngFor="let group of groups; trackBy: trackById"
+        class="list-group-item d-flex justify-content-between align-items-center px-2"
+      >
+        <div class="d-flex">
+          <div style="width: 100px">
+            <img class="image-fit" [src]="'assets/items/news/' + group.img" />
+          </div>
+          <div class="ml-2">
+            <strong
+              >{{ group.text }}
+              <span *ngIf="group.official" class="mdi mdi-check-decagram">
+              </span
+            ></strong>
+            <p>{{ group.description }}</p>
+          </div>
+        </div>
+        <button
+          (click)="toggleGroup(group.id)"
+          [class.badge-primary]="group.selected"
+          [class.text-white]="group.selected"
+          [class.border-primary]="!group.selected"
+          class="btn badge badge-pill py-2"
+          style="width: 150px"
+        >
+          <span *ngIf="!group.selected"> {{ text['REQUEST'] }}</span>
+          <span *ngIf="group.selected">{{ text['FOLLOWING'] }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+<button
+  type="button"
+  *ngIf="!readonly"
+  (click)="onNext.next(true)"
+  class="btn btn-primary float-right mt-1"
+>
+  {{ text['NEXT'] }}
+  <span *ngIf="!loading" class="mdi mdi-chevron-right"></span>
+  <span *ngIf="loading" class="mdi mdi-loading mdi-spin"></span>
+</button>

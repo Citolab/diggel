@@ -2,9 +2,17 @@ import { Type } from '@angular/core';
 import { ItemThemeType, ItemUsage } from '@diggel/data';
 import { ItemComponent, ItemDefinition } from '@diggel/ui';
 
-const infoItems = [];
+export const itemNews = 'news';
+
+export const itemWelcomeSpacegram = 'welcome';
+export const itemTangare = 'tangare';
+export const itemWorkflow = 'workflow';
+export const itemFunnyVideo = 'funny-video';
+export const itemTie = 'tie';
+
+const infoItems = [itemWelcomeSpacegram];
 const itemLocation: Map<string, string> = new Map([
-  
+
 ]);
 
 const addType = (
@@ -25,6 +33,18 @@ const addType = (
   });
 };
 
-export const itemDefinitions: ItemDefinition[] = [
+const registerItems = addType([
+  { id: itemNews, component: import('./news/news.component') }
+], ItemThemeType.registration);
 
+const feedItems = addType([
+  { id: itemWelcomeSpacegram, component: import('./welcome-spacegram/welcome-spacegram.component'), },
+  { id: itemTangare, component: import('./tangare/tangare.component') },
+  { id: itemWorkflow, component: import('./workflow/workflow.component') },
+  { id: itemFunnyVideo, component: import('./funny-video/funny-video.component') },
+  { id: itemTie, component: import('./tie/tie.component') }
+], ItemThemeType.feed);
+
+export const itemDefinitions: ItemDefinition[] = [
+  ...registerItems, ...feedItems
 ];
