@@ -23,7 +23,7 @@
     (click)="onNext.next(true)"
     class="btn btn-primary float-right mt-2"
   >
-    Plaatsen
+    {{ text['POST'] }}
     <span *ngIf="!loading" class="mdi mdi-chevron-right"></span>
     <span *ngIf="loading" class="mdi mdi-loading mdi-spin"></span>
   </button>
