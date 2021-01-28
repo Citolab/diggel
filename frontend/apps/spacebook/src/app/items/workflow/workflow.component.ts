@@ -41,13 +41,14 @@ export class WorkflowItemComponent implements ItemComponent {
         <p>Ik wil niet dat iedereen die mee wil doen een account moet aanmaken.</p>
         <p>Welke site kan ik het beste gebruiken?</p>`;
       this.text['notification'] = `Help Tom met het kiezen van een programma voor het maken van een workflow.`;
+      this.text['POST'] = `Plaatsen`;
     } else {
       this.text['post_intro'] = `
         <p>I am looking for an online tool to make a workflow with other participants online.</p>
         <p>I want everyone to contribute without having to make an account.</p>
         <p> Which site should I use?</p>`;
       this.text['notification'] = `Help Tom finding the right tool to make a workflow.`;
-
+      this.text['POST'] = `Post`;
       this.alternatives = [
         {
           id: 'A', person: 'Bahia', text: this.lang == 'nl' ?

@@ -2,7 +2,7 @@
 
 This application is generated using [Nx](https://nx.dev). It's an Angular application that can be wrapped into a Cordova app.
 
-Spacebook was created first. A year later, Spacebook changed a bit and 3 new applications were added.
+Spacebook was created first. A year later, Spacebook was changed a bit and 3 new applications were added.
 
 ## Current state
 
