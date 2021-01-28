@@ -2,12 +2,15 @@
 
 ## Introduction
 
-Diggel a prototype that is created by Cito in collaboration with the University of Twente. It presents items in a context of a digital application. There are 5 applications that are deployed on the same url:
+Diggel (digitale geletterdheid/digital literacy) a prototype created by Cito in collaboration with the University of Twente.
+Diggel plays an assessment in context of a digital application. There are 4 different contexts:
 - Spacebook: social media context
 - Spacegram: social media context
 - Webspace: student creates a website
 - Spacetalk: student creates a slide show
-- Diggel: contains the login, start and end pages.
+
+Each context is an different Angular application deployed on a subsite of the same domain.
+A fifth application named: Diggel contains the login, start and end pages and is deployed in the root.
 
 ![alt text](screenshot.png)
 

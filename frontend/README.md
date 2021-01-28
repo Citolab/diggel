@@ -3,14 +3,14 @@
 This application is generated using [Nx](https://nx.dev)
 It's an Angular application that can be wrapped into a Cordova app.
 
-Spacebook was created first. A year later, Spacebook changed a bit and 3 new applications were added.
+Spacebook was created first. A year later, Spacebook was changed a bit and 3 new applications were added.
 
 ## Current state
 
-This application is a copy of the original application that contain items that are not allowed to share.
+This application is a copy of the original application that contains items that are not allowed to share.
 
 All items and removed. 5 example items are created and added to Spacebook and Spacegram.
-Because everything in the application was in Dutch we did some translations, but there are still some Dutch textes.
+Because everything in the application was in Dutch it's translated, but there are still some Dutch textes.
 
 The application is build to run on a specific Samsung tablet. Resolutions/aspect ratios other than this tablet aren't tested.
 
