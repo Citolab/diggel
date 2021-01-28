@@ -19,20 +19,10 @@ export class FunnyVideoItemComponent implements ItemComponent {
   response = '';
   alternatives: { id: string, text: string }[] = []
   text: Map<string, string> = new Map([]);
+  private lang = '';
 
-  getNotification = () => this.text['notification'];
-
-  setInitialValue(itemResult: ItemResult): void {
-    if (itemResult) {
-      itemResult.responses.forEach((response) => {
-        this.response = response.value;
-      });
-    } else {
-      this.response = '';
-    }
-  }
-
-  setLang(lang: string) {
+  set language(lang: string) {
+    this.lang = lang;
     this.alternatives = [
       {
         id: 'A', text: lang === 'nl' ?
@@ -48,7 +38,7 @@ export class FunnyVideoItemComponent implements ItemComponent {
       {
         id: 'C',
         text: lang === 'nl' ?
-        'Paard danst de Macarena' :
+          'Paard danst de Macarena' :
           'Horse dancing the Macarena'
       }
     ];
@@ -71,6 +61,18 @@ export class FunnyVideoItemComponent implements ItemComponent {
     }
   }
 
+  getNotification = () => this.text['notification'];
+
+  setInitialValue(itemResult: ItemResult): void {
+    if (itemResult) {
+      itemResult.responses.forEach((response) => {
+        this.response = response.value;
+      });
+    } else {
+      this.response = '';
+    }
+  }
+
   getResult(): ItemResult {
     const totalScore = this.response === 'C' ? 1 : 0;
     const responses = [
@@ -84,7 +86,8 @@ export class FunnyVideoItemComponent implements ItemComponent {
       id: this.id,
       feedback: defaultFeedback(
         totalScore === responses.length,
-        !!this.response
+        !!this.response,
+        this.lang
       ),
       totalScore,
       responses,

@@ -186,9 +186,13 @@ export const trim = (value: string, char: string) => {
 
 export const defaultFeedback = (
   isCorrect: boolean,
-  answered: boolean
+  answered: boolean, 
+  lang: string
 ): string => {
-  const possibleAnswers = ['Fijn 🙂', 'Dank je! 😁', 'Mooi 👍', 'Super 👌'];
+  const possibleAnswers = 
+  lang === 'nl' ? 
+    ['Fijn 🙂', 'Dank je! 😁', 'Mooi 👍', 'Super 👌'] :
+    ['Nice 🙂', 'Thanks! 😁', 'Super 👌'];
   return !answered
     ? null
     : `<span>${possibleAnswers[Math.floor(Math.random() * possibleAnswers.length)]

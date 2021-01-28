@@ -31,6 +31,7 @@ export class TieItemComponent implements ItemComponent {
 
   private answered = false;
   private imageOrdering = false;
+  private lang = '';
 
   constructor(private modalService: NgbModal, config: NgbCarouselConfig) {
     // customize default values of carousels used by this component tree
@@ -59,7 +60,8 @@ export class TieItemComponent implements ItemComponent {
     }
   }
 
-  setLang(lang: string) {
+  set language(lang: string) {
+    this.lang = lang;
     if (lang === 'nl') {
       this.text['MODAL_ACTION'] = `openen foto's`;
       this.text['CHOOSE_PICTURE'] = 'Kies fotos';
@@ -68,7 +70,7 @@ export class TieItemComponent implements ItemComponent {
       this.text['OK'] = `Klaar`;
       this.text['POST'] = `Plaatsen`;
       this.text['NOTIFICATION'] = `<p>Ik wil graag een foto-verhaal delen over hoe je een knoop maakt. ` +
-      `In de fotorol staan <b>vier</b> foto's.</p><p>Selecteer deze foto's in de juiste volgorde.</p>`;
+        `In de fotorol staan <b>vier</b> foto's.</p><p>Selecteer deze foto's in de juiste volgorde.</p>`;
     } else {
       this.text['MODAL_ACTION'] = `open image galary`;
       this.text['CHOOSE_PICTURE'] = 'Select images';
@@ -78,7 +80,6 @@ export class TieItemComponent implements ItemComponent {
       this.text['POST'] = `Post`;
       this.text['NOTIFICATION'] = `<p>I want to use a slideshow to show how to tie a knot.</p>
       <p>Select the photo's in the order of making.</p>`;
-
     }
   }
 
@@ -89,7 +90,7 @@ export class TieItemComponent implements ItemComponent {
       .map((i) => i.id)
       .join('');
     const score = response === this.correct.join('') ? 1 : 0;
-    this.answered = !!this.images.find(i =>!i.order);
+    this.answered = !this.images.find(i => !i.order);
     const responses = [
       {
         interactionId: this.id,
@@ -99,13 +100,13 @@ export class TieItemComponent implements ItemComponent {
     ];
     return {
       id: this.id,
-      feedback: defaultFeedback(score === responses.length, this.answered),
+      feedback: defaultFeedback(score === responses.length, this.answered, this.lang),
       totalScore: score,
       responses
     };
   }
 
-  setImageOrder(image: { id: string, order?: number}) {
+  setImageOrder(image: { id: string, order?: number }) {
     if (!this.imageOrdering) {
       this.imageOrdering = true;
       if (image.order == null) {
@@ -144,7 +145,7 @@ export class TieItemComponent implements ItemComponent {
     }
   }
 
-  get sortedImages(): Array<{ id: string, order?: number, url: string}> {
+  get sortedImages(): Array<{ id: string, order?: number, url: string }> {
     const imagesChosen = this.images.filter((img) => img.order > 0);
     const imagesSorted = imagesChosen.sort((a, b) => a.order - b.order);
     return imagesSorted;

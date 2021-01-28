@@ -9,9 +9,9 @@ export interface ItemComponent {
   id: string;
   loading: boolean;
   location?: string;
+  language: string;
 
   getNotification(): string;
   getResult(): ItemResult;
   setInitialValue(itemResult: ItemResult): void;
-  setLang(lang: string): void;
 }

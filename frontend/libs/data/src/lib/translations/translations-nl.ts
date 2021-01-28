@@ -24,6 +24,7 @@ export const translations = {...en,
     DIGGEL_NEXT_SESSION: `Klik op verder om de volgende opdracht te starten`,
     DIGGEL_END: `Dit is het eind van de toets. Bedankt voor het meedoen!`,
     DIGGEL_NOT_ANSWERED: '<span class="h5">😱</span> Je hebt mijn vraag nog niet helemaal beantwoord.',
+    DIGGEL_REGISTRATION_NOT_ANSWERED: '<span class="h5">😱</span> The registration is not yet completed.',
     DIGGEL_NEXT_ITEM: 'Ok, dan gaan we verder!',
     DIGGEL_HELP: `Ik ga je helpen`,
     DIGGEL_WELCOME: `

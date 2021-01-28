@@ -33,7 +33,8 @@ export class WorkflowItemComponent implements ItemComponent {
     }
   }
 
-  setLang(lang: string) {
+  set language(lang: string) {
+    this.lang = lang;
     if (lang === 'nl') {
       this.text['post_intro'] = `
         <p>Ik ben opzoek naar een online tool om met andere een workflow te maken</p>
@@ -83,7 +84,7 @@ export class WorkflowItemComponent implements ItemComponent {
     ];
     return {
       id: this.id,
-      feedback: defaultFeedback(totalScore < 0, !!this.response),
+      feedback: defaultFeedback(totalScore < 0, !!this.response, this.lang),
       totalScore,
       responses
     };

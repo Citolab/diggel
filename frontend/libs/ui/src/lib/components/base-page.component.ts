@@ -204,7 +204,7 @@ export abstract class BasePageComponent implements AfterContentInit, OnDestroy {
         )
         : undefined;
     instance.readonly = true;
-    instance.setLang(this.translate.currentLang);
+    instance.language = this.translate.currentLang;
     if (restoredItemResult !== undefined) {
       instance.setInitialValue(restoredItemResult);
     }

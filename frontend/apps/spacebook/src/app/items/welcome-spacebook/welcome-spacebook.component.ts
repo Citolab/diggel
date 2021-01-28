@@ -20,7 +20,7 @@ export class WelcomeSpacebookComponent implements ItemComponent {
   loading: boolean;
   response = '';
 
-  setLang(lang: string): void {
+  set language(lang: string) {
     if (lang === 'nl') {
       this.text['notification'] = `Dank je! Het is gelukt om me te registreren.
       Ik ben benieuwd wat mijn vrienden op Spacebook zetten.`;

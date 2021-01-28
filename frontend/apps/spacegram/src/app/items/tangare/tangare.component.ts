@@ -22,8 +22,10 @@ export class TangareItemComponent implements ItemComponent {
   loading = false;
   response = '';
   text: Map<string, string> = new Map([]);
+  private lang = '';
 
-  setLang(lang: string) {
+  set language(lang: string) {
+    this.lang = lang;
     if (lang === 'nl') {
       this.text['post_intro'] = `<p>Hier een vogel uit Brazilië.
         Hij heeft 7 kleuren maar ik ben zijn naam vergeten.</p>
@@ -83,7 +85,7 @@ export class TangareItemComponent implements ItemComponent {
       id: this.id,
       feedback: defaultFeedback(
         totalScore === responses.length,
-        !!this.response
+        !!this.response, this.lang
       ),
       totalScore,
       responses,

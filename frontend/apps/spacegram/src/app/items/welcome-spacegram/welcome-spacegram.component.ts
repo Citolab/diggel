@@ -17,7 +17,8 @@ export class WelcomeSpacegramComponent implements ItemComponent {
   loading: boolean;
   response = '';
   text: Map<string, string> = new Map([]);
-  setLang(lang: string): void {
+
+  set language(lang: string) {
     if (lang === 'nl') {
       this.text['notification'] = `Bedankt! Het is gelukt om te registreren.
       Ik ben benieuwd wat ik kan vinden op Spacegram.`;

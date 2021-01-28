@@ -15,12 +15,7 @@ export class RegistrationComponent extends BasePageComponent implements OnInit {
   public itemDefinitions = itemDefinitions;
   public theme = ItemThemeType.registration;
   ngOnInit(): void {
-    this.translate.setTranslation('en', {
-      DIGGEL_NOT_ANSWERED: '<span class="h5">😱</span> The registration is not yet completed.'
-    }, true);
-    this.translate.setTranslation('nl', {
-      DIGGEL_NOT_ANSWERED: '<span class="h5">😱</span> Je bent nog niet klaar met registreren.'
-    }, true);
+    this.notificationMessage = this.translate.instant('DIGGEL_REGISTRATION_NOT_ANSWERED');
     const stepText = this.translate.currentLang === 'nl' ?
     ['Account', 'Suggesties', 'Volgen'] :
     ['Account', 'Suggestions', 'Follow'];

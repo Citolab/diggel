@@ -21,6 +21,7 @@ export class NewsItemComponent
   modalOpened = false;
   text: Map<string, string> = new Map([]);
   groups: { id: string, text: string, description: string, official: boolean, img: string, selected: boolean, isCorrect: boolean }[] = [];
+  private lang = '';
 
   toggleGroup(id: string) {
     const matchingGroup = this.groups.find(g => g.id === id);
@@ -37,7 +38,8 @@ export class NewsItemComponent
     });
   }
 
-  setLang(lang: string) {
+  set language(lang: string) {
+    this.lang = lang;
     this.groups = [
       {
         id: 'breaking_news',
@@ -124,14 +126,15 @@ export class NewsItemComponent
     return {
       id: this.id,
       feedback: defaultFeedback(score === 1,
-        !!this.groups.find(g => g.selected)
+        !!this.groups.find(g => g.selected),
+        this.lang
       ),
       totalScore: score,
       responses,
     };
   }
 
-  trackById(_: number, { id }:{ id: string }) {
+  trackById(_: number, { id }: { id: string }) {
     return id;
   }
 
