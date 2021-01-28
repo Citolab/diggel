@@ -16,4 +16,4 @@ The backoffice is used to:
 
 - Manage groups and users
 - Download export files
-- Download the .apk (if place in the remote_server_apk folder)
+- Download the .apk (if placed in the `remote_server_apk` folder)
