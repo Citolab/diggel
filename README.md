@@ -16,7 +16,7 @@ A fifth application named *Diggel* contains the login, start and end pages and i
 
 ## Demo
 
-A demo application is deployed [here](https://diggel.azurewebsites.net/).
+A demo application with dummy items is deployed [here](https://diggel.azurewebsites.net/).
 The code 55555 can be used to login as an demo user.
 Other than using the system as a regular user (a learner), a demo user has a slightly different experience:
 - A demo user can navigate through items<sup>[1](#fn1)</sup>

@@ -11,6 +11,9 @@ export const translations = {
   DIGGEL_GOOD_LUCK: 'Good luck with helping Susan!',
   DIGGEL_LOGIN_DESCRIPTION: `
       <p>Hi!</p>
+      <p>This is a demo version of Diggel. Use code '55555' to login as demo-user.
+      There are 5 dummy-items in Spacegram and Spacebook. 
+      The other applications don't have any content yet.</p>
       <p>
         You'll about to help Susan in two digital environments. She'll send
         you messages to ask for your help.

@@ -13,6 +13,8 @@ export const translations = {...en,
     DIGGEL_GOOD_LUCK: 'Veel success met het helpen van Susan!',
     DIGGEL_LOGIN_DESCRIPTION: `
       <p>Welkom!</p>
+      <p>Dit is de demo versie van Diggel. Je kunt de code '55555' gebruiken om als demo gebruiker in te loggen.
+      Spacegram en Spacebook bevatten 5 dummy-items. De andere omgevingen bevatten (nog) geen dummy-items.</p>
       <p>
         Je gaat zo meteen Susan helpen in twee digitale omgevingen. Ze
         stuurt je steeds berichtjes waarin ze jou om hulp vraagt.
