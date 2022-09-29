@@ -11,8 +11,8 @@ namespace Diggel.Logic.Requests.Commands
         private string adminUserPassword = string.Empty;
         public LoginCommand(IConfiguration configuration)
         {
-            adminUserName = configuration.GetValue<string>("AppSettings:backoffice_admin_username");
-            adminUserPassword = configuration.GetValue<string>("AppSettings:backoffice_admin_password");
+            adminUserName = configuration["AppSettings:backoffice_admin_username"];
+            adminUserPassword = configuration["AppSettings:backoffice_admin_password"];
         }
         public string Username { get; set; }
         public string Password { get; set; }

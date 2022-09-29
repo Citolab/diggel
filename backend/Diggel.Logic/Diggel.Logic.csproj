@@ -1,15 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Citolab.Persistence" Version="2020.3.23.3" />
+      <PackageReference Include="Citolab.Persistence" Version="2022.3.29.2" />
       <PackageReference Include="CsvHelper" Version="18.0.0" />
       <PackageReference Include="NinjaNye.SearchExtensions" Version="3.0.1" />
       <PackageReference Include="NinjaNye.SearchExtensions.Levenshtein" Version="3.0.1" />
 
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="Microsoft.Extensions.Configuration" />
+    </ItemGroup>
 </Project>
