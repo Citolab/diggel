@@ -49,29 +49,30 @@ export class WorkflowItemComponent implements ItemComponent {
         <p> Which site should I use?</p>`;
       this.text['notification'] = `Help Tom finding the right tool to make a workflow.`;
       this.text['POST'] = `Post`;
-      this.alternatives = [
-        {
-          id: 'A', person: 'Bahia', text: this.lang == 'nl' ?
-            'Volgens mij kun je dat met WorkFlow doen.' :
-            'I think you can use WorkFlow.'
-        },
-        {
-          id: 'B', person: 'Camil', text: this.lang == 'nl' ?
-            'Dat kan met FlowChart' :
-            'You should use FlowChart'
-        },
-        {
-          id: 'C', person: 'Anne', text: this.lang == 'nl' ?
-            'Nee Workload Rage kun je daarvoor gebruiken.' :
-            'No you should use Workload Rage.'
-        },
-        {
-          id: 'D', person: 'Novan', text: this.lang == 'nl' ?
-            'Je kunt hier het beste Chart Up voor gebruiken.' :
-            'I would recommend Chart Up.'
-        }
-      ];
     }
+    this.alternatives = [
+      {
+        id: 'A', person: 'Bahia', text: this.lang == 'nl' ?
+          'Volgens mij kun je dat met WorkFlow doen.' :
+          'I think you can use WorkFlow.'
+      },
+      {
+        id: 'B', person: 'Camil', text: this.lang == 'nl' ?
+          'Dat kan met FlowChart' :
+          'You should use FlowChart'
+      },
+      {
+        id: 'C', person: 'Anne', text: this.lang == 'nl' ?
+          'Nee Workload Rage kun je daarvoor gebruiken.' :
+          'No you should use Workload Rage.'
+      },
+      {
+        id: 'D', person: 'Novan', text: this.lang == 'nl' ?
+          'Je kunt hier het beste Chart Up voor gebruiken.' :
+          'I would recommend Chart Up.'
+      }
+    ];
+
   }
 
   getResult(): ItemResult {
