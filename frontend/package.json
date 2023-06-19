@@ -34,6 +34,7 @@
     "build:spacegram:prod:cordova": "ng build spacegram --delete-output-path --prod --base-href . --output-path tools/android-app/www/spacegram",
     "build:webspace:prod:cordova": "ng build webspace --delete-output-path --prod --base-href . --output-path tools/android-app/www/webspace",
     "build:spacetalk:prod:cordova": "ng build spacetalk --delete-output-path --prod --base-href . --output-path tools/android-app/www/spacetalk",
+    "deploy:diggel:nobackend": "firebase use citolab-qti && firebase deploy --only hosting:spacebook",
     "apk:build": "npm run build:prod:cordova && npm run --prefix tools/android-app apk:build",
     "apk:nobuild": "npm run --prefix tools/android-app apk:build",
     "lint": "nx workspace-lint && ng lint diggel && ng lint spacebook && ng lint spacegram && ng lint webspace && ng lint spacetalk && ng lint data && ng lint ui",

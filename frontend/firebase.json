@@ -1,0 +1,22 @@
+{
+  "hosting": [
+    {
+      "target": "spacebook",
+      "public": "dist/apps/spacebook",
+      "predeploy": [
+        "nx build spacebook --configuration=production-nobackend"
+      ],
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

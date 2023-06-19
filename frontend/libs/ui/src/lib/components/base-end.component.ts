@@ -27,7 +27,7 @@ export abstract class BaseEndPageComponent implements OnInit, OnDestroy {
     protected translate: TranslateService
   ) {
     toastr.clear();
-    this.textSessionReady = translate.instant('SPACEBOOK_END_THANKS`,');
+    this.textSessionReady = translate.instant('SPACEBOOK_END_THANKS');
   }
   ngOnDestroy(): void {
     if (this.endSubscription) {

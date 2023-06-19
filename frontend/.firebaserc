@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "citolab-qti",
+    "spacebook": "citolab-qti"
+  },
+  "targets": {
+    "citolab-qti": {
+      "hosting": {
+        "spacebook": [
+          "citolab-spacebook"
+        ]
+      }
+    }
+  }
+}
