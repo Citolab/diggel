@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/332690061.svg)](https://zenodo.org/doi/10.5281/zenodo.13842997)
+
 ## Diggel - introduction
 
 Diggel (**Dig**itale **gel**etterdheid - digital literacy) is a prototype that is created by Cito in collaboration with the University of Twente (Netherlands). It presents items<sup>[1](#fn1)</sup> in the context of simulated social media and content creation apps. 
