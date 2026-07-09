@@ -1,0 +1,19 @@
+/* Spacegram (Instagram-style) QTI overrides */
+
+:host {
+  --env-primary: #d65db1;
+  --env-primary-light: #e87fc4;
+}
+
+qti-assessment-section[identifier='feed'] qti-assessment-item-ref {
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.welcome-hero {
+  border-radius: 0.25rem;
+}

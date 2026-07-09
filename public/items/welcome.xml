@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qti-assessment-item
+  xmlns="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"
+  identifier="welcome"
+  title="Welcome to Spacebook"
+  adaptive="false"
+  time-dependent="false"
+  xml:lang="en"
+>
+  <div class="type:susan">
+    <p>Hi! I just signed up for Spacebook. Can you help me get started?</p>
+    <p>I'll post some things here that I need your help with.</p>
+  </div>
+  <qti-item-body>
+    <p><strong>Welcome to Spacebook</strong></p>
+    <p>
+      This is a prototype of the Diggel digital literacy assessment, now powered
+      by QTI items instead of fixed Angular components.
+    </p>
+    <p>Click <em>Continue</em> when you're ready to help Susan.</p>
+  </qti-item-body>
+</qti-assessment-item>

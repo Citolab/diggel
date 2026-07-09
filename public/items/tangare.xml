@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qti-assessment-item xmlns="http://www.imsglobal.org/xsd/imsqtiasi_v3p0" identifier="tangare" title="Bird from Brazil" adaptive="false" time-dependent="false" xml:lang="en">
+  <qti-response-declaration identifier="RESPONSE" cardinality="single" base-type="string">
+    <qti-correct-response><qti-value>tangare</qti-value></qti-correct-response>
+  </qti-response-declaration>
+  <qti-outcome-declaration identifier="SCORE" cardinality="single" base-type="float">
+    <qti-default-value><qti-value>0</qti-value></qti-default-value>
+  </qti-outcome-declaration>
+  <div class="type:susan">
+    <p>Camil found such a funny bird! Search on the Internet for the name of this bird.</p>
+    <p>Enter the name of the bird in a comment. <a href="https://www.google.com">Search on Internet</a></p>
+  </div>
+  <qti-item-body>
+    <p>Look at this bird from Brazil. It has 7 colors but I don't know the name.</p>
+    <p>Does anyone know the name of this bird? 🤔</p>
+    <p><img src="assets/items/tangare/tangare.jpg" alt="Colorful bird" style="width:100%"/></p>
+    <qti-extended-text-interaction class="type:comment" response-identifier="RESPONSE" expected-lines="1" data-correct-response="tangare" data-score="1">
+      <qti-prompt><p>Write a comment with the bird's name:</p></qti-prompt>
+    </qti-extended-text-interaction>
+  </qti-item-body>
+</qti-assessment-item>

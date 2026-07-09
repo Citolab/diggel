@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qti-assessment-item xmlns="http://www.imsglobal.org/xsd/imsqtiasi_v3p0" identifier="workflow" title="Workflow tool" adaptive="false" time-dependent="false" xml:lang="en">
+  <qti-response-declaration identifier="RESPONSE" cardinality="single" base-type="identifier">
+    <qti-correct-response><qti-value>A</qti-value></qti-correct-response>
+  </qti-response-declaration>
+  <qti-outcome-declaration identifier="SCORE" cardinality="single" base-type="float">
+    <qti-default-value><qti-value>0</qti-value></qti-default-value>
+  </qti-outcome-declaration>
+  <div class="type:susan">
+    <p>Help Tom finding the right tool to make a workflow.</p>
+  </div>
+  <qti-item-body>
+    <p>I am looking for an online tool to make a workflow with other participants online.</p>
+    <p>I want everyone to contribute without having to make an account. Which site should I use?</p>
+    <qti-choice-interaction class="type:like" response-identifier="RESPONSE" max-choices="1" data-correct-response="A" data-score="1">
+      <qti-prompt><p>Like the best suggestion:</p></qti-prompt>
+      <qti-simple-choice identifier="A">
+        <img class="like-suggestion__avatar" src="assets/profile-pics-feed/Bahia.png" alt="" />
+        <div class="like-suggestion__bubble">
+          <div class="like-suggestion__name">Bahia</div>
+          <p class="like-suggestion__text">I think you can use WorkFlow.</p>
+        </div>
+      </qti-simple-choice>
+      <qti-simple-choice identifier="B">
+        <img class="like-suggestion__avatar" src="assets/profile-pics-feed/Camil.png" alt="" />
+        <div class="like-suggestion__bubble">
+          <div class="like-suggestion__name">Camil</div>
+          <p class="like-suggestion__text">You should use FlowChart</p>
+        </div>
+      </qti-simple-choice>
+      <qti-simple-choice identifier="C">
+        <img class="like-suggestion__avatar" src="assets/profile-pics-feed/Anne.png" alt="" />
+        <div class="like-suggestion__bubble">
+          <div class="like-suggestion__name">Anne</div>
+          <p class="like-suggestion__text">No you should use Workload Rage.</p>
+        </div>
+      </qti-simple-choice>
+      <qti-simple-choice identifier="D">
+        <img class="like-suggestion__avatar" src="assets/profile-pics-feed/Novan.png" alt="" />
+        <div class="like-suggestion__bubble">
+          <div class="like-suggestion__name">Novan</div>
+          <p class="like-suggestion__text">I would recommend Chart Up.</p>
+        </div>
+      </qti-simple-choice>
+    </qti-choice-interaction>
+  </qti-item-body>
+</qti-assessment-item>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qti-assessment-item
+  xmlns="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"
+  identifier="funny-video"
+  title="Share a funny video"
+  adaptive="false"
+  time-dependent="false"
+  xml:lang="en"
+>
+  <qti-response-declaration identifier="RESPONSE" cardinality="single" base-type="identifier">
+    <qti-correct-response>
+      <qti-value>C</qti-value>
+    </qti-correct-response>
+  </qti-response-declaration>
+  <qti-outcome-declaration identifier="SCORE" cardinality="single" base-type="float">
+    <qti-default-value><qti-value>0</qti-value></qti-default-value>
+  </qti-outcome-declaration>
+  <qti-outcome-declaration identifier="MAXSCORE" cardinality="single" base-type="float">
+    <qti-default-value><qti-value>1</qti-value></qti-default-value>
+  </qti-outcome-declaration>
+
+  <div class="type:susan">
+    <p>Yeah! Tom is asked by the local newspaper! Vote for the video that is most suitable to be shared.</p>
+  </div>
+
+  <qti-item-body>
+    <p>I was asked to send in one of my videos for the funny video public page of the local newspaper.</p>
+    <p>Which one should I share with them to publish on their website?</p>
+    <p><strong>Vote here.</strong></p>
+    <qti-choice-interaction
+      class="type:poll"
+      response-identifier="RESPONSE"
+      max-choices="1"
+      data-correct-response="C"
+      data-score="1"
+    >
+      <qti-prompt>
+        <p>Pick the most appropriate video to share publicly:</p>
+      </qti-prompt>
+      <qti-simple-choice identifier="A">
+        <p>Parrot in hotel lobby insulting guests</p>
+      </qti-simple-choice>
+      <qti-simple-choice identifier="B">
+        <p>Cat chasing a naked baby through the snow</p>
+      </qti-simple-choice>
+      <qti-simple-choice identifier="C">
+        <p>Horse dancing the Macarena</p>
+      </qti-simple-choice>
+    </qti-choice-interaction>
+  </qti-item-body>
+  <qti-response-processing template="https://purl.imsglobal.org/spec/qti/v3p0/rptemplates/match_correct"/>
+</qti-assessment-item>

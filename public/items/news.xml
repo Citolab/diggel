@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qti-assessment-item
+  xmlns="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"
+  identifier="news"
+  title="Follow news pages"
+  adaptive="false"
+  time-dependent="false"
+  xml:lang="en"
+>
+  <qti-response-declaration identifier="RESPONSE" cardinality="multiple" base-type="identifier">
+    <qti-correct-response>
+      <qti-value>breaking_news</qti-value>
+      <qti-value>news</qti-value>
+    </qti-correct-response>
+  </qti-response-declaration>
+  <qti-outcome-declaration identifier="SCORE" cardinality="single" base-type="float">
+    <qti-default-value><qti-value>0</qti-value></qti-default-value>
+  </qti-outcome-declaration>
+  <qti-outcome-declaration identifier="MAXSCORE" cardinality="single" base-type="float">
+    <qti-default-value><qti-value>1</qti-value></qti-default-value>
+  </qti-outcome-declaration>
+
+  <div class="type:susan">
+    <p>I want reliable news sources in my feed. Which pages should I follow?</p>
+  </div>
+
+  <qti-item-body>
+    <qti-choice-interaction
+      class="type:follow"
+      response-identifier="RESPONSE"
+      max-choices="5"
+      data-correct-response="breaking_news news"
+      data-score="1"
+    >
+      <qti-simple-choice identifier="breaking_news">
+        <div class="follow-page-option">
+          <img class="follow-page-option__thumb" src="assets/items/news/breaking_news.png" alt="" />
+          <div>
+            <strong>Latest news <img class="verified-badge" src="assets/items/news/verified.png" alt="" /></strong>
+            <p>Latest news</p>
+          </div>
+        </div>
+      </qti-simple-choice>
+      <qti-simple-choice identifier="good_news">
+        <div class="follow-page-option">
+          <img class="follow-page-option__thumb" src="assets/items/news/good_news.png" alt="" />
+          <div>
+            <strong>Good news</strong>
+            <p>Only happy posts here</p>
+          </div>
+        </div>
+      </qti-simple-choice>
+      <qti-simple-choice identifier="news">
+        <div class="follow-page-option">
+          <img class="follow-page-option__thumb" src="assets/items/news/news.png" alt="" />
+          <div>
+            <strong>News <img class="verified-badge" src="assets/items/news/verified.png" alt="" /></strong>
+            <p>News stories that matter</p>
+          </div>
+        </div>
+      </qti-simple-choice>
+      <qti-simple-choice identifier="meme_news">
+        <div class="follow-page-option">
+          <img class="follow-page-option__thumb" src="assets/items/news/meme_news.png" alt="" />
+          <div>
+            <strong>Meme News</strong>
+            <p>Meme \ Viral \ News</p>
+          </div>
+        </div>
+      </qti-simple-choice>
+      <qti-simple-choice identifier="new_social">
+        <div class="follow-page-option">
+          <img class="follow-page-option__thumb" src="assets/items/news/new_social.png" alt="" />
+          <div>
+            <strong>newsocial <img class="verified-badge" src="assets/items/news/verified.png" alt="" /></strong>
+            <p>Our new social products</p>
+          </div>
+        </div>
+      </qti-simple-choice>
+    </qti-choice-interaction>
+  </qti-item-body>
+  <qti-response-processing template="https://purl.imsglobal.org/spec/qti/v3p0/rptemplates/match_correct"/>
+</qti-assessment-item>

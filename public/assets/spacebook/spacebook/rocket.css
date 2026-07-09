@@ -1,0 +1,70 @@
+/* 
+https://css-tricks.com/animating-svg-css/
+https://glennmccomb.com/articles/creating-smooth-sequential-animations-with-sass/
+https://www.sitepoint.com/svg-styling-with-css/
+https://css-tricks.com/using-multi-step-animations-transitions/
+*/
+
+#RocketContainer {
+  width: 128px;
+  height: 128px;
+}
+
+#MaskGroup {
+}
+
+#MaskShape {
+}
+
+#RocketFlat {
+  opacity: 0;
+  animation: show 0.5s ease forwards;
+  animation-delay: 1.3s;
+}
+
+#Clouds {
+  transform: translate(0, 0);
+  animation: kf-cloud 1s ease forwards;
+  animation-delay: 0.4s;
+}
+
+#Rocket3D {
+  animation: kf-rocket 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes kf-rocket {
+  0% {
+    transform: translate(11041px, -803px);
+  }
+  100% {
+    transform: translate(11173px, -933px);
+  }
+}
+
+@keyframes kf-cloud {
+  0% {
+    transform: translate(-130px, 130px);
+  }
+  100% {
+    transform: translate(130px, -130px);
+  }
+}

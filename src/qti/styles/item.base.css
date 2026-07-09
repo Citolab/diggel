@@ -1,0 +1,200 @@
+/*
+ * Shared Diggel QTI styles — always combined with item.spacebook.css or item.spacegram.css
+ * and injected into test-container / item-container shadow roots.
+ *
+ * Nested shadow roots (qti-simple-choice, qti-assessment-section) → injectQtiStyles.ts
+ * App chrome → index.css
+ */
+
+:host {
+  display: block;
+  width: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  --qti-border-active: var(--env-primary, #428beb);
+  --qti-bg-active: color-mix(in srgb, var(--env-primary, #428beb) 14%, white);
+  --qti-focus-color: color-mix(in srgb, var(--env-primary, #428beb) 40%, transparent);
+  --qti-focus-border-width: 3px;
+}
+
+@layer qti-components {
+  qti-extended-text-interaction {
+    &::part(textarea) {
+      border-radius: 0.5rem;
+    }
+
+    &:focus-within {
+      &::part(textarea) {
+        border-color: var(--env-primary, #428beb) !important;
+        box-shadow: 0 0 0 var(--qti-focus-border-width) var(--qti-focus-color) !important;
+      }
+    }
+  }
+
+  qti-text-entry-interaction {
+    &:focus-within {
+      &::part(input) {
+        border-color: var(--env-primary, #428beb) !important;
+        box-shadow: 0 0 0 var(--qti-focus-border-width) var(--qti-focus-color) !important;
+      }
+    }
+  }
+
+  qti-choice-interaction-poll qti-simple-choice:focus:not(:focus-visible),
+  qti-choice-interaction-like qti-simple-choice:focus:not(:focus-visible),
+  qti-choice-interaction-follow qti-simple-choice:focus:not(:focus-visible) {
+    box-shadow: none !important;
+  }
+}
+
+qti-assessment-item-ref {
+  display: block;
+}
+
+qti-rubric-block[use='instructions'] {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+qti-rubric-block qti-content-body {
+  padding: 0;
+  margin: 0;
+}
+
+.diggel-item-body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #1c1e21;
+  overflow: hidden;
+}
+
+.diggel-item-body img {
+  max-width: 100%;
+  height: auto;
+}
+
+.like-suggestion {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.like-suggestion__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+
+.like-suggestion__bubble {
+  flex: 1;
+  min-width: 0;
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.like-suggestion__name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1c1e21;
+  margin-bottom: 0.15rem;
+}
+
+.like-suggestion__text {
+  margin: 0;
+  color: #1c1e21;
+  line-height: 1.4;
+}
+
+.follow-page-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+qti-item-body {
+  padding: 0;
+}
+
+.welcome-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--env-primary);
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 2rem 1rem;
+}
+
+.welcome-hero__rocket,
+.welcome-hero object,
+.welcome-hero img {
+  display: block;
+  width: 128px;
+  height: 128px;
+  border: none;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+.welcome-hero__label {
+  margin: 0.5rem 0 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.welcome-hero__title {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.diggel-post-reaction {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.diggel-post-reaction__avatar {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.diggel-post-reaction__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.diggel-post-reaction__bubble {
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.diggel-post-reaction__name {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1c1e21;
+  margin-bottom: 0.15rem;
+}
+
+.diggel-post-reaction__text {
+  margin: 0;
+  color: #1c1e21;
+  line-height: 1.4;
+  word-break: break-word;
+}

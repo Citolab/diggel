@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40.958" height="43.509" viewBox="0 0 40.958 43.509">
+  <g id="icon-spacegram-satellite" transform="translate(0.5 0.662)">
+    <circle id="Ellipse_170" data-name="Ellipse 170" cx="6.405" cy="6.405" r="6.405" transform="translate(3.536 3.451)" fill="none" stroke="#d85bb2" stroke-miterlimit="10" stroke-width="1"/>
+    <circle id="Ellipse_172" data-name="Ellipse 172" cx="10" cy="10" r="10" fill="none" stroke="#d85bb2" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Path_3710" data-name="Path 3710" d="M390.636,171.788,417.322,145.1s11.288,11.292-2.054,24.63S390.636,171.788,390.636,171.788Z" transform="translate(-388.875 -143.646)" fill="#fff"/>
+    <path id="Path_3711" data-name="Path 3711" d="M422.749,180.68v5.934l5.932-4.449v-8.16" transform="translate(-398.74 -152.525)" fill="#bfbfbf"/>
+    <path id="Path_3712" data-name="Path 3712" d="M414.186,195.672v-2.966l17.8-13.348h2.966l-5.933,11.865Z" transform="translate(-396.109 -154.17)" fill="#bfbfbf"/>
+    <path id="Path_3714" data-name="Path 3714" d="M422.749,180.68v5.934l5.932-4.449v-8.16" transform="translate(-398.74 -152.525)" fill="#fff" stroke="#d85bb2" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_3715" data-name="Path 3715" d="M414.186,195.672v-2.966l17.8-13.348h2.966l-5.933,11.865Z" transform="translate(-396.109 -154.17)" fill="#fff" stroke="#d85bb2" stroke-miterlimit="10" stroke-width="2"/>
+    <g id="Group_1514" data-name="Group 1514" transform="translate(1.762 1.459)">
+      <path id="Path_3713" data-name="Path 3713" d="M390.636,171.788,417.322,145.1s11.288,11.292-2.054,24.63S390.636,171.788,390.636,171.788Z" transform="translate(-390.636 -145.104)" fill="none" stroke="#d85bb2" stroke-miterlimit="10" stroke-width="3"/>
+      <line id="Line_80" data-name="Line 80" y1="25.604" x2="25.606" transform="translate(3.619 3.619)" fill="none" stroke="#d85bb2" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="Line_81" data-name="Line 81" x1="3.079" y1="3.077" transform="translate(9.749 9.751)" fill="none" stroke="#d85bb2" stroke-miterlimit="10" stroke-width="2"/>
+      <circle id="Ellipse_174" data-name="Ellipse 174" cx="2.903" cy="2.903" r="2.903" transform="translate(5.307 5.309)" fill="none" stroke="#d85bb2" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

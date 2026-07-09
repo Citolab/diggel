@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qti-assessment-item
+  xmlns="http://www.imsglobal.org/xsd/imsqtiasi_v3p0"
+  identifier="tie"
+  title="Photo story — tie a knot"
+  adaptive="false"
+  time-dependent="false"
+  xml:lang="en"
+>
+  <qti-response-declaration identifier="RESPONSE" cardinality="ordered" base-type="identifier">
+    <qti-correct-response>
+      <qti-value>step_knopen_maken</qti-value>
+      <qti-value>step_knopen</qti-value>
+      <qti-value>step_knoop</qti-value>
+      <qti-value>step_knoop_maken</qti-value>
+    </qti-correct-response>
+  </qti-response-declaration>
+  <qti-outcome-declaration identifier="SCORE" cardinality="single" base-type="float">
+    <qti-default-value><qti-value>0</qti-value></qti-default-value>
+  </qti-outcome-declaration>
+  <qti-outcome-declaration identifier="MAXSCORE" cardinality="single" base-type="float">
+    <qti-default-value><qti-value>1</qti-value></qti-default-value>
+  </qti-outcome-declaration>
+
+  <div class="type:susan">
+    <p>I want to use a slideshow to show how to tie a knot.</p>
+    <p>Select the <b>four</b> photos in the order of making.</p>
+  </div>
+
+  <qti-item-body>
+    <p>Order the photos for Susan's knot-tying slideshow:</p>
+    <qti-order-interaction
+      class="type:photostory"
+      response-identifier="RESPONSE"
+      shuffle="false"
+      data-correct-response="step_knopen_maken step_knopen step_knoop step_knoop_maken"
+      data-score="1"
+    >
+      <qti-prompt>
+        <p>Select the four photos in the order of making (first step first).</p>
+      </qti-prompt>
+      <qti-simple-choice identifier="step_knopen_maken">
+        <img src="assets/items/tie/knopen maken.png" alt="Start with the rope loop" />
+      </qti-simple-choice>
+      <qti-simple-choice identifier="step_knopen">
+        <img src="assets/items/tie/knopen.png" alt="Cross the ends" />
+      </qti-simple-choice>
+      <qti-simple-choice identifier="step_knoop">
+        <img src="assets/items/tie/knoop.png" alt="Pull through the knot" />
+      </qti-simple-choice>
+      <qti-simple-choice identifier="step_knoop_maken">
+        <img src="assets/items/tie/knoop maken.png" alt="Tighten the finished knot" />
+      </qti-simple-choice>
+    </qti-order-interaction>
+  </qti-item-body>
+  <qti-response-processing template="https://purl.imsglobal.org/spec/qti/v3p0/rptemplates/match_correct"/>
+</qti-assessment-item>

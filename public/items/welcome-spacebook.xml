@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qti-assessment-item xmlns="http://www.imsglobal.org/xsd/imsqtiasi_v3p0" identifier="welcome-spacebook" title="Welcome to Spacebook" adaptive="false" time-dependent="false" xml:lang="en">
+  <qti-item-body>
+    <div class="welcome-hero">
+      <object id="RocketContainer" class="welcome-hero__rocket" data="assets/spacebook/rocket.svg" type="image/svg+xml" width="128" height="128"></object>
+      <p class="welcome-hero__label">Welcome to</p>
+      <h2 class="welcome-hero__title">SPACEBOOK</h2>
+      <p>Tap <strong>Continue</strong> below when you're ready.</p>
+    </div>
+  </qti-item-body>
+</qti-assessment-item>
