@@ -1,8 +1,10 @@
 import {
   forwardRef,
+  memo,
   useCallback,
   useEffect,
   useImperativeHandle,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -91,8 +93,12 @@ type QtiTestElement = IQtiTest & {
   ) => ReturnType<typeof applyDiggelTestTransform>;
 };
 
-export const QtiTestPlayer = forwardRef<QtiTestPlayerHandle, QtiTestPlayerProps>(
-  function QtiTestPlayer(
+// Memoized: an answer triggers a debounced session save (recordResult) which
+// re-renders the feed. Without memo, this player re-renders and re-touches
+// <test-container>, remounting the item (a visible content/scrollbar flash).
+// All props are stable references, so memo skips those re-renders.
+export const QtiTestPlayer = memo(
+  forwardRef<QtiTestPlayerHandle, QtiTestPlayerProps>(function QtiTestPlayer(
     {
       testUrl,
       itemId,
@@ -308,27 +314,34 @@ export const QtiTestPlayer = forwardRef<QtiTestPlayerHandle, QtiTestPlayerProps>
     return () => test.removeEventListener('qti-test-loaded', onTestLoaded);
   }, [applyLayoutStyles, isConnected]);
 
-  const initContext = items.map((item) => {
-    const regularItems = items.filter((i) => i.usage !== 'info');
-    const seqNr =
-      item.usage === 'info'
-        ? -1
-        : regularItems.findIndex((i) => i.identifier === item.identifier);
+  // Memoized so re-renders (e.g. after recordResult on answer) don't hand
+  // test-navigation a new array — that re-initializes the test and remounts the
+  // item, which resets the page scroll.
+  const initContext = useMemo(
+    () =>
+      items.map((item) => {
+        const regularItems = items.filter((i) => i.usage !== 'info');
+        const seqNr =
+          item.usage === 'info'
+            ? -1
+            : regularItems.findIndex((i) => i.identifier === item.identifier);
 
-    return {
-      identifier: item.identifier,
-      name: item.title,
-      seqNr,
-      completionStatus: 'not-attempted',
-      score: 0,
-      maxScore: 0,
-    };
-  });
+        return {
+          identifier: item.identifier,
+          name: item.title,
+          seqNr,
+          completionStatus: 'not-attempted',
+          score: 0,
+          maxScore: 0,
+        };
+      }),
+    [items]
+  );
 
   return (
     <div className={className ? `qti-test-player ${className}` : 'qti-test-player'}>
       <qti-test ref={testRef} className="qti-test-player__host">
-        <test-navigation auto-score-items initContext={initContext}>
+        <test-navigation initContext={initContext}>
           <test-container ref={containerRef} test-url={testUrl}>
             <template
               dangerouslySetInnerHTML={{
@@ -340,7 +353,7 @@ export const QtiTestPlayer = forwardRef<QtiTestPlayerHandle, QtiTestPlayerProps>
       </qti-test>
     </div>
   );
-  }
+  })
 );
 
 

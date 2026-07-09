@@ -1,8 +1,8 @@
 import { t } from '../data/translations';
-import { friendAvatarUrl } from '../environments/config';
 import { useEnvironment } from '../environments/EnvironmentProvider';
 import type { ItemDefinition, ItemResult } from '../types';
 
+import { FeedPostHeader } from './FeedPostHeader';
 import { QtiItemPlayer } from './QtiItemPlayer';
 
 interface FeedPostProps {
@@ -19,10 +19,6 @@ export function FeedPost({
   onSusanNotification,
 }: FeedPostProps) {
   const env = useEnvironment();
-  const time = new Date().toLocaleTimeString(navigator.language, {
-    hour: '2-digit',
-    minute: '2-digit',
-  });
 
   if (item.id.startsWith('welcome-')) {
     return (
@@ -41,11 +37,6 @@ export function FeedPost({
   const author = item.author ?? env.susanDisplayName;
   const isSusanComposing = author === env.susanDisplayName && !readonly;
 
-  const avatar =
-    author === env.susanDisplayName
-      ? env.susanProfilePic
-      : friendAvatarUrl(env, author);
-
   return (
     <article
       className={`feed-post card${readonly ? ' feed-post--readonly' : ''}`}
@@ -55,22 +46,12 @@ export function FeedPost({
     >
       {isSusanComposing && (
         <div className="feed-post__compose-header">
-          <img className="profile" src={avatar} alt="" />
+          <img className="profile" src={env.susanProfilePic} alt="" />
           <div className="feed-post__compose-tab">{t.SPACEBOOK_POST}</div>
         </div>
       )}
       <div className="feed-post__body">
-        {!isSusanComposing && (
-          <div className="feed-post__author-row">
-            <img className="profile" src={avatar} alt="" />
-            <div className="feed-post__author-meta">
-              <div className="feed-post__author-name">{author}</div>
-              <span className="feed-post__time">
-                {t.SPACEBOOK_POSTED} {time}
-              </span>
-            </div>
-          </div>
-        )}
+        {!isSusanComposing && <FeedPostHeader item={item} />}
         <QtiItemPlayer
           item={item}
           readonly={readonly}

@@ -25,7 +25,7 @@ function EnvShell() {
 
 export function App() {
   return (
-    <EnvironmentProvider environmentId="spacebook">
+    <EnvironmentProvider environmentId="spacebook" applyTheme={false}>
       <SessionProvider>
         <Routes>
           <Route path="/" element={<LoginPage />} />

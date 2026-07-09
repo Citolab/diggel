@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { AdvanceButton } from '../components/AdvanceButton';
 import { AnimatedEnter } from '../components/AnimatedEnter';
 import { FeedPost } from '../components/FeedPost';
+import { FeedPostHeader } from '../components/FeedPostHeader';
 import { AppLayout } from '../components/layout/AppLayout';
 import {
   QtiTestPlayer,
@@ -22,6 +23,8 @@ export function FeedPage() {
   const { envId } = useParams<{ envId: string }>();
   const env = useEnvironment();
   const { session, items, currentItem, recordResult, advance } = useSession();
+  // Stable reference so QtiTestPlayer doesn't re-init on every re-render.
+  const testPlayerItems = useMemo(() => toTestPlayerItems(items), [items]);
   const { activeNotification, showNotification, dismissNotification } =
     useSusanNotifications();
   const testPlayerRef = useRef<QtiTestPlayerHandle>(null);
@@ -100,26 +103,54 @@ export function FeedPage() {
           aria-current="step"
         >
           <AnimatedEnter key={currentItem.id}>
-            <div className="feed-stack__item">
-              <QtiTestPlayer
-                ref={testPlayerRef}
-                testUrl={TEST_URL_BY_ENV[envId]}
-                itemId={currentItem.id}
-                items={toTestPlayerItems(items)}
-                assetBase={env.assetBase}
-                onSusanNotification={showNotification}
-                onItemReady={scrollToCurrentItem}
-                onResponsesChanged={handleResponsesChanged}
-              />
-              <footer className="feed-actions">
-                <AdvanceButton
-                  loading={isPosting}
-                  label={currentItem.usage === 'info' ? 'Continue' : 'Post'}
-                  showChevron={currentItem.usage !== 'info'}
-                  onClick={() => void handleNext()}
+            {currentItem.usage === 'regular' ? (
+              <article
+                className="feed-post card feed-stack__item"
+                data-item-id={currentItem.id}
+              >
+                <div className="feed-post__body">
+                  <FeedPostHeader item={currentItem} />
+                  <QtiTestPlayer
+                    ref={testPlayerRef}
+                    testUrl={TEST_URL_BY_ENV[envId]}
+                    itemId={currentItem.id}
+                    items={testPlayerItems}
+                    assetBase={env.assetBase}
+                    onSusanNotification={showNotification}
+                    onItemReady={scrollToCurrentItem}
+                    onResponsesChanged={handleResponsesChanged}
+                  />
+                </div>
+                <footer className="feed-actions">
+                  <AdvanceButton
+                    loading={isPosting}
+                    label="Post"
+                    showChevron
+                    onClick={() => void handleNext()}
+                  />
+                </footer>
+              </article>
+            ) : (
+              <div className="feed-stack__item">
+                <QtiTestPlayer
+                  ref={testPlayerRef}
+                  testUrl={TEST_URL_BY_ENV[envId]}
+                  itemId={currentItem.id}
+                  items={testPlayerItems}
+                  assetBase={env.assetBase}
+                  onSusanNotification={showNotification}
+                  onItemReady={scrollToCurrentItem}
+                  onResponsesChanged={handleResponsesChanged}
                 />
-              </footer>
-            </div>
+                <footer className="feed-actions">
+                  <AdvanceButton
+                    loading={isPosting}
+                    label="Continue"
+                    onClick={() => void handleNext()}
+                  />
+                </footer>
+              </div>
+            )}
           </AnimatedEnter>
         </div>
         {historyItems.map((item) => (

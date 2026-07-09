@@ -71,20 +71,33 @@ export function SpacegramSidebar() {
           src={env.susanProfilePic}
           alt=""
         />
-        <div>
+        <div className="spacegram-profile__meta">
           <strong>{env.susanDisplayName}</strong>
           <div className="spacegram-profile__sub">Susan</div>
         </div>
       </div>
-      <p className="spacegram-profile__hint text-muted">
-        Suggested for you
-      </p>
-      {FRIENDS.slice(0, 3).map((name) => (
-        <div key={name} className="spacegram-profile__suggestion">
-          <img className="profile-sm" src={friendAvatarUrl(env, name)} alt="" />
-          <span>{name}</span>
+
+      <div className="followers-card">
+        <div className="followers-card__header">{t.SPACEGRAM_FOLLOWERS}</div>
+        <div className="followers-card__body">
+          {FRIENDS.map((name) => (
+            <div key={name} className="followers-card__follower">
+              <img
+                className="profile-sm"
+                src={friendAvatarUrl(env, name)}
+                alt=""
+              />
+              <div className="followers-card__meta">
+                <strong>{name}</strong>
+                <span className="followers-card__sub">
+                  {t.SPACEGRAM_FOLLOWER}
+                </span>
+              </div>
+            </div>
+          ))}
+          <span className="followers-card__source">{t.SPACEGRAM_SOURCE}</span>
         </div>
-      ))}
+      </div>
     </aside>
   );
 }

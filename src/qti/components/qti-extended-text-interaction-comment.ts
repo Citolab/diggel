@@ -144,16 +144,21 @@ export class QtiExtendedTextInteractionComment extends QtiExtendedTextInteractio
   #renderCommentInput() {
     const env = currentEnvironmentConfig();
     const placeholder = this.placeholderText || 'Write a comment';
+    // Instagram-style environments (spacegram) show the comment field on its own;
+    // the author avatar already appears in the post header.
+    const showAvatar = env.layout !== 'instagram';
 
     return html`
       <div class="comment-input">
-        <span class="comment-input__avatar-ring">
-          <img
-            class="comment-input__avatar"
-            src="${env.susanProfilePic}"
-            alt=""
-          />
-        </span>
+        ${showAvatar
+          ? html`<span class="comment-input__avatar-ring">
+              <img
+                class="comment-input__avatar"
+                src="${env.susanProfilePic}"
+                alt=""
+              />
+            </span>`
+          : ''}
         <textarea
           class="comment-input__field"
           part="textarea"

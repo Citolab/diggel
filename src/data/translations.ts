@@ -11,6 +11,9 @@ export const t = {
   SPACEBOOK_WELCOME_MESSAGE:
     'Welcome! Susan is setting up her profile. Help her get started.',
   SPACEBOOK_FRIENDS: "Susan's friends",
+  SPACEGRAM_FOLLOWERS: 'Susans followers',
+  SPACEGRAM_FOLLOWER: 'Follower',
+  SPACEGRAM_SOURCE: 'Spacegram',
   SPACEBOOK_POSTED: 'Posted',
   SPACEBOOK_POST: 'Post',
   SPACEBOOK_START: 'Start',

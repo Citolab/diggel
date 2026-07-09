@@ -16,6 +16,8 @@
   --env-primary: #d65db1;
   --env-primary-light: #e87fc4;
   --env-body-bg: #f8f9fa;
+  /* Instagram-style like: heart icon instead of thumb. */
+  --like-glyph: '\F02D5';
 }
 
 body {
@@ -242,7 +244,10 @@ body {
 
 @media (min-width: 768px) {
   .env-grid--facebook { grid-template-columns: 260px minmax(0, 1fr) 160px; }
-  .env-grid--instagram { grid-template-columns: minmax(0, 1fr) 300px; }
+  .env-grid--instagram {
+    grid-template-columns: minmax(0, 470px) 300px;
+    justify-content: center;
+  }
 }
 
 .profile-card {
@@ -308,26 +313,61 @@ body {
   margin-bottom: 1rem;
 }
 
-.story-strip {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-}
-
-.story-strip__item {
+.spacegram-profile__meta {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.75rem;
+  justify-content: center;
 }
 
-.story-strip__ring {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: 2px solid var(--env-primary);
+.spacegram-profile__sub {
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+.followers-card {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.followers-card__header {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e9ecef;
+  color: #6c757d;
+  font-weight: 700;
+}
+
+.followers-card__body {
+  padding: 1rem;
+  background: #f8f9fa;
+}
+
+.followers-card__follower {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.followers-card__meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.followers-card__meta strong {
+  color: #1c1e21;
+}
+
+.followers-card__sub {
+  color: #6c757d;
+  font-size: 0.8rem;
+}
+
+.followers-card__source {
+  display: block;
+  color: #6c757d;
+  font-size: 0.8rem;
 }
 
 .registration-sidebar__step {
@@ -504,7 +544,12 @@ body {
 }
 
 .feed-post__body { padding: 1rem; }
-.feed-actions { margin-top: 1rem; display: flex; justify-content: flex-end; }
+.feed-actions {
+  margin-top: 1rem;
+  padding: 0 1rem 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
 
 .advance-button__spinner {
   display: inline-block;

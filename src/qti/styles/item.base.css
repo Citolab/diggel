@@ -144,6 +144,32 @@ qti-item-body {
   object-fit: contain;
 }
 
+/* Spacegram welcome: satellite badge in a white circle, gently floating. */
+.welcome-hero__badge {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  animation: welcome-hero-float 3s ease-in-out infinite;
+}
+
+.welcome-hero__badge img {
+  width: 80px;
+  height: 80px;
+}
+
+@keyframes welcome-hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .welcome-hero__label {
   margin: 0.5rem 0 0;
   text-transform: uppercase;

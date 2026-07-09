@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { AdvanceButton } from '../components/AdvanceButton';
@@ -21,6 +21,8 @@ export function RegistrationPage() {
   const { envId } = useParams<{ envId: string }>();
   const env = useEnvironment();
   const { items, currentItem, recordResult, advance } = useSession();
+  // Stable reference so QtiTestPlayer doesn't re-init on every re-render.
+  const testPlayerItems = useMemo(() => toTestPlayerItems(items), [items]);
   const { activeNotification, showNotification, dismissNotification } =
     useSusanNotifications();
   const testPlayerRef = useRef<QtiTestPlayerHandle>(null);
@@ -79,7 +81,7 @@ export function RegistrationPage() {
               ref={testPlayerRef}
               testUrl={TEST_URL_BY_ENV[envId]}
               itemId="news"
-              items={toTestPlayerItems(items)}
+              items={testPlayerItems}
               assetBase={env.assetBase}
               className="registration-page__player"
               onSusanNotification={showNotification}

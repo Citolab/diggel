@@ -2,7 +2,9 @@
 <qti-assessment-item xmlns="http://www.imsglobal.org/xsd/imsqtiasi_v3p0" identifier="welcome-spacegram" title="Welcome to Spacegram" adaptive="false" time-dependent="false" xml:lang="en">
   <qti-item-body>
     <div class="welcome-hero welcome-hero--spacegram">
-      <img src="assets/spacegram-logo.svg" alt="Spacegram" width="120" />
+      <div class="welcome-hero__badge">
+        <img src="assets/identity/icon-spacegram-satellite.svg" alt="Spacegram" />
+      </div>
       <p class="welcome-hero__label">Welcome to</p>
       <h2 class="welcome-hero__title">SPACEGRAM</h2>
       <p>Tap <strong>Continue</strong> below when you're ready.</p>

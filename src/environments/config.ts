@@ -44,7 +44,7 @@ export const ENVIRONMENTS: Record<EnvironmentId, EnvironmentConfig> = {
     primary: '#d65db1',
     primaryLight: '#e87fc4',
     bodyBg: '#f8f9fa',
-    navbarClass: 'env-navbar--brand',
+    navbarClass: 'env-navbar--light',
     layout: 'instagram',
     susanDisplayName: 'Susie Frusie',
     susanProfilePic: '/assets/spacegram/profile-pics/profile-empty.png',

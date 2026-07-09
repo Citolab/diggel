@@ -21,17 +21,7 @@ export function AppLayout({ children, sidebar }: AppLayoutProps) {
         <SpacebookNavbar />
         <main className="env-main">
           <div className="env-grid env-grid--instagram">
-            <div className="env-grid__feed">
-              <div className="story-strip" aria-hidden="true">
-                {['Susan', 'Tom', 'Camil', 'Bahia'].map((name) => (
-                  <div key={name} className="story-strip__item">
-                    <span className="story-strip__ring" />
-                    <span>{name}</span>
-                  </div>
-                ))}
-              </div>
-              {children}
-            </div>
+            <div className="env-grid__feed">{children}</div>
             <div className="env-grid__aside">
               {sidebar ?? <SpacegramSidebar />}
             </div>

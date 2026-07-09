@@ -143,7 +143,8 @@ export const likeChoiceShadowStyles = `
   }
 
   :host::after {
-    content: '\\F0513';
+    /* thumb-up by default; spacegram overrides to a heart via --like-glyph. */
+    content: var(--like-glyph, '\\F0513');
     font-family: 'Material Design Icons';
     font-size: 22px;
     line-height: 1;
@@ -344,7 +345,10 @@ export function injectFollowChoiceStyles(scope: ParentNode): void {
 
         const existing = root.getElementById('diggel-follow-choice-style');
         if (existing) {
-          existing.textContent = followChoiceShadowStyles;
+          // Avoid re-setting identical CSS — it forces a repaint (flicker).
+          if (existing.textContent !== followChoiceShadowStyles) {
+            existing.textContent = followChoiceShadowStyles;
+          }
           return;
         }
 
@@ -367,7 +371,10 @@ export function injectLikeChoiceStyles(scope: ParentNode): void {
 
         const existing = root.getElementById('diggel-like-choice-style');
         if (existing) {
-          existing.textContent = likeChoiceShadowStyles;
+          // Avoid re-setting identical CSS — it forces a repaint (flicker).
+          if (existing.textContent !== likeChoiceShadowStyles) {
+            existing.textContent = likeChoiceShadowStyles;
+          }
           return;
         }
 
@@ -386,7 +393,10 @@ export function injectPollChoiceStyles(scope: ParentNode): void {
 
         const existing = root.getElementById('diggel-poll-choice-style');
         if (existing) {
-          existing.textContent = pollChoiceShadowStyles;
+          // Avoid re-setting identical CSS — it forces a repaint (flicker).
+          if (existing.textContent !== pollChoiceShadowStyles) {
+            existing.textContent = pollChoiceShadowStyles;
+          }
           return;
         }
 

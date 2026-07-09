@@ -144,19 +144,26 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     patch((s) => ({ ...s, phase: 'registration', currentIndex: 0 }));
   }, [patch]);
 
-  const recordResult = useCallback(
-    (result: ItemResult) => {
-      patch((prev) => {
-        const index = prev.results.findIndex((r) => r.id === result.id);
-        const results =
-          index === -1
-            ? [...prev.results, result]
-            : prev.results.map((r) => (r.id === result.id ? result : r));
-        return { ...prev, results };
-      });
-    },
-    [patch]
-  );
+  const recordResult = useCallback((result: ItemResult) => {
+    // Continuous save persists straight to storage WITHOUT a React re-render:
+    // re-rendering the feed on every keystroke/click remounts the live QTI item
+    // (a visible content/scrollbar flash). The value is committed to state on
+    // advance(); this only lets a mid-item reload recover the in-progress answer.
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      const stored: SessionState = raw
+        ? { ...defaultState, ...JSON.parse(raw) }
+        : defaultState;
+      const index = stored.results.findIndex((r) => r.id === result.id);
+      const results =
+        index === -1
+          ? [...stored.results, result]
+          : stored.results.map((r) => (r.id === result.id ? result : r));
+      persist({ ...stored, results });
+    } catch {
+      // ignore storage errors
+    }
+  }, []);
 
   const advance = useCallback(
     (result?: ItemResult) => {
