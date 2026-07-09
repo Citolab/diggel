@@ -14,6 +14,7 @@ import type { CustomElements } from '@citolab/qti-components/react';
 import { applyDiggelImageConstraintsDeep } from '../qti/transform/diggelImageConstraints';
 import { scheduleAssetUrlFix } from '../qti/transform/resolveDiggelAssetUrl';
 import { applyDiggelItemTransform } from '../qti/transform/applyDiggelItemTransform';
+import { applyDiggelTestTransform } from '../qti/transform/applyDiggelTestTransform';
 import {
   DIGGEL_SUSAN_READY,
   type DiggelSusanReadyDetail,
@@ -84,6 +85,10 @@ type QtiTestElement = IQtiTest & {
     transformer: Parameters<typeof applyDiggelItemTransform>[0],
     itemRef: QtiAssessmentItemRef
   ) => ReturnType<typeof applyDiggelItemTransform>;
+  postLoadTestTransformCallback?: (
+    transformer: Parameters<typeof applyDiggelTestTransform>[0],
+    testElement: Parameters<typeof applyDiggelTestTransform>[1]
+  ) => ReturnType<typeof applyDiggelTestTransform>;
 };
 
 export const QtiTestPlayer = forwardRef<QtiTestPlayerHandle, QtiTestPlayerProps>(
@@ -194,6 +199,7 @@ export const QtiTestPlayer = forwardRef<QtiTestPlayerHandle, QtiTestPlayerProps>
 
     test.postLoadTransformCallback = (transformer, itemRef) =>
       applyDiggelItemTransform(transformer, itemRef, assetBaseRef.current);
+    test.postLoadTestTransformCallback = applyDiggelTestTransform;
   }, [isConnected]);
 
   useEffect(() => {

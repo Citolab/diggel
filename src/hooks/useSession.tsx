@@ -3,13 +3,15 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
   type ReactNode,
 } from 'react';
 
-import { ITEMS_BY_ENV } from '../data/items';
+import { loadAssessmentStructure } from '../data/assessmentStructure';
+import { TEST_URL_BY_ENV } from '../data/items';
 import type { EnvironmentId } from '../environments/config';
-import type { ItemResult, SessionState } from '../types';
+import type { AppPhase, ItemDefinition, ItemResult, SessionState } from '../types';
 
 const STORAGE_KEY = 'diggel-new-session';
 
@@ -36,12 +38,21 @@ function persist(state: SessionState) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
+/** Derive the app phase for the item at `index` from its QTI section. */
+function phaseForIndex(items: ItemDefinition[], index: number): AppPhase {
+  if (index >= items.length) return 'end';
+  const section = items[index]?.section;
+  return section === 'registration' ? 'registration' : 'feed';
+}
+
 interface SessionContextValue {
   session: SessionState;
-  items: ReturnType<typeof getItems>;
-  currentItem: ReturnType<typeof getItems>[number] | null;
+  items: ItemDefinition[];
+  currentItem: ItemDefinition | null;
   currentIndex: number;
   isComplete: boolean;
+  /** True while the assessment structure is being fetched for the environment. */
+  isLoadingStructure: boolean;
   enterDemo: () => void;
   selectEnvironment: (environment: EnvironmentId) => void;
   beginRegistration: () => void;
@@ -50,18 +61,46 @@ interface SessionContextValue {
   reset: () => void;
 }
 
-function getItems(environment: EnvironmentId | null) {
-  return environment ? ITEMS_BY_ENV[environment] : [];
-}
-
 const SessionContext = createContext<SessionContextValue | null>(null);
 
 export function SessionProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<SessionState>(load);
+  const [items, setItems] = useState<ItemDefinition[]>([]);
+  const [isLoadingStructure, setIsLoadingStructure] = useState(false);
+  // Kept in a ref so `advance` (a setState callback) can read the latest items.
+  const itemsRef = useRef<ItemDefinition[]>([]);
+  itemsRef.current = items;
 
   useEffect(() => {
     persist(session);
   }, [session]);
+
+  // Derive the item structure from the environment's QTI assessment test.
+  useEffect(() => {
+    const environment = session.environment;
+    if (!environment) {
+      setItems([]);
+      return;
+    }
+
+    let cancelled = false;
+    setIsLoadingStructure(true);
+    loadAssessmentStructure(TEST_URL_BY_ENV[environment])
+      .then((loaded) => {
+        if (!cancelled) setItems(loaded);
+      })
+      .catch((error) => {
+        console.error(error);
+        if (!cancelled) setItems([]);
+      })
+      .finally(() => {
+        if (!cancelled) setIsLoadingStructure(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [session.environment]);
 
   const patch = useCallback((updater: (prev: SessionState) => SessionState) => {
     setSession((prev) => {
@@ -71,10 +110,11 @@ export function SessionProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
-  const items = getItems(session.environment);
   const currentItem = items[session.currentIndex] ?? null;
   const isComplete =
-    session.environment !== null && session.currentIndex >= items.length;
+    session.environment !== null &&
+    items.length > 0 &&
+    session.currentIndex >= items.length;
 
   const enterDemo = useCallback(() => {
     patch(() => ({
@@ -121,16 +161,9 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   const advance = useCallback(
     (result?: ItemResult) => {
       patch((prev) => {
-        const envItems = prev.environment
-          ? ITEMS_BY_ENV[prev.environment]
-          : [];
+        const envItems = itemsRef.current;
         const nextIndex = prev.currentIndex + 1;
-        const nextPhase: SessionState['phase'] =
-          nextIndex >= envItems.length
-            ? 'end'
-            : nextIndex === 1
-              ? 'feed'
-              : prev.phase;
+        const nextPhase = phaseForIndex(envItems, nextIndex);
 
         let results = prev.results;
         if (result) {
@@ -165,6 +198,7 @@ export function SessionProvider({ children }: { children: ReactNode }) {
         currentItem,
         currentIndex: session.currentIndex,
         isComplete,
+        isLoadingStructure,
         enterDemo,
         selectEnvironment,
         beginRegistration,

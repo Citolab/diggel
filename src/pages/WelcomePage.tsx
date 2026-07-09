@@ -45,7 +45,7 @@ export function WelcomePage() {
               className="welcome-page__card"
               onClick={() => {
                 selectEnvironment(id);
-                navigate(`/${id}/start`);
+                navigate(`/${id}`);
               }}
             >
               <img src={env.logoPicker} alt={env.label} />

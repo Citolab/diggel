@@ -3,8 +3,10 @@ import { css, html, LitElement } from 'lit';
 import { REGISTRATION_STEPS } from '../../data/items';
 
 /**
- * Registration wizard sidebar — authored in section rubric blocks as:
- *   <div-registration-steps active-step="5"></div-registration-steps>
+ * Registration wizard sidebar — authored in a section rubric block as valid QTI:
+ *   <div class="type:registration-steps" data-active-step="5"></div>
+ * The test-level transform (extendElementsWithClass) upgrades it to
+ * <div-registration-steps> at load, mirroring how items handle type:* classes.
  */
 export class DivRegistrationSteps extends LitElement {
   activeStep = 5;
@@ -58,7 +60,8 @@ export class DivRegistrationSteps extends LitElement {
 
   override connectedCallback(): void {
     super.connectedCallback();
-    const raw = this.getAttribute('active-step');
+    // Authored as data-* (non-QTI attribute) on <div class="type:registration-steps">.
+    const raw = this.getAttribute('data-active-step');
     if (raw) {
       const parsed = Number(raw);
       if (!Number.isNaN(parsed)) {

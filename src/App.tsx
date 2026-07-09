@@ -3,11 +3,8 @@ import { Navigate, Route, Routes, useParams } from 'react-router-dom';
 import { EnvironmentProvider } from './environments/EnvironmentProvider';
 import type { EnvironmentId } from './environments/config';
 import { SessionProvider } from './hooks/useSession';
-import { EndPage } from './pages/EndPage';
-import { FeedPage } from './pages/FeedPage';
+import { AssessmentPage } from './pages/AssessmentPage';
 import { LoginPage } from './pages/LoginPage';
-import { RegistrationPage } from './pages/RegistrationPage';
-import { StartPage } from './pages/StartPage';
 import { WelcomePage } from './pages/WelcomePage';
 
 function EnvShell() {
@@ -17,15 +14,11 @@ function EnvShell() {
     return <Navigate to="/welcome" replace />;
   }
 
+  // One page for the whole assessment; the session phase (derived from the QTI
+  // section) decides which view renders. URL stays /:envId throughout.
   return (
     <EnvironmentProvider environmentId={envId as EnvironmentId}>
-      <Routes>
-        <Route path="start" element={<StartPage />} />
-        <Route path="registration" element={<RegistrationPage />} />
-        <Route path="feed" element={<FeedPage />} />
-        <Route path="end" element={<EndPage />} />
-        <Route path="*" element={<Navigate to="start" replace />} />
-      </Routes>
+      <AssessmentPage />
     </EnvironmentProvider>
   );
 }

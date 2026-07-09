@@ -11,18 +11,21 @@
     <qti-assessment-section identifier="registration" title="Registration" visible="true" keep-together="true">
       <qti-rubric-block use="instructions" view="candidate" class="qti-rubric-discretionary-placement">
         <qti-content-body>
-          <div-registration-steps active-step="5"></div-registration-steps>
+          <div class="type:registration-steps" data-active-step="5"></div>
         </qti-content-body>
       </qti-rubric-block>
-      <qti-assessment-item-ref identifier="news" href="../../items/news.xml" />
+      <qti-assessment-item-ref identifier="news" href="../../items/news.xml" data-title="Follow news pages" data-author="Susan" />
+    </qti-assessment-section>
+
+    <qti-assessment-section identifier="welcome" title="Welcome" visible="true" keep-together="true">
+      <qti-assessment-item-ref identifier="welcome-spacebook" href="../../items/welcome-spacebook.xml" category="info" data-title="Welcome" />
     </qti-assessment-section>
 
     <qti-assessment-section identifier="feed" title="Feed" visible="true" keep-together="true">
-      <qti-assessment-item-ref identifier="welcome-spacebook" href="../../items/welcome-spacebook.xml" category="info" />
-      <qti-assessment-item-ref identifier="tangare" href="../../items/tangare.xml" />
-      <qti-assessment-item-ref identifier="workflow" href="../../items/workflow.xml" />
-      <qti-assessment-item-ref identifier="funny-video" href="../../items/funny-video.xml" />
-      <qti-assessment-item-ref identifier="tie" href="../../items/tie.xml" />
+      <qti-assessment-item-ref identifier="tangare" href="../../items/tangare.xml" data-title="Bird from Brazil" data-author="Camil" />
+      <qti-assessment-item-ref identifier="workflow" href="../../items/workflow.xml" data-title="Workflow tool" data-author="Tom" />
+      <qti-assessment-item-ref identifier="funny-video" href="../../items/funny-video.xml" data-title="Funny video poll" data-author="Tom" />
+      <qti-assessment-item-ref identifier="tie" href="../../items/tie.xml" data-title="Photo story — tie a knot" data-author="Susan" />
     </qti-assessment-section>
 
   </qti-test-part>

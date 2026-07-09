@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { AdvanceButton } from '../components/AdvanceButton';
 import { AnimatedEnter } from '../components/AnimatedEnter';
@@ -9,7 +9,8 @@ import {
 } from '../components/QtiTestPlayer';
 import { SpacebookNavbar } from '../components/layout/EnvChrome';
 import { SusanNotification } from '../components/SusanNotification';
-import { testPlayerItems, TEST_URL_BY_ENV } from '../data/items';
+import { TEST_URL_BY_ENV } from '../data/items';
+import { toTestPlayerItems } from '../data/assessmentStructure';
 import { buildItemResult } from '../data/itemResult';
 import { ITEM_ADVANCE_DELAY_MS } from '../config/timing';
 import { useEnvironment } from '../environments/EnvironmentProvider';
@@ -18,9 +19,8 @@ import { useSession } from '../hooks/useSession';
 
 export function RegistrationPage() {
   const { envId } = useParams<{ envId: string }>();
-  const navigate = useNavigate();
   const env = useEnvironment();
-  const { session, currentItem, recordResult, advance } = useSession();
+  const { items, currentItem, recordResult, advance } = useSession();
   const { activeNotification, showNotification, dismissNotification } =
     useSusanNotifications();
   const testPlayerRef = useRef<QtiTestPlayerHandle>(null);
@@ -53,17 +53,13 @@ export function RegistrationPage() {
       }
 
       await new Promise((resolve) => window.setTimeout(resolve, ITEM_ADVANCE_DELAY_MS));
+      // advance() sets the phase (from the next item's section); the single
+      // AssessmentPage then renders the feed view — no URL navigation.
       advance(result);
-      navigate(`/${envId}/feed`);
     } finally {
       setIsAdvancing(false);
     }
-  }, [advance, currentItem, envId, isAdvancing, navigate]);
-
-  if (!session.loggedIn || session.environment !== envId) {
-    navigate('/welcome');
-    return null;
-  }
+  }, [advance, currentItem, isAdvancing]);
 
   if (envId !== 'spacebook' && envId !== 'spacegram') {
     return null;
@@ -83,7 +79,7 @@ export function RegistrationPage() {
               ref={testPlayerRef}
               testUrl={TEST_URL_BY_ENV[envId]}
               itemId="news"
-              items={testPlayerItems(envId)}
+              items={toTestPlayerItems(items)}
               assetBase={env.assetBase}
               className="registration-page__player"
               onSusanNotification={showNotification}

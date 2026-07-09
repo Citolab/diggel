@@ -1,19 +1,13 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { useEnvironment } from '../environments/EnvironmentProvider';
 import { t } from '../data/translations';
 import { useSession } from '../hooks/useSession';
 
 export function EndPage() {
-  const { envId } = useParams<{ envId: string }>();
   const navigate = useNavigate();
   const env = useEnvironment();
-  const { reset, session } = useSession();
-
-  if (!session.loggedIn || session.environment !== envId) {
-    navigate('/welcome');
-    return null;
-  }
+  const { reset } = useSession();
 
   return (
     <div

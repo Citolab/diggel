@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { AdvanceButton } from '../components/AdvanceButton';
 import { AnimatedEnter } from '../components/AnimatedEnter';
@@ -10,7 +10,8 @@ import {
   type QtiTestPlayerHandle,
 } from '../components/QtiTestPlayer';
 import { SusanNotification } from '../components/SusanNotification';
-import { ITEMS_BY_ENV, testPlayerItems, TEST_URL_BY_ENV } from '../data/items';
+import { TEST_URL_BY_ENV } from '../data/items';
+import { toTestPlayerItems } from '../data/assessmentStructure';
 import { buildItemResult } from '../data/itemResult';
 import { ITEM_ADVANCE_DELAY_MS } from '../config/timing';
 import { useEnvironment } from '../environments/EnvironmentProvider';
@@ -19,10 +20,8 @@ import { useSession } from '../hooks/useSession';
 
 export function FeedPage() {
   const { envId } = useParams<{ envId: string }>();
-  const navigate = useNavigate();
   const env = useEnvironment();
-  const { session, currentItem, isComplete, recordResult, advance } =
-    useSession();
+  const { session, items, currentItem, recordResult, advance } = useSession();
   const { activeNotification, showNotification, dismissNotification } =
     useSusanNotifications();
   const testPlayerRef = useRef<QtiTestPlayerHandle>(null);
@@ -53,11 +52,6 @@ export function FeedPage() {
   const handleNext = useCallback(async () => {
     if (!currentItem || isPosting) return;
 
-    if (isComplete) {
-      navigate(`/${envId}/end`);
-      return;
-    }
-
     setIsPosting(true);
 
     try {
@@ -74,33 +68,19 @@ export function FeedPage() {
       }
 
       await new Promise((resolve) => window.setTimeout(resolve, ITEM_ADVANCE_DELAY_MS));
+      // advance() moves to the next item and, past the last one, sets phase
+      // 'end' — the AssessmentPage then renders the end view. No navigation.
       advance(result);
     } finally {
       setIsPosting(false);
     }
-  }, [advance, currentItem, envId, isComplete, isPosting, navigate]);
-
-  if (!session.loggedIn || session.environment !== envId) {
-    navigate('/welcome');
-    return null;
-  }
-
-  if (session.phase === 'end' || isComplete) {
-    navigate(`/${envId}/end`);
-    return null;
-  }
-
-  if (session.phase === 'registration') {
-    navigate(`/${envId}/registration`);
-    return null;
-  }
+  }, [advance, currentItem, isPosting]);
 
   if (!currentItem || (envId !== 'spacebook' && envId !== 'spacegram')) {
     return null;
   }
 
-  const allItems = ITEMS_BY_ENV[envId];
-  const feedItems = allItems
+  const feedItems = items
     .slice(1, session.currentIndex + 1)
     .filter(
       (item) => item.usage !== 'info' || item.id === currentItem.id
@@ -125,7 +105,7 @@ export function FeedPage() {
                 ref={testPlayerRef}
                 testUrl={TEST_URL_BY_ENV[envId]}
                 itemId={currentItem.id}
-                items={testPlayerItems(envId)}
+                items={toTestPlayerItems(items)}
                 assetBase={env.assetBase}
                 onSusanNotification={showNotification}
                 onItemReady={scrollToCurrentItem}

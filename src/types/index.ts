@@ -1,15 +1,14 @@
 import type { EnvironmentId } from '../environments/config';
 
 export type ItemUsage = 'info' | 'regular';
-export type ItemPhase = 'registration' | 'feed';
 
 export interface ItemDefinition {
   id: string;
   href: string;
   title: string;
   usage: ItemUsage;
-  sequenceNumber: number;
-  phase: ItemPhase;
+  /** qti-assessment-section identifier this item belongs to (e.g. registration/welcome/feed). */
+  section: string;
   author?: string;
 }
 

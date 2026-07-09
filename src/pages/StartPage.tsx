@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
 
 import { useEnvironment } from '../environments/EnvironmentProvider';
 import { t } from '../data/translations';
@@ -7,10 +6,8 @@ import { useSession } from '../hooks/useSession';
 import { SusanNotification } from '../components/SusanNotification';
 
 export function StartPage() {
-  const { envId } = useParams<{ envId: string }>();
-  const navigate = useNavigate();
   const env = useEnvironment();
-  const { beginRegistration, session } = useSession();
+  const { beginRegistration } = useSession();
   const [showButton, setShowButton] = useState(false);
   const [toast, setToast] = useState(false);
 
@@ -22,11 +19,6 @@ export function StartPage() {
       window.clearTimeout(t2);
     };
   }, []);
-
-  if (!session.loggedIn || session.environment !== envId) {
-    navigate('/welcome');
-    return null;
-  }
 
   return (
     <div
@@ -47,10 +39,7 @@ export function StartPage() {
       <button
         type="button"
         className={`start-page__btn btn btn-primary btn-lg ${showButton ? 'start-page__btn--visible' : ''}`}
-        onClick={() => {
-          beginRegistration();
-          navigate(`/${envId}/registration`);
-        }}
+        onClick={() => beginRegistration()}
       >
         {t.SPACEBOOK_START}
       </button>
