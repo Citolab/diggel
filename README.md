@@ -1,9 +1,15 @@
-# Diggel (QTI version)
+# Diggel
 
-A React + TypeScript rebuild of the Diggel social-media training application, driven
-by a **valid QTI 3 package** and rendered with [`@citolab/qti-components`](https://github.com/Citolab/qti-components).
-Both environments (Spacebook / Spacegram) run from one app with **environment themes**
-instead of separate apps.
+Diggel (*Digitale geletterdheid* — digital literacy) is a prototype created by Cito in
+collaboration with the University of Twente (Netherlands). It presents items in the
+context of simulated social-media and content-creation apps.
+
+## QTI version
+
+A React + TypeScript rebuild of Diggel, driven by a **valid QTI 3 package** and rendered
+with [`@citolab/qti-components`](https://github.com/Citolab/qti-components). Both
+environments (Spacebook / Spacegram) run from one app with **environment themes** instead
+of separate apps.
 
 **Live demo:** https://citolab-diggel-demo.web.app
 
