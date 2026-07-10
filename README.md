@@ -7,6 +7,8 @@ instead of separate apps.
 
 **Live demo:** https://citolab-diggel-demo.web.app
 
+![Spacebook feed](docs/spacebook.png)
+
 ## Background
 
 The original Diggel is an Angular monorepo — you can find it on the
