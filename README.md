@@ -5,6 +5,8 @@ by a **valid QTI 3 package** and rendered with [`@citolab/qti-components`](https
 Both environments (Spacebook / Spacegram) run from one app with **environment themes**
 instead of separate apps.
 
+**Live demo:** https://citolab-diggel-demo.web.app
+
 ## Background
 
 The original Diggel is an Angular monorepo — you can find it on the
